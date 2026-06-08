@@ -19,7 +19,7 @@ const casesData = {
   'bonnell-newnan': {
 
     /* ── CLIENTE ──────────────────────────────────────────── */
-    clientName:       "Bonnell Aluminum Newnan",
+    clientName:       "Bonnell Aluminum",
     clientLocation:   "Newnan, Georgia, USA",
     clientIndustry:   "Aluminum Extrusion",
     caseDate:         "2021-06",
@@ -442,7 +442,7 @@ const casesData = {
 
     /* ── CLIENTE ──────────────────────────────────────────── */
     clientName:       "INDALUM",
-    clientLocation:   "Mexico",
+    clientLocation:   "San Nicolás, NL, México",
     clientIndustry:   "Aluminum Extrusion",
     caseDate:         "2022-11",
     interlubContact:  "Interlub Technical Team",
@@ -623,7 +623,7 @@ const casesData = {
 const casesRegistry = [
   {
     id:        "bonnell-newnan",
-    client:    "Bonnell Aluminum, Newnan",
+    client:    "Bonnell Aluminum",
     industry:  "Aluminum Extrusion",
     location:  "Newnan, Georgia, USA",
     headline:  "100% reduction in lubricant-related illnesses & accidents",
@@ -634,7 +634,7 @@ const casesRegistry = [
     id:        "indalum",
     client:    "INDALUM",
     industry:  "Aluminum Extrusion",
-    location:  "Mexico",
+    location:  "San Nicolás, NL, México",
     headline:  "75% lubricant cost reduction across all 3 presses",
     date:      "2022-11",
     isCurrent: true
@@ -650,7 +650,7 @@ const casesRegistry = [
   },
   {
       id:        "hydro-cressona",
-      client:    "Hydro Cressona",
+      client:    "Hydro",
       industry:  "Aluminum Extrusion",
       location:  "Cressona, PA, USA",
       headline:  "100% migration to water-based technologies",
@@ -659,7 +659,7 @@ const casesRegistry = [
     },
     {
       id:        "confidential-eu",
-      client:    "Confidential, EU",
+      client:    "Confidential",
       industry:  "Aluminum Extrusion",
       location:  "Lombardia, Italy",
       headline:  "Graphite eliminated across 5 presses",
