@@ -211,7 +211,7 @@ const casesData = {
 
     /* ── CLIENTE ──────────────────────────────────────────── */
     clientName:       "Extrum",
-    clientLocation:   "Honduras",
+    clientLocation:   "San Pedro Sula, Honduras, Honduras",
     clientIndustry:   "Aluminum Extrusion",
     caseDate:         "2024-08",
     interlubContact:  "Interlub Technical Team",
@@ -442,7 +442,7 @@ const casesData = {
 
     /* ── CLIENTE ──────────────────────────────────────────── */
     clientName:       "INDALUM",
-    clientLocation:   "San Nicolás, NL, México",
+    clientLocation:   "San Nicolas, Nuevo Leon, Mexico",
     clientIndustry:   "Aluminum Extrusion",
     caseDate:         "2022-11",
     interlubContact:  "Interlub Technical Team",
@@ -613,7 +613,168 @@ const casesData = {
 
   } /* end indalum */
 
-}; /* end casesData */
+,
+  'hai': {
+    clientName:       "HAI Romania",
+    clientLocation:   "Chisineu-Cris, Romania",
+    clientIndustry:   "Aluminum Extrusion",
+    caseDate:         "2023-11",
+    interlubContact:  "Thomas Massmann",
+
+    totalPresses:          5,
+    activePressesWithRO3:  null,
+    plantSummary:     "5 presses · Romania · Flagship Presezzi running INTERFORGE KI-C continuously for 2+ years without crystallized deposits.",
+    plantDescription: "36,000 MT/year production capacity for automotive and construction profiles. We previously used STAG 11 and STAG 118 for hub-end and guillotine lubrication. The result was severe, recurring maintenance issues: crystallized deposits, hardened residue, clogged spray nozzles, and tank sludge. We evaluated Interforge KI-C to eliminate these exact failures. It now runs continuously on our flagship 10-inch Presezzi Extrutec press.",
+
+    presses: [
+      {
+        pressId:                "Press 1 (Flagship)",
+        pressBrand:             "Presezzi Extrutec (2023)",
+        pushTons:               "85 MN",
+        billetDiameter:         10,
+        billetUnit:             "in",
+        extrusionsPerShift:     null,
+        lubricantBefore:        "STAG 118",
+        lubricantPriceBefore:   null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter:  null,
+        dosingSystem:           "Automated",
+        valveType:              null,
+        ro3Implemented:         false,
+        statusNote:             "Running INTERFORGE KI-C continuously for 2+ years"
+      },
+      {
+        pressId:                "Press 2",
+        pressBrand:             "Prisma",
+        pushTons:               null,
+        billetDiameter:         5,
+        billetUnit:             "in",
+        extrusionsPerShift:     null,
+        lubricantBefore:        "STAG 11",
+        lubricantPriceBefore:   null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter:  null,
+        dosingSystem:           "Automated",
+        valveType:              null,
+        ro3Implemented:         false,
+        statusNote:             "Trialed INTERFORGE KI-C for hub-end lubrication"
+      },
+      {
+        pressId:                "Press 3",
+        pressBrand:             "Cometal/OMAV",
+        pushTons:               null,
+        billetDiameter:         7,
+        billetUnit:             "in",
+        extrusionsPerShift:     null,
+        lubricantBefore:        "STAG 11",
+        lubricantPriceBefore:   null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter:  null,
+        dosingSystem:           "Automated",
+        valveType:              null,
+        ro3Implemented:         false,
+        statusNote:             "Trialed INTERFORGE KI-C for guillotine lubrication"
+      }
+    ],
+
+    challenges: [
+      {
+        title:          "Severe Crystallized Deposits",
+        description:    "STAG 11 and STAG 118 generated significant, crystallized deposit formation around application areas. These residues progressively hardened over time, making cleaning increasingly difficult and raising concerns that hard particles could enter the extrusion process.",
+        impactCategory: "Maintenance"
+      },
+      {
+        title:          "Chronic Nozzle Clogging",
+        description:    "The previous products caused frequent spray nozzle obstruction, requiring continuous maintenance intervention and unplanned downtime. Sludge also accumulated inside the tanks, contaminating hoses and valves.",
+        impactCategory: "Productivity"
+      }
+    ],
+
+    heroMetric: {
+      metricValue:   "0",
+      metricLabel:   "Crystallized deposits or hardened residues observed",
+      metricContext: "INTERFORGE KI-C residues remain soft and rubber-like, making the system significantly easier to maintain.",
+      metricUnit:    "verified after 2+ years"
+    },
+
+    secondaryHeroMetric: {
+      metricValue:   "100%",
+      metricLabel:   "Continuous operation on the flagship 10-inch Presezzi line",
+      metricContext: "The system runs cleaner with reduced nozzle clogging compared to competing products observed on other lines.",
+      metricUnit:    "since 2023"
+    },
+
+    verificationNote: "Validation report: November 2023. Follow-up review: June 2026. Competing products on other lines still show heavy residue and nozzle clogging. All findings verified on-site at HAI Romania under real production conditions. Evaluators: Csaba Jakabos (HAI), Vali (Lubricant Romania), Thomas Massmann (Interlub), Andrea Zanoni, and Srdjan Jordanovic (Danieli).",
+
+    supportingMetrics: [
+      { label: "Crystallized Deposits",              before: "Severe",  after: "None",    unit: "",  improvement: "Eliminated" },
+      { label: "Residue Hardening",      before: "Progressive",  after: "Soft/Rubber-like",   unit: "",   improvement: "Resolved" },
+      { label: "System Contamination",      before: "Significant",       after: "Minimal",     unit: "",         improvement: "Cleaner operation" }
+    ],
+
+    comparisonTables: [
+      {
+        title:    "Performance Comparison: Previous Products vs. INTERFORGE KI-C",
+        subtitle: "Based on validation trial and 3-year continuous observation",
+        columns:  ["", "STAG 11 / 118", "INTERFORGE KI-C"],
+        highlight: 4,
+        rows: [
+          ["Crystallized deposit formation", "Severe, consistent", "None observed" ],
+          ["Residue hardening over time", "Yes — progressive", "No — remains soft" ],
+          ["Spray nozzle clogging frequency", "High", "Reduced" ],
+          ["System contamination", "Significant", "Minimal" ]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Parallel trials conducted on Press 2 (Hub-End, 15L) and Press 3 (Guillotine, 2L). Systems were flushed prior to testing. Daily consumption: Day 1 (Commissioning), Day 2 (2.5L), Day 3 (3.0L), Day 4 (7.0L spike due to unauthorized settings change, returned to normal once restored). Continuous operation validated on the flagship Press 1 (Presezzi 10-inch).",
+      product1Label:   "STAG 11 / 118",
+      product1Result:  "Heavy crystallized deposits. Residues hardened over time. High frequency of spray nozzle clogging. Sludge accumulation inside tanks.",
+      product2Label:   "INTERFORGE KI-C",
+      product2Result:  "No severe crystallized deposits. Residues remain soft and rubber-like. Reduced nozzle obstruction. Cleaner operating conditions maintained.",
+      hasPhotos:       false,
+      photos:          []
+    },
+
+    productComparison: [
+      { productName: "STAG 118",  performance: "Low", price: "Low",    cleanliness: "Low",  safetyEnvironment: "Medium",  isInterlub: false },
+      { productName: "INTERFORGE KI-C",  performance: "High",   price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true  }
+    ],
+
+    solution: {
+      solutionText:       "Interforge KI-C replaced our previous hub-end and guillotine lubricants. We apply it directly without dilution. It completely eliminated the crystallized deposits and hardening that plagued our prior setup. We have run it continuously on our flagship Presezzi line for over two years. The process environment stays clean, and the nozzles do not clog.",
+      product:            "INTERFORGE KI-C",
+      productDescription: "Water-based synthetic release agent for aluminum extrusion. Applied undiluted. Formulated to minimize deposit formation and residue hardening, keeping systems cleaner and reducing maintenance burdens.",
+      ro3Description:     null
+    },
+
+    results: [
+      { resultText: "Elimination of crystallized deposit formation" },
+      { resultText: "Prevention of progressive residue hardening" },
+      { resultText: "Reduced spray nozzle clogging frequency" },
+      { resultText: "Satisfactory guillotine and bar deformation performance" },
+      { resultText: "Strict parameter control required for consistent consumption" },
+      { resultText: "Full system cleaning required before switching products" }
+    ],
+
+    additionalBenefits: [
+      { icon: "quality",      label: "No risk of hard particles entering the extrusion" },
+      { icon: "cleanliness",  label: "Cleaner operating condition in the lubrication system" },
+      { icon: "productivity", label: "Reduced unplanned downtime from clogged nozzles" },
+      { icon: "safety",       label: "Water-based synthetic formulation" }
+    ],
+
+    media: {
+      coverImage:    "assets/Extrusion_HD_01.jpg",
+      productImage:  "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/hai_logo.png",
+      logoPillBg:    "rgba(255,255,255,0.92)"
+    }
+  }
+
+};
+/* end casesData */
 
 
 /* ============================================================
@@ -634,7 +795,7 @@ const casesRegistry = [
     id:        "indalum",
     client:    "INDALUM",
     industry:  "Aluminum Extrusion",
-    location:  "San Nicolás, NL, México",
+    location:  "San Nicolas, Nuevo Leon, Mexico",
     headline:  "75% lubricant cost reduction across all 3 presses",
     date:      "2022-11",
     isCurrent: true
@@ -643,7 +804,7 @@ const casesRegistry = [
     id:        "extrum",
     client:    "Extrum",
     industry:  "Aluminum Extrusion",
-    location:  "Honduras",
+    location:  "San Pedro Sula, Honduras, Honduras",
     headline:  "55% less lubricant · 98,865 lb production loss eliminated",
     date:      "2024-08",
     isCurrent: true
@@ -652,19 +813,19 @@ const casesRegistry = [
       id:        "hydro-cressona",
       client:    "Hydro",
       industry:  "Aluminum Extrusion",
-      location:  "Cressona, PA, USA",
+      location:  "Cressona, Pennsylvania, United States",
       headline:  "100% migration to water-based technologies",
       date:      "TBD",
       isCurrent: false
     },
     {
-      id:        "confidential-eu",
-      client:    "Confidential",
+      id:        "hai",
+      client:    "HAI",
       industry:  "Aluminum Extrusion",
-      location:  "Lombardia, Italy",
-      headline:  "Graphite eliminated across 5 presses",
-      date:      "2023-07",
-      isCurrent: false
+      location:  "Arad County, Romania, Romania",
+      headline:  "100% elimination of crystallized deposits on flagship press",
+      date:      "2023-11",
+      isCurrent: true
     }
   ];
 
