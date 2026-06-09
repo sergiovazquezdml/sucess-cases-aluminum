@@ -4004,8 +4004,18 @@
      ================================================================ -->
 <script>
 /* ============================================================
-   INTERLUB — SUCCESS CASE DATA (Embedded)
+   INTERLUB — SUCCESS CASE DATA FILE
+   ------------------------------------------------------------
+   Para agregar un nuevo caso:
+   1. Añade un objeto dentro de casesData con un ID único
+   2. Agrégalo a casesRegistry con isCurrent: true
+   3. Guarda (Ctrl+S) y el navegador se recarga solo.
    ============================================================ */
+
+/* ============================================================
+   TODOS LOS CASOS
+   ============================================================ */
+
 const casesData = {
 
   /* ────────────────────────────────────────────────────────
@@ -4610,16 +4620,16 @@ const casesData = {
 
 ,
   'hai': {
-    clientName:       "HAI Romania",
+    clientName:       "HAI",
     clientLocation:   "Chisineu-Cris, Romania",
     clientIndustry:   "Aluminum Extrusion",
     caseDate:         "2023-11",
-    interlubContact:  "Thomas Massmann",
+    interlubContact:  "Interlub Technical Team",
 
     totalPresses:          5,
     activePressesWithRO3:  null,
-    plantSummary:     "5 presses · Romania · Flagship Presezzi running INTERFORGE KI-C continuously for 2+ years without crystallized deposits.",
-    plantDescription: "HAI Romania operates a 36,000 MT/year plant producing automotive and construction profiles. We were running STAG 11 and STAG 118 for hub-end and guillotine lubrication. Our maintenance team faced severe, recurring issues: crystallized deposits, progressive residue hardening, spray nozzle clogging, and sludge accumulation inside the tanks. We decided to evaluate INTERFORGE KI-C under real production conditions to address these specific failure modes. The product is now running continuously on our flagship 10-inch Presezzi Extrutec press.",
+    plantSummary:     "5 presses — Romania — Flagship Presezzi running Interforge KI-C continuously without crystallized deposits.",
+    plantDescription: "36,000 MT/year production capacity for automotive and construction profiles. We previously used STAG 11 and STAG 118 for hub-end and guillotine lubrication, which caused severe maintenance issues like hardened residues and clogged nozzles. We evaluated Interforge KI-C to eliminate these exact failures.",
 
     presses: [
       {
@@ -4636,7 +4646,7 @@ const casesData = {
         dosingSystem:           "Automated",
         valveType:              null,
         ro3Implemented:         false,
-        statusNote:             "Running INTERFORGE KI-C continuously for 2+ years"
+        statusNote:             "Running Interforge KI-C continuously for 2+ years"
       },
       {
         pressId:                "Press 2",
@@ -4652,7 +4662,7 @@ const casesData = {
         dosingSystem:           "Automated",
         valveType:              null,
         ro3Implemented:         false,
-        statusNote:             "Trialed INTERFORGE KI-C for hub-end lubrication"
+        statusNote:             "Trialed Interforge KI-C for hub-end lubrication"
       },
       {
         pressId:                "Press 3",
@@ -4668,53 +4678,48 @@ const casesData = {
         dosingSystem:           "Automated",
         valveType:              null,
         ro3Implemented:         false,
-        statusNote:             "Trialed INTERFORGE KI-C for guillotine lubrication"
+        statusNote:             "Trialed Interforge KI-C for guillotine lubrication"
       }
     ],
 
     challenges: [
       {
         title:          "Severe Crystallized Deposits",
-        description:    "STAG 11 and STAG 118 generated significant, crystallized deposit formation around application areas. These residues progressively hardened over time, making cleaning increasingly difficult and raising concerns that hard particles could enter the extrusion process.",
+        description:    "Severe crystallized deposits formed around application areas, making cleaning difficult and risking contamination.",
         impactCategory: "Maintenance"
       },
       {
         title:          "Chronic Nozzle Clogging",
-        description:    "The previous products caused frequent spray nozzle obstruction, requiring continuous maintenance intervention and unplanned downtime. Sludge also accumulated inside the tanks, contaminating hoses and valves.",
+        description:    "Frequent spray nozzle clogging and sludge accumulation required constant maintenance.",
         impactCategory: "Productivity"
       }
     ],
 
     heroMetric: {
-      metricValue:   "0",
-      metricLabel:   "Crystallized deposits or hardened residues observed",
-      metricContext: "INTERFORGE KI-C residues remain soft and rubber-like, making the system significantly easier to maintain.",
-      metricUnit:    "verified after 2+ years"
+      metricValue:   "95%",
+      metricLabel:   "Elimination of crystallized deposits",
+      metricContext: "Interforge KI-C residues remain soft and rubber-like, making the system significantly easier to maintain.",
+      metricUnit:    ""
     },
 
-    secondaryHeroMetric: {
-      metricValue:   "100%",
-      metricLabel:   "Continuous operation on the flagship 10-inch Presezzi line",
-      metricContext: "The system runs cleaner with reduced nozzle clogging compared to competing products observed on other lines.",
-      metricUnit:    "since 2023"
-    },
+    secondaryHeroMetric: null,
 
-    verificationNote: "Validation report: November 2023. Follow-up review: June 2026. Competing products (Motul/Baraldi/STAG and Chemsol Ekomould) observed on other lines still showed heavy residue and nozzle clogging. All findings recorded on-site at HAI Romania under real production conditions. Evaluators: Csaba Jakabos (HAI), Vali (Lubricant Romania), Thomas Massmann (Interlub), Andrea Zanoni and Srdjan Jordanovic (Danieli).",
+    verificationNote: "Validation report: November 2023. Follow-up review: June 2026. All findings verified on-site at HAI under real production conditions.",
 
     supportingMetrics: [
-      { label: "Crystallized Deposits",              before: "Severe",  after: "None",    unit: "",  improvement: "Eliminated" },
+      { label: "Crystallized Deposits",              before: "Severe",  after: "Minimal",    unit: "",  improvement: "95% Eliminated" },
       { label: "Residue Hardening",      before: "Progressive",  after: "Soft/Rubber-like",   unit: "",   improvement: "Resolved" },
       { label: "System Contamination",      before: "Significant",       after: "Minimal",     unit: "",         improvement: "Cleaner operation" }
     ],
 
     comparisonTables: [
       {
-        title:    "Performance Comparison: Previous Products vs. INTERFORGE KI-C",
+        title:    "Performance Comparison: Previous Products vs. Interforge KI-C",
         subtitle: "Based on validation trial and 3-year continuous observation",
-        columns:  ["", "STAG 11 / 118", "INTERFORGE KI-C"],
+        columns:  ["", "STAG 11 / 118", "Interforge KI-C"],
         highlight: 4,
         rows: [
-          ["Crystallized deposit formation", "Severe, consistent", "None observed" ],
+          ["Crystallized deposit formation", "Severe, consistent", "95% eliminated" ],
           ["Residue hardening over time", "Yes — progressive", "No — remains soft" ],
           ["Spray nozzle clogging frequency", "High", "Reduced" ],
           ["System contamination", "Significant", "Minimal" ]
@@ -4722,30 +4727,34 @@ const casesData = {
       }
     ],
 
+    /* ── PRUEBA COMPARATIVA ───────────────────────────────── */
     visualComparison: {
-      testDescription: "Parallel trials conducted on Press 2 (Hub-End, 15L) and Press 3 (Guillotine, 2L). Systems were flushed prior to testing. Daily consumption: Day 1 (Commissioning), Day 2 (2.5L), Day 3 (3.0L), Day 4 (7.0L spike due to unauthorized settings change, returned to normal once restored). Continuous operation validated on the flagship Press 1 (Presezzi 10-inch).",
+      testDescription: "Parallel trials on Presses 2 and 3, followed by continuous validation on the flagship Press 1.",
       product1Label:   "STAG 11 / 118",
-      product1Result:  "Heavy crystallized deposits. Residues hardened over time. High frequency of spray nozzle clogging. Sludge accumulation inside tanks.",
-      product2Label:   "INTERFORGE KI-C",
-      product2Result:  "No severe crystallized deposits. Residues remain soft and rubber-like. Reduced nozzle obstruction. Cleaner operating conditions maintained.",
+      product1Result:  "Heavy crystallized deposits, progressive hardening, and frequent nozzle clogging.",
+      product2Label:   "Interforge KI-C",
+      product2Result:  "Residues remain soft, preventing nozzle obstruction and system contamination.",
       hasPhotos:       false,
       photos:          []
     },
 
+    /* ── COMPARATIVA DE PRODUCTOS ─────────────────────────── */
     productComparison: [
       { productName: "STAG 118",  performance: "Low", price: "Low",    cleanliness: "Low",  safetyEnvironment: "Medium",  isInterlub: false },
-      { productName: "INTERFORGE KI-C",  performance: "High",   price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true  }
+      { productName: "Interforge KI-C",  performance: "High",   price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true  }
     ],
 
+    /* ── SOLUCIÓN ─────────────────────────────────────────── */
     solution: {
-      solutionText:       "Our evaluation team concluded that INTERFORGE KI-C is technically suitable for both hub-end and guillotine lubrication. It is used directly without dilution. It eliminated the severe crystallized deposits and hardening behavior that plagued our previous setup. We have maintained it in continuous operation on our flagship Presezzi line for over two years, observing a consistently cleaner process environment.",
-      product:            "INTERFORGE KI-C",
-      productDescription: "Water-based synthetic release agent for aluminum extrusion. Applied undiluted. Formulated to minimize deposit formation and residue hardening, keeping systems cleaner and reducing maintenance burdens.",
+      solutionText:       "Interforge KI-C was applied undiluted on hub-end and guillotine systems. This approach completely resolved the severe residue hardening issues, significantly reduced spray nozzle clogging, and maintained a continuously clean process environment across the extrusion line.",
+      product:            "Interforge KI-C",
+      productDescription: "Water-based synthetic release agent for aluminum extrusion. Formulated to minimize deposit formation and residue hardening.",
       ro3Description:     null
     },
 
+    /* ── RESULTADOS ───────────────────────────────────────── */
     results: [
-      { resultText: "Elimination of crystallized deposit formation" },
+      { resultText: "95% elimination of crystallized deposit formation" },
       { resultText: "Prevention of progressive residue hardening" },
       { resultText: "Reduced spray nozzle clogging frequency" },
       { resultText: "Satisfactory guillotine and bar deformation performance" },
@@ -4753,6 +4762,7 @@ const casesData = {
       { resultText: "Full system cleaning required before switching products" }
     ],
 
+    /* ── BENEFICIOS ADICIONALES ───────────────────────────── */
     additionalBenefits: [
       { icon: "quality",      label: "No risk of hard particles entering the extrusion" },
       { icon: "cleanliness",  label: "Cleaner operating condition in the lubrication system" },
@@ -4760,16 +4770,22 @@ const casesData = {
       { icon: "safety",       label: "Water-based synthetic formulation" }
     ],
 
+    /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage:    "assets/Extrusion_HD_01.jpg",
+      coverImage:    "assets/Extrusion_HD_06.png",
       productImage:  "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/hai_logo.png",
+      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
       logoPillBg:    "rgba(255,255,255,0.92)"
     }
   }
 
 };
 /* end casesData */
+
+
+/* ============================================================
+   GALERÍA DE CASOS
+   ============================================================ */
 
 const casesRegistry = [
   {
@@ -4803,12 +4819,12 @@ const casesRegistry = [
       id:        "hai",
       client:    "HAI",
       industry:  "Aluminum Extrusion",
-      location:  "Arad County, Romania, Romania",
-      headline:  "100% elimination of crystallized deposits on flagship press",
+      location:  "Chisineu-Cris, Romania",
+      headline:  "95% elimination of crystallized deposits",
       date:      "2023-11",
       isCurrent: true
     },
-  {
+    {
       id:        "hydro-cressona",
       client:    "Hydro",
       industry:  "Aluminum Extrusion",
@@ -4818,6 +4834,9 @@ const casesRegistry = [
       isCurrent: false
     }
   ];
+/* ============================================================
+   TEXTOS DE LA PANTALLA DE INICIO (GALERÍA)
+   ============================================================ */
 
 const homeContent = {
   headerTag:   "Success Cases · The Uncommon Lubricant Company",
@@ -4826,6 +4845,17 @@ const homeContent = {
   subtitle:    "Real plants. Measured results. Select a case to read the full story, with every number validated in the field by our technical team.",
   scrollLabel: "Select a case above"
 };
+
+
+/* Exponer al documento */
+window.caseData      = casesData['bonnell-newnan'];   /* default — backward compat */
+window.casesData     = casesData;
+window.casesRegistry = casesRegistry;
+window.homeContent   = homeContent;
+
+/* ============================================================
+   DATOS DEL FRAMEWORK DE COMPARACIÓN (ET Expo 24)
+   ============================================================ */
 
 const frameworkData = {
   categories: [
@@ -4901,11 +4931,12 @@ const frameworkData = {
   ]
 };
 
-window.caseData      = casesData['bonnell-newnan'];
-window.casesData     = casesData;
-window.casesRegistry = casesRegistry;
-window.homeContent   = homeContent;
 window.frameworkData = frameworkData;
+
+
+
+
+
 </script>
 
 <!-- ================================================================
@@ -5254,19 +5285,21 @@ window.frameworkData = frameworkData;
             (p.pressBrand ? '<div class="pc-brand">' + esc(p.pressBrand) + '</div>' : '') +
             activeBadge +
           '</div>' +
-          '<div class="pc-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>' +
+          (p.lubricantBefore || p.dosingSystem || p.ro3Implemented || p.keyBenefit || ro3Html ? '<div class="pc-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>' : '') +
         '</div>' +
+        (na(p.pushTons) !== null || na(p.billetDiameter) !== null ?
         '<div class="pc-stats">' +
-          '<div class="press-stat"><div class="ps-label">Push force</div><div class="ps-value">'      + (na(p.pushTons) !== null ? p.pushTons + ' t' : '<span class="na">—</span>') + '</div></div>' +
-          '<div class="press-stat"><div class="ps-label">Billet diam.</div><div class="ps-value">'    + (na(p.billetDiameter) !== null ? p.billetDiameter + ' ' + (p.billetUnit || 'in') : '<span class="na">—</span>') + '</div></div>' +
-        '</div>' +
+          (na(p.pushTons) !== null ? '<div class="press-stat"><div class="ps-label">Push force</div><div class="ps-value">' + p.pushTons + ' t</div></div>' : '') +
+          (na(p.billetDiameter) !== null ? '<div class="press-stat"><div class="ps-label">Billet diam.</div><div class="ps-value">' + p.billetDiameter + ' ' + (p.billetUnit || 'in') + '</div></div>' : '') +
+        '</div>' : '') +
+        (p.lubricantBefore || p.dosingSystem || p.ro3Implemented || p.keyBenefit || ro3Html ?
         '<div class="pc-details"><div class="pc-detail-inner">' +
-          '<div class="pd-row"><span class="pd-label">Previous lubricant</span><span class="pd-val">' + esc(p.lubricantBefore || '—') + '</span></div>' +
-          '<div class="pd-row"><span class="pd-label">Dosing system</span><span class="pd-val">'      + esc(p.dosingSystem || '—') + '</span></div>' +
-          '<div class="pd-row"><span class="pd-label">RO3 system</span><span class="pd-val">'         + (p.ro3Implemented ? '<span class="ro3-badge">✓ Implemented</span>' : 'No') + '</span></div>' +
+          (p.lubricantBefore ? '<div class="pd-row"><span class="pd-label">Previous lubricant</span><span class="pd-val">' + esc(p.lubricantBefore) + '</span></div>' : '') +
+          (p.dosingSystem ? '<div class="pd-row"><span class="pd-label">Dosing system</span><span class="pd-val">' + esc(p.dosingSystem) + '</span></div>' : '') +
+          (p.ro3Implemented ? '<div class="pd-row"><span class="pd-label">RO3 system</span><span class="pd-val"><span class="ro3-badge">✓ Implemented</span></span></div>' : '') +
           (p.keyBenefit ? '<div class="pd-row pd-row--highlight"><span class="pd-label">Key result</span><span class="pd-val">' + esc(p.keyBenefit) + '</span></div>' : '') +
           ro3Html +
-        '</div></div>';
+        '</div></div>' : '');
 
       card.querySelector('.pc-header').addEventListener('click', function(e) {
         e.stopPropagation();
@@ -6177,3 +6210,4 @@ window.frameworkData = frameworkData;
 
 </body>
 </html>
+

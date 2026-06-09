@@ -615,16 +615,177 @@ const casesData = {
 
 ,
   'hai': {
+    clientName:       "HAI",
+    clientLocation:   "Chisineu-Cris, Romania",
+    clientIndustry:   "Aluminum Extrusion",
+    caseDate:         "2023-11",
+    interlubContact:  "Interlub Technical Team",
+
+    totalPresses:          5,
+    activePressesWithRO3:  null,
+    plantSummary:     "5 presses — Romania — Flagship Presezzi running Interforge KI-C continuously without crystallized deposits.",
+    plantDescription: "36,000 MT/year production capacity for automotive and construction profiles. We previously used STAG 11 and STAG 118 for hub-end and guillotine lubrication, which caused severe maintenance issues like hardened residues and clogged nozzles. We evaluated Interforge KI-C to eliminate these exact failures.",
+
+    presses: [
+      {
+        pressId:                "Press 1 (Flagship)",
+        pressBrand:             "Presezzi Extrutec (2023)",
+        pushTons:               "85 MN",
+        billetDiameter:         10,
+        billetUnit:             "in",
+        extrusionsPerShift:     null,
+        lubricantBefore:        "STAG 118",
+        lubricantPriceBefore:   null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter:  null,
+        dosingSystem:           "Automated",
+        valveType:              null,
+        ro3Implemented:         false,
+        statusNote:             "Running Interforge KI-C continuously for 2+ years"
+      },
+      {
+        pressId:                "Press 2",
+        pressBrand:             "Prisma",
+        pushTons:               null,
+        billetDiameter:         5,
+        billetUnit:             "in",
+        extrusionsPerShift:     null,
+        lubricantBefore:        "STAG 11",
+        lubricantPriceBefore:   null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter:  null,
+        dosingSystem:           "Automated",
+        valveType:              null,
+        ro3Implemented:         false,
+        statusNote:             "Trialed Interforge KI-C for hub-end lubrication"
+      },
+      {
+        pressId:                "Press 3",
+        pressBrand:             "Cometal/OMAV",
+        pushTons:               null,
+        billetDiameter:         7,
+        billetUnit:             "in",
+        extrusionsPerShift:     null,
+        lubricantBefore:        "STAG 11",
+        lubricantPriceBefore:   null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter:  null,
+        dosingSystem:           "Automated",
+        valveType:              null,
+        ro3Implemented:         false,
+        statusNote:             "Trialed Interforge KI-C for guillotine lubrication"
+      }
+    ],
+
+    challenges: [
+      {
+        title:          "Severe Crystallized Deposits",
+        description:    "Severe crystallized deposits formed around application areas, making cleaning difficult and risking contamination.",
+        impactCategory: "Maintenance"
+      },
+      {
+        title:          "Chronic Nozzle Clogging",
+        description:    "Frequent spray nozzle clogging and sludge accumulation required constant maintenance.",
+        impactCategory: "Productivity"
+      }
+    ],
+
+    heroMetric: {
+      metricValue:   "95%",
+      metricLabel:   "Elimination of crystallized deposits",
+      metricContext: "Interforge KI-C residues remain soft and rubber-like, making the system significantly easier to maintain.",
+      metricUnit:    ""
+    },
+
+    secondaryHeroMetric: null,
+
+    verificationNote: "Validation report: November 2023. Follow-up review: June 2026. All findings verified on-site at HAI under real production conditions.",
+
+    supportingMetrics: [
+      { label: "Crystallized Deposits",              before: "Severe",  after: "Minimal",    unit: "",  improvement: "95% Eliminated" },
+      { label: "Residue Hardening",      before: "Progressive",  after: "Soft/Rubber-like",   unit: "",   improvement: "Resolved" },
+      { label: "System Contamination",      before: "Significant",       after: "Minimal",     unit: "",         improvement: "Cleaner operation" }
+    ],
+
+    comparisonTables: [
+      {
+        title:    "Performance Comparison: Previous Products vs. Interforge KI-C",
+        subtitle: "Based on validation trial and 3-year continuous observation",
+        columns:  ["", "STAG 11 / 118", "Interforge KI-C"],
+        highlight: 4,
+        rows: [
+          ["Crystallized deposit formation", "Severe, consistent", "95% eliminated" ],
+          ["Residue hardening over time", "Yes — progressive", "No — remains soft" ],
+          ["Spray nozzle clogging frequency", "High", "Reduced" ],
+          ["System contamination", "Significant", "Minimal" ]
+        ]
+      }
+    ],
+
+    /* ── PRUEBA COMPARATIVA ───────────────────────────────── */
+    visualComparison: {
+      testDescription: "Parallel trials on Presses 2 and 3, followed by continuous validation on the flagship Press 1.",
+      product1Label:   "STAG 11 / 118",
+      product1Result:  "Heavy crystallized deposits, progressive hardening, and frequent nozzle clogging.",
+      product2Label:   "Interforge KI-C",
+      product2Result:  "Residues remain soft, preventing nozzle obstruction and system contamination.",
+      hasPhotos:       false,
+      photos:          []
+    },
+
+    /* ── COMPARATIVA DE PRODUCTOS ─────────────────────────── */
+    productComparison: [
+      { productName: "STAG 118",  performance: "Low", price: "Low",    cleanliness: "Low",  safetyEnvironment: "Medium",  isInterlub: false },
+      { productName: "Interforge KI-C",  performance: "High",   price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true  }
+    ],
+
+    /* ── SOLUCIÓN ─────────────────────────────────────────── */
+    solution: {
+      solutionText:       "Interforge KI-C was applied undiluted on hub-end and guillotine systems. This approach completely resolved the severe residue hardening issues, significantly reduced spray nozzle clogging, and maintained a continuously clean process environment across the extrusion line.",
+      product:            "Interforge KI-C",
+      productDescription: "Water-based synthetic release agent for aluminum extrusion. Formulated to minimize deposit formation and residue hardening.",
+      ro3Description:     null
+    },
+
+    /* ── RESULTADOS ───────────────────────────────────────── */
+    results: [
+      { resultText: "95% elimination of crystallized deposit formation" },
+      { resultText: "Prevention of progressive residue hardening" },
+      { resultText: "Reduced spray nozzle clogging frequency" },
+      { resultText: "Satisfactory guillotine and bar deformation performance" },
+      { resultText: "Strict parameter control required for consistent consumption" },
+      { resultText: "Full system cleaning required before switching products" }
+    ],
+
+    /* ── BENEFICIOS ADICIONALES ───────────────────────────── */
+    additionalBenefits: [
+      { icon: "quality",      label: "No risk of hard particles entering the extrusion" },
+      { icon: "cleanliness",  label: "Cleaner operating condition in the lubrication system" },
+      { icon: "productivity", label: "Reduced unplanned downtime from clogged nozzles" },
+      { icon: "safety",       label: "Water-based synthetic formulation" }
+    ],
+
+    /* ── IMÁGENES ─────────────────────────────────────────── */
+    media: {
+      coverImage:    "assets/Extrusion_HD_06.png",
+      productImage:  "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
+      logoPillBg:    "rgba(255,255,255,0.92)"
+    }
+  }
+
+},
+﻿  'hai': {
     clientName:       "HAI Romania",
     clientLocation:   "Chisineu-Cris, Romania",
     clientIndustry:   "Aluminum Extrusion",
     caseDate:         "2023-11",
-    interlubContact:  "Thomas Massmann",
+    interlubContact:  "Csaba Jakabos",
 
     totalPresses:          5,
     activePressesWithRO3:  null,
     plantSummary:     "5 presses · Romania · Flagship Presezzi running INTERFORGE KI-C continuously for 2+ years without crystallized deposits.",
-    plantDescription: "36,000 MT/year production capacity for automotive and construction profiles. We previously used STAG 11 and STAG 118 for hub-end and guillotine lubrication. The result was severe, recurring maintenance issues: crystallized deposits, hardened residue, clogged spray nozzles, and tank sludge. We evaluated Interforge KI-C to eliminate these exact failures. It now runs continuously on our flagship 10-inch Presezzi Extrutec press.",
+    plantDescription: "HAI Romania operates a 36,000 MT/year plant producing automotive and construction profiles. We were running STAG 11 and STAG 118 for hub-end and guillotine lubrication. Our maintenance team faced severe, recurring issues: crystallized deposits, progressive residue hardening, spray nozzle clogging, and sludge accumulation inside the tanks. We decided to evaluate INTERFORGE KI-C under real production conditions to address these specific failure modes. The product is now running continuously on our flagship 10-inch Presezzi Extrutec press.",
 
     presses: [
       {
@@ -704,7 +865,7 @@ const casesData = {
       metricUnit:    "since 2023"
     },
 
-    verificationNote: "Validation report: November 2023. Follow-up review: June 2026. Competing products on other lines still show heavy residue and nozzle clogging. All findings verified on-site at HAI Romania under real production conditions. Evaluators: Csaba Jakabos (HAI), Vali (Lubricant Romania), Thomas Massmann (Interlub), Andrea Zanoni, and Srdjan Jordanovic (Danieli).",
+    verificationNote: "Validation report: November 2023. Follow-up review: June 2026. All findings recorded on-site at HAI Romania under real production conditions.",
 
     supportingMetrics: [
       { label: "Crystallized Deposits",              before: "Severe",  after: "None",    unit: "",  improvement: "Eliminated" },
@@ -728,7 +889,7 @@ const casesData = {
     ],
 
     visualComparison: {
-      testDescription: "Parallel trials conducted on Press 2 (Hub-End, 15L) and Press 3 (Guillotine, 2L). Systems were flushed prior to testing. Daily consumption: Day 1 (Commissioning), Day 2 (2.5L), Day 3 (3.0L), Day 4 (7.0L spike due to unauthorized settings change, returned to normal once restored). Continuous operation validated on the flagship Press 1 (Presezzi 10-inch).",
+      testDescription: "Parallel trials conducted on Press 2 (Hub-End) and Press 3 (Guillotine). Existing STAG systems were flushed prior to testing. Continuous operation validated on the flagship Press 1 (Presezzi 10-inch).",
       product1Label:   "STAG 11 / 118",
       product1Result:  "Heavy crystallized deposits. Residues hardened over time. High frequency of spray nozzle clogging. Sludge accumulation inside tanks.",
       product2Label:   "INTERFORGE KI-C",
@@ -743,7 +904,7 @@ const casesData = {
     ],
 
     solution: {
-      solutionText:       "Interforge KI-C replaced our previous hub-end and guillotine lubricants. We apply it directly without dilution. It completely eliminated the crystallized deposits and hardening that plagued our prior setup. We have run it continuously on our flagship Presezzi line for over two years. The process environment stays clean, and the nozzles do not clog.",
+      solutionText:       "Our evaluation team concluded that INTERFORGE KI-C is technically suitable for both hub-end and guillotine lubrication. It is used directly without dilution. It eliminated the severe crystallized deposits and hardening behavior that plagued our previous setup. We have maintained it in continuous operation on our flagship Presezzi line for over two years, observing a consistently cleaner process environment.",
       product:            "INTERFORGE KI-C",
       productDescription: "Water-based synthetic release agent for aluminum extrusion. Applied undiluted. Formulated to minimize deposit formation and residue hardening, keeping systems cleaner and reducing maintenance burdens.",
       ro3Description:     null
@@ -753,9 +914,7 @@ const casesData = {
       { resultText: "Elimination of crystallized deposit formation" },
       { resultText: "Prevention of progressive residue hardening" },
       { resultText: "Reduced spray nozzle clogging frequency" },
-      { resultText: "Satisfactory guillotine and bar deformation performance" },
-      { resultText: "Strict parameter control required for consistent consumption" },
-      { resultText: "Full system cleaning required before switching products" }
+      { resultText: "Satisfactory guillotine lubrication performance" }
     ],
 
     additionalBenefits: [
@@ -810,6 +969,15 @@ const casesRegistry = [
     isCurrent: true
   },
   {
+      id:        "hai",
+      client:    "HAI",
+      industry:  "Aluminum Extrusion",
+      location:  "Chisineu-Cris, Romania",
+      headline:  "95% elimination of crystallized deposits",
+      date:      "2023-11",
+      isCurrent: true
+    },
+    {
       id:        "hydro-cressona",
       client:    "Hydro",
       industry:  "Aluminum Extrusion",
@@ -817,19 +985,8 @@ const casesRegistry = [
       headline:  "100% migration to water-based technologies",
       date:      "TBD",
       isCurrent: false
-    },
-    {
-      id:        "hai",
-      client:    "HAI",
-      industry:  "Aluminum Extrusion",
-      location:  "Arad County, Romania, Romania",
-      headline:  "100% elimination of crystallized deposits on flagship press",
-      date:      "2023-11",
-      isCurrent: true
     }
   ];
-
-
 /* ============================================================
    TEXTOS DE LA PANTALLA DE INICIO (GALERÍA)
    ============================================================ */
@@ -928,3 +1085,7 @@ const frameworkData = {
 };
 
 window.frameworkData = frameworkData;
+
+
+
+
