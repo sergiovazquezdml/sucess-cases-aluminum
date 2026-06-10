@@ -952,6 +952,882 @@ const frameworkData = {
 
 window.frameworkData = frameworkData;
 
+/* ============================================================
+   TODOS LOS CASOS (ESPAÑOL)
+   ============================================================ */
+
+const casesDataEs = {
+
+  /* ────────────────────────────────────────────────────────
+     CASO 1 · BONNELL ALUMINUM – NEWNAN
+     ──────────────────────────────────────────────────────── */
+  'bonnell-newnan': {
+
+    clientName: "Bonnell Aluminum",
+    clientLocation: "Newnan, Georgia, Estados Unidos",
+    clientIndustry: "Extrusión de Aluminio",
+    caseDate: "2021-06",
+    interlubContact: "Equipo Técnico de Interlub",
+
+    totalPresses: 10,
+    activePressesWithRO3: 4,
+    plantDescription: "4 prensas en producción activa, cada una equipada con el sistema de dosificación automatizado RO3. La planta de Bonnell en Newnan suministra perfiles de aluminio a clientes de los sectores de la construcción, automotriz e industrial en todo EE. UU., y cada prensa debe operar de manera limpia.",
+
+    presses: [
+      {
+        pressId: "Prensa 1",
+        pressBrand: "Pressezi",
+        pushTons: null,
+        billetDiameter: 9,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Nitruro de Boro (polvo)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Sistema de Dosificación Automatizado RO3",
+        valveType: "Válvula de pulverización atomizadora",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Cizalla de troncos en caliente", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Tocho", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Prensa 8",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 6,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Nitruro de Boro (polvo)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Sistema de Dosificación Automatizado RO3",
+        valveType: "Válvula de pulverización atomizadora",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Cizalla de troncos en caliente", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Tocho", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Prensa 9",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 8,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Nitruro de Boro (polvo)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Sistema de Dosificación Automatizado RO3",
+        valveType: "Válvula de pulverización atomizadora",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Cizalla de troncos en caliente", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Tocho", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Cizalla de colilla (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Prensa 10",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 7,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Nitruro de Boro (polvo)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Sistema de Dosificación Automatizado RO3",
+        valveType: "Válvula de pulverización atomizadora",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Cizalla de troncos en caliente", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Tocho", lubePoints: 1, valves: 1 }
+        ]
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Riesgo de Seguridad para el Operador",
+        description: "El polvo de nitruro de boro se aplicaba a mano a temperaturas de hasta 600 °C. Los operadores inhalaban polvo y trabajaban muy cerca del metal caliente durante cada ciclo y turno en 10 prensas. No había ningún sistema para controlarlo ni forma de medir la exposición acumulada.",
+        impactCategory: "Safety"
+      },
+      {
+        title: "Perfiles Defectuosos y Scrap (Desperdicio)",
+        description: "El residuo blanco de nitruro de boro se adhería a los perfiles terminados en las 10 prensas. Las piezas que pasaban la extrusión fallaban la inspección de superficie, requiriendo retrabajo o siendo descartadas. El lubricante resolvía un problema pero creaba otro.",
+        impactCategory: "Quality"
+      },
+      {
+        title: "Costos Sin Control",
+        description: "La falta de un sistema de dosificación impedía la medición. Se desconocía el consumo real de lubricante. Se compraban, almacenaban y aplicaban tres productos distintos en 10 prensas, sin forma de rastrear el consumo o reducirlo.",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "100%",
+      metricLabel: "Reducción de enfermedades y accidentes laborales relacionados con lubricantes",
+      metricContext: "Cero incidentes respiratorios, cero accidentes por quemaduras químicas y cero reportes de seguridad relacionados con lubricantes en las 4 prensas activas, en cada turno, desde el primer día de implementación.",
+      metricUnit: "sostenido desde la implementación"
+    },
+
+    supportingMetrics: [
+      { label: "Consumo de Lubricante", before: "No controlado", after: "Preciso", unit: "", improvement: "Totalmente automatizado" },
+      { label: "Defectos en Perfiles por Lube", before: "Recurrente", after: "Eliminado", unit: "", improvement: "↓ 100%" },
+      { label: "Incidentes de Seguridad Laboral", before: 14, after: 0, unit: "/año", improvement: "↓ 100%" },
+      { label: "Productos en Uso", before: "3 productos distintos", after: "1 producto", unit: "", improvement: "Simplificado" }
+    ],
+
+    visualComparison: {
+      testDescription: "Prueba comparativa controlada en la Prensa 2 durante un ciclo de producción de cuatro semanas, comparando polvo de nitruro de boro frente a Interforge KI-C aplicado con el sistema RO3.",
+      product1Label: "Nitruro de Boro (polvo)",
+      product1Result: "Residuo blanco visible en el 38% de los perfiles. Reaplicación manual en cada ciclo. Cero control de dosificación.",
+      product2Label: "Interforge KI-C",
+      product2Result: "Cero residuos en todos los perfiles. Dosificación automatizada constante de 7 ml por ciclo de aplicación.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Nitruro de Boro", performance: "Medium", price: "High", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Grafito", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Flama Acetileno", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Las 4 prensas activas se unificaron en una sola instalación. El sistema RO3 reemplazó todas las aplicaciones manuales de lubricante, incluyendo el polvo de nitruro de boro y el lubricante de la cizalla en caliente, en una sola transición. Interforge KI-C ahora opera automáticamente en cada ciclo. Los operadores no intervienen, no hay residuos y no hay nada que ajustar.",
+      product: "Interforge KI-C",
+      productDescription: "Agente desmoldante base agua y libre de grafito. Listo para usar sin mezclar. Los perfiles salen limpios, sin manchas ni residuos blancos y sin vapores nocivos para los operadores, facilitando la limpieza de cualquier residuo traza.",
+      ro3Description: "La misma dosis medida, en cada ciclo, en cada prensa, sin necesidad de ajustes, variaciones ni pasos manuales."
+    },
+
+    results: [
+      { resultText: "Cero enfermedades respiratorias y cero quemaduras químicas por primera vez en la historia de la planta." },
+      { resultText: "Perfiles limpios en las 4 prensas, eliminando los residuos de nitruro de boro por completo." },
+      { resultText: "Tres productos de lubricación sustituidos por uno solo." },
+      { resultText: "Lubricación totalmente automatizada sin contacto del operador en ninguna prensa." },
+      { resultText: "Cada dosis es medida en cada ciclo, garantizando el mismo volumen y resultado." },
+      { resultText: "Sin polvo, sin humos y sin acumulación de residuos en los equipos." }
+    ],
+
+    additionalBenefits: [
+      { icon: "safety", label: "No inflamable y no tóxico" },
+      { icon: "cleanliness", label: "Base agua, residuo fácil de remover" },
+      { icon: "quality", label: "Perfiles libres de defectos" },
+      { icon: "productivity", label: "Dosificación automatizada constante" },
+      { icon: "cost", label: "Un producto reemplaza a tres" },
+      { icon: "environment", label: "Sin emisiones tóxicas ni polvo" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_01.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/bonnell-aluminum.png"
+    }
+
+  }, /* end bonnell-newnan */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 2 · EXTRUM
+     ──────────────────────────────────────────────────────── */
+  'extrum': {
+
+    clientName: "Extrum",
+    clientLocation: "San Pedro Sula, Honduras",
+    clientIndustry: "Extrusión de Aluminio",
+    caseDate: "2024-08",
+    interlubContact: "Equipo Técnico de Interlub",
+
+    totalPresses: 3,
+    activePressesWithRO3: 2,
+    plantDescription: "La prensa Pressezi (Prensa 1) consumía <strong>2,527 litros al año</strong> de Ejecteze en el dummy block sin control de dosificación. La prensa Mei Ruey (Prensa 2) se detenía cada 4 ciclos para aplicar flama de acetileno, perdiendo <strong>98,865 libras de producción al año</strong> y manteniendo una flama abierta en la planta todo el día.",
+
+    presses: [
+      {
+        pressId: "Prensa 1",
+        pressBrand: "Pressezi",
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: 180,
+        lubricantBefore: "Ejecteze en el dummy block",
+        dosingSystem: "Sistema de Dosificación Automatizado RO3",
+        valveType: "Válvula de pulverización atomizadora",
+        ro3Implemented: true,
+        keyBenefit: "Reducción del 55% en lubricante de dummy block, bajando de 2,527 L a 1,154 L al año",
+        ro3Units: [
+          { number: 1, location: "Cizalla de troncos en caliente", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Tocho", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Cizalla de colilla (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Prensa 2",
+        pressBrand: "Mei Ruey",
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Flama de acetileno (brazo, cada 4 ciclos) más Ejecteze",
+        dosingSystem: "Sistema de Dosificación Automatizado RO3",
+        valveType: "Válvula de pulverización atomizadora",
+        ro3Implemented: true,
+        keyBenefit: "98,865 lb/año recuperadas · Brazo de flama eliminado · Cero incidentes de incendio",
+        ro3Units: [
+          { number: 1, location: "Cizalla de troncos en caliente", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Tocho", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Cizalla de colilla (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Prensa 3",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Ejecteze + Flama de acetileno",
+        dosingSystem: "Sistema automatizado existente",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Solo como referencia, sin RO3 instalado"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Mei Ruey: 98,865 lb Perdidas por Paros de Lubricación",
+        description: "La Prensa 2 (Mei Ruey) se detenía cada 4 ciclos para lubricar, requiriendo 5 segundos, 135 veces al día. Con una producción de 1,690 lb/h durante 26 días de operación, esto representaba 11.25 minutos de producción perdida al día, equivalentes a 98,865 lb de aluminio anuales no producidas debido a un paso de lubricación.",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Pressezi: Desperdicio del Doble de Lubricante en el Dummy Block",
+        description: "La Prensa 1 (Pressezi) aplicaba Ejecteze manualmente a 15 ml por disparo en el dummy block. Sin control de dosificación y con 540 ciclos diarios, se consumían 2,527 litros anuales. Interforge KI-C con RO3 dosifica 7 ml en movimiento, logrando un 55% menos de lubricante con la misma cobertura y protección.",
+        impactCategory: "Cost"
+      },
+      {
+        title: "Flama de Acetileno: Riesgo de Incendio en Cada Ciclo",
+        description: "Cada vez que operaba el brazo de flama, había fuego abierto en el área de producción. Este riesgo se repetía decenas de veces al día, 26 días al mes. Se requerían extintores cercanos y protocols de seguridad específicos. Al implementar el sistema RO3, el brazo de flama y sus riesgos se eliminaron.",
+        impactCategory: "Safety"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "55%",
+      metricLabel: "Reducción de lubricante en dummy block · Prensa 1 · Pressezi",
+      metricContext: "Sustitución de Ejecteze a 15 ml/disparo por Interforge KI-C a 7 ml/disparo, ahorrando 1,372 litros anuales de lubricante únicamente en el dummy block.",
+      metricUnit: "verificado · Extrum · Honduras"
+    },
+
+    secondaryHeroMetric: {
+      metricValue: "98,865",
+      metricUnit: "lb",
+      pressLabel: "Prensa 2 · Mei Ruey",
+      metricLabel: "de producción recuperada al año al eliminar el brazo de flama",
+      metricContext: "270 lb de aluminio recuperadas por día de producción. Se eliminó el brazo de flama de acetileno, logrando cero paros forzados y cero riesgos de incendio."
+    },
+
+    verificationNote: "Todos los datos registrados en sitio por el equipo técnico de Interlub en Extrum Honduras. Disponibles para auditoría.",
+
+    supportingMetrics: [
+      { press: "Prensa 1 · Pressezi", label: "Lubricante por Disparo", before: "15 ml", after: "7 ml", unit: "", improvement: "↓ 53%" },
+      { press: "Prensa 1 · Pressezi", label: "Consumo Anual", before: "2,527 L", after: "1,154 L", unit: "/año", improvement: "↓ 55%" },
+      { press: "Prensa 2 · Mei Ruey", label: "Pérdida de Producción", before: "98,865 lb", after: "0 lb", unit: "/año", improvement: "↓ 100%" },
+      { press: "Prensa 2 · Mei Ruey", label: "Tiempo Muerto Diario", before: "11.25 min", after: "0 min", unit: "/día", improvement: "Eliminado" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Consumo de Lubricante",
+        subtitle: "Prensa 1 · Pressezi · Ejecteze vs. Interforge KI-C · dummy block · 540 extrusiones/día",
+        columns: ["", "Ejecteze", "Interforge KI-C"],
+        highlight: 4,
+        rows: [
+          ["No. de Prensas", "1", "1"],
+          ["ml por Disparo", "15 ml", "7 ml"],
+          ["Lubricante por 24 Horas", "8.1 L", "3.7 L"],
+          ["Días Laborables / Mes", "26", "26"],
+          ["Consumo Anual", "2,527 L", "1,154 L"]
+        ]
+      },
+      {
+        title: "Pérdida de Producción por Lubricación",
+        subtitle: "Prensa 2 · Mei Ruey · Flama de Acetileno vs. Interforge KI-C · 1,690 lb/h · 26 días/mes",
+        columns: ["", "Flama", "Interforge KI-C"],
+        highlight: 5,
+        rows: [
+          ["No. de Prensas", "1", "1"],
+          ["Lubricación de Brazo", "Cada 4 ciclos", "N/A"],
+          ["Tiempo Perdido / Lubricación", "5 s", "0 s"],
+          ["Extrusiones / 24 hrs", "540", "540"],
+          ["Días Laborables / Mes", "26", "26"],
+          ["Libras/Año Perdidas por Lube", "98,865 lb", "0 lb"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Análisis de campo en la Prensa 1 en Extrum, Honduras. Acetileno manual más Ejecteze (15 ml/disparo, 2 puntos, cada 4 ciclos) vs. Interforge KI-C con RO3 (7 ml/disparo, 1 punto, en movimiento). 540 extrusiones/día · 26 días/mes · 1,690 lb/h.",
+      product1Label: "Flama de Acetileno + Ejecteze",
+      product1Result: "15 ml por disparo · 2 puntos de lubricación (dummy + tocho) · Aplicado con paro cada 4 ciclos · 5 s de tiempo muerto por evento · 135 paros/día · 11.25 min perdidos/día · 98,865 lb/año de pérdida de producción · 2,527 L consumidos anualmente.",
+      product2Label: "Interforge KI-C + RO3",
+      product2Result: "7 ml por disparo · 1 punto de lubricación · Aplicado en movimiento con cero paros · 0 s de tiempo muerto · 0 lb de producción perdida · 1,154 L consumidos anualmente (ahorro de 1,372 L) · 100% de cobertura de dummy block garantizada.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Ejecteze", performance: "Medium", price: "Medium", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Grafito", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Flama Acetileno", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "La Pressezi y la Mei Ruey tenían problemas diferentes pero la misma solución. En la Prensa 1, se reemplazó Ejecteze con Interforge KI-C mediante RO3, reduciendo el consumo en un 55% (de 2,527 L a 1,154 L al año). En la Prensa 2, se retiró el brazo de flama e instaló el sistema RO3, recuperando 98,865 lb de producción anual y eliminando el riesgo de incendio. Ambas prensas operan ahora con 3 puntos de lubricación en movimiento: Cizalla en Caliente, Dummy y Cizalla de Colilla.",
+      product: "Interforge KI-C",
+      productDescription: "Agente desmoldante base agua y libre de grafito. Aplicado en movimiento por el sistema RO3 en 3 puntos de lubricación a 7 ml por disparo en el dummy block, sin residuos, no inflamable y fácil de limpiar con agua. Sin intervención manual, paros forzados ni riesgos de incendio.",
+      ro3Description: "Dosificación en movimiento en 3 puntos (Cizalla Caliente, Dummy y Cizalla de Colilla) aplicada durante el ciclo de extrusión. Mismo volumen y cobertura en cada disparo. Instalado en Pressezi y Mei Ruey en Extrum Honduras."
+    },
+
+    resultGroups: [
+      {
+        pressLabel: "Prensa 1 · Pressezi",
+        headline: "55",
+        headlineUnit: "%",
+        headlineSub: "menos lubricante en dummy block",
+        items: [
+          "Consumo anual: de <strong>2,527 L</strong> a sólo <strong>1,154 L</strong>, logrando un ahorro de 1,372 litros al año.",
+          "Dosis por disparo: de <strong>15 ml</strong> a <strong>7 ml</strong>, aplicado en movimiento durante el ciclo.",
+          "100% de cobertura en el dummy block, ofreciendo la misma protección a la mitad del volumen."
+        ]
+      },
+      {
+        pressLabel: "Prensa 2 · Mei Ruey",
+        headline: "98,865",
+        headlineUnit: "lb",
+        headlineSub: "de producción recuperada al año",
+        items: [
+          "Eliminación del brazo de flama de acetileno, logrando <strong>cero paros forzados</strong> cada 4 ciclos.",
+          "Eliminación del fuego abierto en planta, eliminando reemplazos de extintores y protocols de seguridad específicos de lubricación.",
+          "Tiempo muerto diario por lubricación: reducido de <strong>11.25 min a 0 min</strong>."
+        ]
+      }
+    ],
+
+    additionalBenefits: [
+      { icon: "productivity", label: "98,865 lb de producción recuperada" },
+      { icon: "cost", label: "55% menos de lubricante consumido" },
+      { icon: "safety", label: "Flama eliminada, logrando cero riesgo de incendio" },
+      { icon: "quality", label: "100% cobertura de dummy block" },
+      { icon: "cleanliness", label: "Base agua, libre de grafito, residuo fácil de limpiar" },
+      { icon: "environment", label: "1,372 L ahorrados al año" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_02.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/extrum_logo.webp",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+
+  }, /* end extrum */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 3 · INDALUM
+     ──────────────────────────────────────────────────────── */
+  'indalum': {
+
+    clientName: "INDALUM",
+    clientLocation: "San Nicolás, Nuevo León, México",
+    clientIndustry: "Extrusión de Aluminio",
+    caseDate: "2022-11",
+    interlubContact: "Equipo Técnico de Interlub",
+
+    totalPresses: 3,
+    activePressesWithRO3: null,
+    plantDescription: "Los residuos de grafito contaminaban los perfiles, ensuciaban los equipos y elevaban los costos de mantenimiento. Se convirtieron 3 prensas a Interforge KI-C utilizando los sistemas de dosificación automatizados existentes de cada prensa, eliminando el grafito por completo y reduciendo el gasto de lubricante en un 75%.",
+
+    presses: [
+      {
+        pressId: "Prensa 1",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Barras de grafito (2 barras/turno)",
+        dosingSystem: "Sistema de dosificación existente de la prensa",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C aplicado a través del sistema de dosificación existente"
+      },
+      {
+        pressId: "Prensa 2",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Barras de grafito (2 barras/turno)",
+        dosingSystem: "Sistema de dosificación existente de la prensa",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C aplicado a través del sistema de dosificación existente"
+      },
+      {
+        pressId: "Prensa 3",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Barras de grafito (2 barras/turno)",
+        dosingSystem: "Sistema de dosificación existente de la prensa",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C aplicado a través del sistema de dosificación existente"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Contaminación por Grafito en Perfiles",
+        description: "Las barras de grafito dejaban un residuo oscuro y visible en los perfiles extruidos de las 3 prensas. Las piezas que pasaban extrusión fallaban en control de calidad, requiriendo retrabajos o generando scrap (desperdicio). La calidad superficial era inconsistente e impredecible.",
+        impactCategory: "Quality"
+      },
+      {
+        title: "Ensuciamiento de Equipos y Carga de Mantenimiento",
+        description: "La acumulación de grafito obstruía troqueles, portamatrices y boquillas de pulverización. La limpieza manual forzaba paros de mantenimiento no programados. El ensuciamiento se extendía a equipos circundantes, acortando su vida útil e incrementando costos de refacciones.",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Costos Excesivos de Lubricación",
+        description: "Cada prensa consumía 2 barras de grafito por turno, durante 3 turnos al día, 26 días al mes. Los costos indirectos de limpieza, retrabajos y perfiles rechazados hacían que el gasto total de lubricación fuera muy superior al costo del producto solo.",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "75%",
+      metricLabel: "Reducción en el gasto anual de lubricante en las 3 prensas",
+      metricContext: "Eliminación completa del grafito, logrando cero residuos en los perfiles y cero ensuciamiento de equipos, ahorrando un 75% en gasto de lubricante.",
+      metricUnit: "verificado desde Noviembre de 2022"
+    },
+
+    secondaryHeroMetric: null,
+
+    verificationNote: null,
+
+    supportingMetrics: [
+      { label: "Lubricante por Turno", before: "2 barras de grafito", after: "2.4 kg KI-C", unit: "/turno", improvement: "Grafito eliminado" },
+      { label: "Gasto Anual en Lubricante", before: "Línea base", after: "Reducido", unit: "", improvement: "↓ 75%" },
+      { label: "Residue de Grafito en Perfiles", before: "Recurrente", after: "Eliminado", unit: "", improvement: "↓ 100%" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Comparación de Costo de Lubricante",
+        subtitle: "Las 3 prensas · Barras de grafito vs. Interforge KI-C · 3 turnos/día · 26 días/mes",
+        columns: ["", "Barras de Grafito", "Interforge KI-C"],
+        highlight: 4,
+        rows: [
+          ["No. de Prensas", "3", "3"],
+          ["Lubricante por Turno", "2 barras", "2.4 kg"],
+          ["Turnos por Día", "3", "3"],
+          ["Días Laborables / Mes", "26", "26"],
+          ["Reducción de Costo", "", "75%"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Conversión completa de planta en las 3 prensas en INDALUM, México. Barras de grafito reemplazadas por Interforge KI-C aplicado con los sistemas de dosificación existentes de las prensas. 3 turnos al día, 26 días de operación al mes.",
+      product1Label: "Barras de Grafito",
+      product1Result: "2 barras por turno. Residuo oscuro en perfiles que requería limpieza y retrabajos. Ensuciamiento de equipos y boquillas obstruidas.",
+      product2Label: "Interforge KI-C",
+      product2Result: "2.4 kg por turno. Cero residuos en perfiles desde el primer día. Sin ensuciamiento de equipos ni boquillas obstruidas. El residuo traza es fácil de limpiar con agua.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Grafito", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Nitruro de Boro", performance: "Medium", price: "High", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Flama Acetileno", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Se convirtieron las 3 prensas en una única fase. Las barras de grafito fueron sustituidas en su totalidad por Interforge KI-C, aplicando el producto a través de los sistemas de dosificación automatizados existentes de cada prensa, evitando inversiones de capital adicionales. Se eliminó el grafito de toda la planta: sin residuos en los perfiles, sin acumulaciones en los equipos, sin boquillas obstruidas y sin consumo descontrolado.",
+      product: "Interforge KI-C",
+      productDescription: "Agente desmoldante base agua y libre de grafito aplicado al tocho. Listo para usar sin mezclas. Los perfiles salen limpios, libres de manchas oscuras, y cualquier residuo traza es fácil de remover con agua convencional.",
+      ro3Description: null
+    },
+
+    results: [
+      { resultText: "Ahorro del 75% en gasto anual de lubricante." },
+      { resultText: "Perfiles de aluminio 100% libres de manchas." },
+      { resultText: "Área de trabajo más limpia." }
+    ],
+
+    additionalBenefits: [
+      { icon: "cost", label: "75% de reducción en el gasto anual de lubricante" },
+      { icon: "quality", label: "Cero residuos de grafito en perfiles" },
+      { icon: "cleanliness", label: "Residue fácil de limpiar con agua" },
+      { icon: "productivity", label: "Sin ensuciamiento de equipos ni boquillas obstruidas" },
+      { icon: "safety", label: "No inflamable, no tóxico, base agua" },
+      { icon: "environment", label: "Sin emisiones de COV ni residuos peligrosos" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_05.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/indalum_logo.png",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+
+  }, /* end indalum */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 4 · HAI
+     ──────────────────────────────────────────────────────── */
+  'hai': {
+    clientName: "HAI",
+    clientLocation: "Chisineu-Cris, Rumania",
+    clientIndustry: "Extrusión de Aluminio",
+    caseDate: "2023-11",
+    interlubContact: "Equipo Técnico de Interlub",
+
+    totalPresses: 4,
+    activePressesWithRO3: null,
+    plantSummary: "",
+    plantDescription: "Se corrió una prueba en la empresa HAI en Rumania en la prensa Pressezi (Prensa 1) para resolver problemas severos de taponamiento de válvulas y suciedad en el área operativa. El lubricante anterior (STAG 118) formaba un residuo muy difícil de remover y taponaba constantemente las válvulas de pulverización, lo cual se agravó debido a que el proveedor anterior no brindó la capacitación adecuada de los equipos, generando mucho desperdicio de producto y suciedad. Al implementar Interforge KI-C en la cizalla de colilla de la prensa Presezzi, junto con la asistencia técnica de Interlub para calibrar y centralizar la lubricación en los objetivos, logramos reducir el consumo y los paros relacionados a taponamientos en un 100%. El producto también fue validado en la cizalla de troncos en caliente de la prensa Cometal (Prensa 3).",
+
+    presses: [
+      {
+        pressId: "Prensa 1",
+        pressBrand: "Presezzi",
+        pushTons: null,
+        billetDiameter: 10,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automated",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Probado y verificado para la lubricación de cizalla de colilla (butt shear)"
+      },
+      {
+        pressId: "Prensa 2",
+        pressBrand: "Prisma",
+        pushTons: null,
+        billetDiameter: 5,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automated",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Solo como referencia (STAG 118 como lubricante anterior)"
+      },
+      {
+        pressId: "Prensa 3",
+        pressBrand: "Cometal",
+        pushTons: null,
+        billetDiameter: 7,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automated",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Probado y verificado para la lubricación de cizalla de troncos en caliente (hot log shear)"
+      },
+      {
+        pressId: "Prensa 4",
+        pressBrand: "Sutton",
+        pushTons: null,
+        billetDiameter: 8,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automated",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Solo como referencia (STAG 118 como lubricante anterior)"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Taponamiento Constante de Válvulas",
+        description: "El lubricante anterior (STAG 118) formaba residuos altamente cristalizados y duros que obstruían constantemente las válvulas de pulverización. Esto requería paros de mantenimiento frecuentes y causaba paros de producción no programados.",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Ambiente Operativo Contaminado",
+        description: "El taponamiento parcial o total de las válvulas provocaba una distribución deficiente e irregular del lubricante. Esto generaba sobrepulverización, fugas de producto y un área operativa extremadamente sucia e insegura.",
+        impactCategory: "Environment"
+      },
+      {
+        title: "Alto Desperdicio de Producto y Falta de Soporte",
+        description: "El proveedor anterior no brindó la capacitación técnica adecuada respecto a los equipos y válvulas. Como consecuencia, la calibración incorrecta generaba un gran desperdicio de producto y acumulaba suciedad en la maquinaria.",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "100%",
+      metricLabel: "Reducción de paros relacionados con taponamiento de válvulas",
+      metricContext: "Se eliminaron por completo los paros de producción no programados por taponamiento de válvulas. Aunque Interforge KI-C sí genera un depósito cristalizado, este permanece blando y es muy fácil de limpiar con agua y un trapo.",
+      metricUnit: "logrado"
+    },
+
+    secondaryHeroMetric: null,
+
+    verificationNote: null,
+
+    supportingMetrics: [
+      { label: "Paros por Taponamiento", before: "Frecuentes", after: "0", unit: "/mes", improvement: "↓ 100%" },
+      { label: "Consumo de Lubricante", before: "Excesivo (STAG 118)", after: "Optimizado", unit: "", improvement: "Reducido" },
+      { label: "Limpieza de Residuos", before: "Extremadamente difícil", after: "Fácil con agua", unit: "", improvement: "Residuo blando" },
+      { label: "Desperdicio por Aplicación", before: "Alto (sin capacitación)", after: "Minimizado", unit: "", improvement: "Calibrado" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Comparación de Desempeño Operativo",
+        subtitle: "Lubricante anterior (STAG 118) vs. Interforge KI-C bajo calibración técnica",
+        columns: ["Parámetro", "STAG 118", "Interforge KI-C"],
+        highlight: 1,
+        rows: [
+          ["Frecuencia de taponamiento", "Constante / Diaria", "Eliminado"],
+          ["Paros por obstrucción", "Paros frecuentes", "Reducción del 100%"],
+          ["Consumo de lubricante", "Alto desperdicio (falta de soporte)", "Reducido y optimizado"],
+          ["Método de remoción de residuo", "Difícil / Raspado mecánico", "Limpieza fácil con agua y trapo"],
+          ["Limpieza del área operativa", "Hollín / Suciedad severa", "Limpia y controlada"]
+        ]
+      }
+    ],
+
+    /* ── PRUEBA COMPARATIVA ───────────────────────────────── */
+    visualComparison: {
+      testDescription: "Comparación entre el lubricante anterior (STAG 118) e Interforge KI-C en la lubricación de cizalla de colilla de la Prensa 1 (Presezzi) y de cizalla de troncos en caliente de la Prensa 3 (Cometal).",
+      product1Label: "STAG 118",
+      product1Result: "Taponamiento constante de válvulas, residuos duros difíciles de limpiar, alto desperdicio por falta de soporte y un área operativa sucia.",
+      product2Label: "Interforge KI-C",
+      product2Result: "Reducción del 100% en paros por taponamiento, consumo optimizado y residuos blandos fáciles de limpiar con agua (se recomienda limpieza periódica para evitar acumulación).",
+      hasPhotos: false,
+      photos: []
+    },
+
+    /* ── COMPARATIVA DE PRODUCTOS ─────────────────────────── */
+    productComparison: [
+      { productName: "STAG 118", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    /* ── SOLUCIÓN ─────────────────────────────────────────── */
+    solution: {
+      solutionText: "Al implementar Interforge KI-C y la asistencia técnica de Interlub, logramos centralizar la lubricación en los objetivos. El producto genera un residuo que sí se deposita, pero este es blando y sumamente fácil de remover con un trapo húmedo con agua (el residuo se vuelve difícil de quitar solo si se deja acumular). Se brindó capacitación técnica para calibrar las válvulas, deteniendo el desperdicio de producto.",
+      product: "Interforge KI-C",
+      productDescription: "Agente desmoldante sintético base agua para extrusión de aluminio. Produce un residuo blando fácilmente lavable con agua, evitando la cristalización rígida del producto anterior si se realiza limpieza regular.",
+      ro3Description: null
+    },
+
+    /* ── RESULTADOS ───────────────────────────────────────── */
+    results: [
+      { resultText: "Reducción del 100% en paros relacionados con taponamiento de válvulas." },
+      { resultText: "Reducción en el consumo de lubricante mediante calibración y centralización." },
+      { resultText: "Residuos traza blandos y fáciles de limpiar con un trapo y agua." },
+      { resultText: "Se recomienda limpieza regular para evitar el endurecimiento por acumulación." },
+      { resultText: "Eliminación de desperdicio de producto gracias a la capacitación técnica de equipos y válvulas." },
+      { resultText: "Área de trabajo notablemente más limpia por calibración de boquillas." }
+    ],
+
+    /* ── BENEFICIOS ADICIONALES ───────────────────────────── */
+    additionalBenefits: [
+      { icon: "productivity", label: "Reducción del 100% en paros por taponamientos" },
+      { icon: "cost", label: "Menor consumo de lubricante" },
+      { icon: "cleanliness", label: "Residuos fáciles de limpiar con trapo y agua" },
+      { icon: "safety", label: "Capacitación técnica en equipos y válvulas" },
+      { icon: "environment", label: "Área de trabajo más limpia y menos desperdicios" }
+    ],
+
+    /* ── IMÁGENES ─────────────────────────────────────────── */
+    media: {
+      coverImage: "assets/Extrusion_HD_06.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+  }
+
+};
+/* end casesDataEs */
+
+
+/* ============================================================
+   GALERÍA DE CASOS (ESPAÑOL)
+   ============================================================ */
+
+const casesRegistryEs = [
+  {
+    id: "bonnell-newnan",
+    client: "Bonnell Aluminum",
+    industry: "Extrusión de Aluminio",
+    location: "Newnan, Georgia, Estados Unidos",
+    headline: "Reducción del 100% en enfermedades y accidentes por lubricantes",
+    date: "2021-06",
+    isCurrent: true
+  },
+  {
+    id: "indalum",
+    client: "INDALUM",
+    industry: "Extrusión de Aluminio",
+    location: "San Nicolás, Nuevo León, México",
+    headline: "Reducción del 75% en costo de lubricante en las 3 prensas",
+    date: "2022-11",
+    isCurrent: true
+  },
+  {
+    id: "extrum",
+    client: "Extrum",
+    industry: "Extrusión de Aluminio",
+    location: "San Pedro Sula, Honduras",
+    headline: "55% menos de lubricante y eliminación de paros por flama",
+    date: "2024-08",
+    isCurrent: true
+  },
+  {
+    id: "hai",
+    client: "HAI",
+    industry: "Extrusión de Aluminio",
+    location: "Chisineu-Cris, Rumania",
+    headline: "Reducción del 100% en paros por taponamiento de válvulas",
+    date: "2023-11",
+    isCurrent: true
+  },
+  {
+    id: "hydro-cressona",
+    client: "Hydro",
+    industry: "Extrusión de Aluminio",
+    location: "Cressona, Pensilvania, Estados Unidos",
+    headline: "Migración del 100% a tecnologías base agua",
+    date: "TBD",
+    isCurrent: false
+  }
+];
+
+
+/* ============================================================
+   TEXTOS DE LA PANTALLA DE INICIO (ESPAÑOL)
+   ============================================================ */
+
+const homeContentEs = {
+  headerTag: "Casos de Éxito · The Uncommon Lubricant Company",
+  eyebrow: "Resultados documentados",
+  title: "Casos de Éxito",
+  subtitle: "Plantas reales. Resultados medidos. Selecciona un caso para leer la historia completa, con cada cifra validada en campo por nuestro equipo técnico.",
+  scrollLabel: "Selecciona un caso arriba"
+};
+
+
+/* ============================================================
+   DATOS DEL FRAMEWORK DE COMPARACIÓN (ESPAÑOL)
+   ============================================================ */
+
+const frameworkDataEs = {
+  categories: [
+    { id: "cost", name: "Categoría 1 - Costo", weight: 25, parameters: ["1.1", "1.2"] },
+    { id: "safety", name: "Categoría 2 - Seguridad y Medio Ambiente", weight: 25, parameters: ["2.1", "2.2", "2.3", "2.4"] },
+    { id: "productivity", name: "Categoría 3 - Productividad y Rendimiento", weight: 25, parameters: ["3.1", "3.2", "3.3"] },
+    { id: "easeOfUse", name: "Categoría 4 - Facilidad de uso", weight: 25, parameters: ["4.1", "4.2", "4.3"] }
+  ],
+  parameters: {
+    "1.1": { label: "Costo del lubricante ($/kg)", note: "1 = Costo más alto, 5 = Costo más bajo" },
+    "1.2": { label: "Volumen de consumo de lubricante", note: "1 = Mayor consumo, 5 = Menor consumo" },
+    "2.1": { label: "Seguridad (Riesgo de incendio)", note: "1 = Mayor riesgo, 5 = Menor riesgo" },
+    "2.2": { label: "Salud ocupacional (Riesgo de lesiones / a largo plazo)", note: "1 = Mayor riesgo, 5 = Menor riesgo" },
+    "2.3": { label: "Medio ambiente (Emisiones de COV)", note: "1 = Mayor COV, 5 = Menor" },
+    "2.4": { label: "Limpieza del área de trabajo", note: "1 = Más sucia / resbaladiza, 5 = Más limpia" },
+    "3.1": { label: "Productividad (Desempeño de desmoldeo)", note: "1 = Menor protección de dummy, 5 = Mayor" },
+    "3.2": { label: "Calidad del producto terminado", note: "1 = Mayor probabilidad de defectos, 5 = Menor" },
+    "3.3": { label: "Protección de herramentales (Cizalla en caliente)", note: "1 = Menor protección, 5 = Mayor" },
+    "4.1": { label: "Facilidad de uso (Taponamiento y limpieza)", note: "1 = Más difícil de mantener, 5 = Más fácil" },
+    "4.2": { label: "Costo del método de aplicación", note: "1 = Mayor inversión, 5 = Menor" },
+    "4.3": { label: "Puntos de lubricación (Versatilidad)", note: "1 = Menor cantidad de usos, 5 = Mayor" }
+  },
+  technologies: [
+    {
+      id: "interforge",
+      name: "Interforge KI-C",
+      color: "#ff0000",
+      isInterlub: true,
+      grades: { "1.1": 3, "1.2": 5, "2.1": 5, "2.2": 5, "2.3": 4, "2.4": 5, "3.1": 5, "3.2": 5, "3.3": 4, "4.1": 5, "4.2": 3, "4.3": 5 }
+    },
+    {
+      id: "acetylene",
+      name: "Flama de Acetileno",
+      color: "#6c6c72",
+      grades: { "1.1": 5, "1.2": 5, "2.1": 1, "2.2": 1, "2.3": 1, "2.4": 1, "3.1": 5, "3.2": 5, "3.3": 1, "4.1": 2, "4.2": 4, "4.3": 2 }
+    },
+    {
+      id: "bn_suspension",
+      name: "Suspensión de Nitruro de Boro",
+      color: "#2e7bcf",
+      grades: { "1.1": 2, "1.2": 4, "2.1": 5, "2.2": 3, "2.3": 4, "2.4": 3, "3.1": 5, "3.2": 3, "3.3": 3, "4.1": 2, "4.2": 3, "4.3": 5 }
+    },
+    {
+      id: "bn_powder",
+      name: "Polvo de Nitruro de Boro",
+      color: "#3bb19b",
+      grades: { "1.1": 1, "1.2": 3, "2.1": 5, "2.2": 3, "2.3": 5, "2.4": 4, "3.1": 5, "3.2": 5, "3.3": 1, "4.1": 2, "4.2": 1, "4.3": 2 }
+    },
+    {
+      id: "graphite_suspension",
+      name: "Suspensión de Grafito",
+      color: "#8a58bf",
+      grades: { "1.1": 3, "1.2": 4, "2.1": 5, "2.2": 2, "2.3": 4, "2.4": 3, "3.1": 5, "3.2": 5, "3.3": 5, "4.1": 2, "4.2": 3, "4.3": 4 }
+    },
+    {
+      id: "sticks",
+      name: "Crayones y Bloques",
+      color: "#d9972b",
+      grades: { "1.1": 4, "1.2": 1, "2.1": 2, "2.2": 1, "2.3": 2, "2.4": 2, "3.1": 3, "3.2": 1, "3.3": 1, "4.1": 1, "4.2": 5, "4.3": 2 }
+    }
+  ],
+  notes: [
+    { param: "2.2", text: "El uso de crayones y bloques de grafito o nitruro de boro es altamente peligroso. El operador debe trabajar al alcance de componentes calientes en movimiento." },
+    { param: "3.2", text: "El uso de suspensiones de nitruro utiliza otros compuestos para mantenerse estable que pueden generar ampollas o burbujas superficiales. Las crayones y bloques califican bajo porque causan defectos si se aplican en exceso." },
+    { param: "4.1", text: "La flama de acetileno y el polvo de nitruro de boro no se pueden usar en otros puntos de lubricación (ej. cizalla de colilla o cizalla en caliente), requiriendo un segundo sistema de lubricación." },
+    { param: "4.1", text: "Interforge KI-C no necesita agitación previa, opera con baja presión de atomización y es excepcionalmente fácil de limpiar con agua estándar." },
+    { param: "4.1", text: "El polvo de nitruro de boro tiene un efecto severo de obstrucción en boquillas de pulverización, válvulas y equipos circundantes." },
+    { param: "4.2", text: "La flama de acetileno tiene una complejidad de sistema sumamente elevada para una implementación automatizada segura." },
+    { param: "1.2", text: "Las suspensiones de nitruro de boro y grafito tienden a ser más viscosas, requiriendo un mayor volumen por disparo de aplicación." },
+    { param: "1.2", text: "El polvo de nitruro de boro resulta en un mayor consumo general y pérdidas continuas debido al polvo en el aire." },
+    { param: "1.2", text: "Interforge KI-C es sumamente eficiente, consumiendo en promedio sólo de 10g a 15g por ciclo de aplicación." },
+    { param: "4.3", text: "Las suspensiones de grafito no se pueden aplicar en las cizallas en caliente a la salida del horno de precalentamiento porque ensuciarán y contaminarán el cuerpo del perfil de aluminio." }
+  ]
+};
+
+window.casesDataEs = casesDataEs;
+window.casesRegistryEs = casesRegistryEs;
+window.homeContentEs = homeContentEs;
+window.frameworkDataEs = frameworkDataEs;
+
 
 
 
