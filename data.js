@@ -1079,10 +1079,10 @@ const casesDataEs = {
     },
 
     supportingMetrics: [
-      { label: "Control del Proceso", before: "Manual / Variable", after: "Automático en ciclo", unit: "", improvement: "RO3 Automatizado" },
+      { label: "Control del Proceso", before: "Manual / Variable", after: "Control automático de lazo cerrado", unit: "", improvement: "RO3 Automatizado" },
       { label: "Contaminantes en Perfil", before: "Recurrentes", after: "Eliminados", unit: "", improvement: "↓ 100%" },
-      { label: "Incidentes de EHS", before: 14, after: 0, unit: "/año", improvement: "↓ 100%" },
-      { label: "Complejidad de SKUs", before: "3 Productos", after: "1 Producto", unit: "", improvement: "KI-C Estandarizado" }
+      { label: "Incidentes de EHS", before: 14, after: 0, unit: "/ año", improvement: "↓ 100%" },
+      { label: "Complejidad de Inventario", before: "3 Productos", after: "1 Producto", unit: "", improvement: "KI-C Estandarizado" }
     ],
 
     visualComparison: {
@@ -1103,19 +1103,19 @@ const casesDataEs = {
     ],
 
     solution: {
-      solutionText: "Se eliminó el polvo manual en las prensas activas, centralizando la lubricación de la cizalla en caliente, tocho y cizalla de colilla mediante el sistema automático RO3. Interforge KI-C se dosifica de forma sincronizada con el ciclo de la prensa sin interacción humana.",
+      solutionText: "Todas las prensas activas se convirtieron a Interforge KI-C base agua. Los sistemas de dosificación automática RO3 reemplazaron el bestiado manual en la cizalla de troncos en caliente, tocho y cizalla de colilla. La dosificación está totalmente sincronizada con el ciclo de prensa sin interacción humana.",
       product: "Interforge KI-C",
       productDescription: "Agente desmoldante sintético, base agua y libre de grafito. Desarrollado para uso directo sin agitación. Evita manchas y ampollas superficiales en el aluminio; los residuos traza secos se eliminan de forma simple con agua.",
       ro3Description: "Dosificación automática de alta precisión. Suministra volúmenes exactos en microlitros sobre los puntos de lubricación, eliminando riesgos para el personal."
     },
 
     results: [
-      { resultText: "Cero incidentes respiratorios o quemaduras por contacto, estableciendo un nuevo récord de seguridad (EHS)." },
-      { resultText: "Eliminación total del residuo blanco en los perfiles, reduciendo la tasa de scrap y rechazo en anodizado/pintura." },
-      { resultText: "Estandarización en un solo SKU de desmolde, reemplazando tres lubricantes en planta." },
-      { resultText: "Lubricación en ciclo y en movimiento, eliminando intervenciones manuales por turno." },
-      { resultText: "Consumo controlado y repetible a 7 ml por ciclo, eliminando picos de desperdicio." },
-      { resultText: "Reducción de polvos abrasivos en el aire, protegiendo guías lineales y sellos de la prensa." }
+      { resultText: "Sostenido en cero incidentes respiratorios de seguridad y quemaduras por contacto, logrando un nuevo récord de EHS en planta." },
+      { resultText: "100% eliminación del residuo blanco de nitruro de boro en superficies de perfiles terminados, reduciendo drásticamente la tasa de scrap." },
+      { resultText: "Estandarización en un solo SKU de agente desmoldante, reemplazando tres tipos de lubricantes independientes." },
+      { resultText: "Dosificación automatizada de lazo cerrado con cero interacción manual del operador por prensa." },
+      { resultText: "Entrega constante de volumen a 7 ml por ciclo, eliminando picos incontrolados de consumo." },
+      { resultText: "Eliminación de la contaminación por polvo en suspensión, protegiendo sellos y guías lineales de la prensa contra polvo abrasivo." }
     ],
 
     additionalBenefits: [
@@ -1601,10 +1601,9 @@ const casesDataEs = {
     verificationNote: null,
 
     supportingMetrics: [
-      { label: "Paros por Taponamiento", before: "Frecuentes", after: "0", unit: "/mes", improvement: "↓ 100%" },
-      { label: "Consumo de Lubricante", before: "Excesivo (STAG 118)", after: "Optimizado", unit: "", improvement: "Reducido" },
-      { label: "Limpieza de Residuos", before: "Extremadamente difícil", after: "Fácil con agua", unit: "", improvement: "Residuo blando" },
-      { label: "Desperdicio por Aplicación", before: "Alto (sin capacitación)", after: "Minimizado", unit: "", improvement: "Calibrado" }
+      { label: "Eventos de taponamiento de boquillas", before: "Diarios", after: "0", unit: "/mes", improvement: "↓ 100% paros" },
+      { label: "Facilidad de limpieza de residuo", before: "Raspado mecánico", after: "Trapo húmedo con agua", unit: "", improvement: "Residuo traza blando" },
+      { label: "Soporte técnico del proveedor", before: "Ninguno / Sin capacitación", after: "Calibración en sitio", unit: "", improvement: "Capacitación práctica" }
     ],
 
     comparisonTables: [
@@ -1828,6 +1827,882 @@ window.casesDataEs = casesDataEs;
 window.casesRegistryEs = casesRegistryEs;
 window.homeContentEs = homeContentEs;
 window.frameworkDataEs = frameworkDataEs;
+
+/* ============================================================
+   TODOS LOS CASOS (DEUTSCH)
+   ============================================================ */
+
+const casesDataDe = {
+
+  /* ────────────────────────────────────────────────────────
+     CASO 1 · BONNELL ALUMINUM – NEWNAN
+     ──────────────────────────────────────────────────────── */
+  'bonnell-newnan': {
+
+    clientName: "Bonnell Aluminum",
+    clientLocation: "Newnan, Georgia, Vereinigte Staaten",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2021-06",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 10,
+    activePressesWithRO3: 4,
+    plantDescription: "Insgesamt 10 Pressen im Werk Newnan, davon 4 Hochleistungs-Strangpressen auf automatische Interforge KI-C Dosierung umgerüstet. Bonnell liefert hochpräzise Aluminiumprofile für Architektur, Automobil und Industrie in den USA mit höchsten Anforderungen an die Oberflächengüte.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: "Pressezi",
+        pushTons: null,
+        billetDiameter: 9,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 8",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 6,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 9",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 8,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Kropfschere (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 10",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 7,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 }
+        ]
+      }
+    ],
+
+    challenges: [
+      {
+        title: "EHS-Risiken & Manuelle Applikation",
+        description: "Bediener trugen trockenes Bornitrid-Pulver manuell bei Bolzentemperaturen von bis zu 600 °C auf. Die ständige Inhalation von Staub und die Nähe zu heißen Pressenbauteilen führten zu Sicherheitsrisiken und variablen Zykluszeiten.",
+        impactCategory: "Safety"
+      },
+      {
+        title: "Oberflächenfehler & Ausschussrate",
+        description: "Unkontrolliertes manuelles Auftragen hinterließ weiße Bornitrid-Flecken auf den Profilen. Diese Verunreinigungen führten zu kosmetischen Ausschüssen und Haftungsproblemen beim Eloxieren/Lackieren.",
+        impactCategory: "Quality"
+      },
+      {
+        title: "Inventarkomplexität & Unkontrollierte Kosten",
+        description: "Ohne Dosiersteuerung gab es keine Verbrauchstransparenz. Bonnell kaufte, lagerte und verendete 3 verschiedene Schmierstoffe. Der Mangel an Standardisierung erhöhte die Gesamtkosten (TCO).",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "100%",
+      metricLabel: "Eliminierung von EHS-Vorfällen & Arbeitsunfällen durch Schmierstoffe",
+      metricContext: "Nachhaltig null Atembeschwerden, null Kontaktverbrennungen und null Sicherheitsberichte seit der Umstellung auf automatische Dosierung.",
+      metricUnit: "nachhaltig seit Implementierung"
+    },
+
+    supportingMetrics: [
+      { label: "Prozesssteuerung", before: "Manuell / Variabel", after: "Automatisch im Zyklus", unit: "", improvement: "RO3 Automatisiert" },
+      { label: "Oberflächenkontamination", before: "Häufig", after: "Eliminiert", unit: "", improvement: "↓ 100%" },
+      { label: "EHS-Sicherheitsunfälle", before: 14, after: 0, unit: "/Jahr", improvement: "↓ 100%" },
+      { label: "Inventarkomplexität", before: "3 Produkte", after: "1 Produkt", unit: "", improvement: "KI-C Standardisiert" }
+    ],
+
+    visualComparison: {
+      testDescription: "Kontrollierter Vergleichstest an Presse 2 über 4 Produktionswochen: Bornitrid-Pulver vs. Interforge KI-C mit dem RO3-System.",
+      product1Label: "Bornitrid (Pulver)",
+      product1Result: "Sichtbare weiße Rückstände auf 38% der Profile. Manuelles Nachauftragen in jedem Zyklus. Null Dosierkontrolle.",
+      product2Label: "Interforge KI-C",
+      product2Result: "Null Rückstände auf allen Profilen. Automatische Dosierung konstant bei 7 ml pro Zyklus.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Bornitrid", performance: "Medium", price: "High", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Graphit", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Acetylenflamme", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Alle aktiven Pressen wurden auf Interforge KI-C auf Wasserbasis umgestellt. Automatische RO3-Dosiersysteme ersetzten das manuelle Bestäuben an Warmblockschere, Bolzen und Kropfschere. Die Dosierung erfolgt vollautomatisch im Presszyklus.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis, graphitfrei. Einsatzfertig ohne Mischen. Verhindert Bornitrid-Flecken; trockene Spurenreste lassen sich einfach mit Wasser abwaschen.",
+      ro3Description: "Hochpräzise automatische Sprühdosierung. Liefert exakte Mikrolitermengen direkt an die Schmierpunkte ohne Bedienerrisiko."
+    },
+
+    results: [
+      { resultText: "Nachhaltig null Atemwegs- oder Verbrennungsunfälle (neuer EHS-Anlagenrekord)." },
+      { resultText: "100% Eliminierung weißer Bornitrid-Rückstände auf den Profiloberflächen, drastische Senkung des Ausschusses." },
+      { resultText: "Standardisierung auf eine einzige Trennmittel-SKU anstelle von drei Schmierstoffen." },
+      { resultText: "Automatische Dosierung im Zyklus ohne manuelle Eingriffe." },
+      { resultText: "Konstante Dosierung von 7 ml pro Zyklus ohne Verbrauchsspitzen." },
+      { resultText: "Beseitigung von Pulverstaub in der Luft schützt Pressendichtungen und Führungen." }
+    ],
+
+    additionalBenefits: [
+      { icon: "safety", label: "Nicht brennbar & ungiftig" },
+      { icon: "cleanliness", label: "Wasserbasiert, Rückstände leicht entfernbar" },
+      { icon: "quality", label: "Fehlerfreie Profile" },
+      { icon: "productivity", label: "Konstante automatische Dosierung" },
+      { icon: "cost", label: "Ein Produkt ersetzt drei" },
+      { icon: "environment", label: "Keine toxischen Emissionen oder Stäube" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_01.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/bonnell-aluminum.png"
+    }
+
+  }, /* end bonnell-newnan */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 2 · EXTRUM
+     ──────────────────────────────────────────────────────── */
+  'extrum': {
+
+    clientName: "Extrum",
+    clientLocation: "San Pedro Sula, Honduras",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2024-08",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 3,
+    activePressesWithRO3: 2,
+    plantDescription: "Das Werk Sula von Extrum betreibt 3 Strangpresslinien. Pressezi (Presse 1) verbrauchte jährlich **2.527 Liter Ejecteze** am Pressstempel ohne Durchflusssteuerung. Gleichzeitig stoppte Mei Ruey (Presse 2) alle 4 Zyklen für einen Acetylen-Flammenarm, was täglich **11,25 Minuten Produktionskapazität** kostete (98.865 lb jährlich) und eine offene Brandgefahr darstellte.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: "Pressezi",
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: 180,
+        lubricantBefore: "Ejecteze am Pressstempel",
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        keyBenefit: "55% Reduzierung des Stempelschmierstoffs von 2.527 L auf 1.154 L pro Jahr",
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Kropfschere (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 2",
+        pressBrand: "Mei Ruey",
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Acetylenflamme (Arm, alle 4 Zyklen) plus Ejecteze",
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        keyBenefit: "98.865 lb/Jahr zurückgewonnen · Flammenarm entfernt · Null Brandunfälle",
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Kropfschere (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 3",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Ejecteze + Acetylenflamme",
+        dosingSystem: "Bestehendes automatisches System",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Nur als Referenz, kein RO3 installiert"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Mei Ruey: Kapazitätsverlust durch erzwungene Flammzyklus-Stopps",
+        description: "Presse 2 musste alle 4 Zyklen für 5 Sekunden anhalten. Bei 1.690 lb/h summierten sich diese Unterbrechungen auf 11,25 Minuten verlorene Kapazität pro Tag (**98.865 lb Aluminium pro Jahr**).",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Pressezi: Übermäßiger Trennmittelverbrauch & Verschwendung",
+        description: "Ejecteze wurde manuell mit 15 ml pro Schuss aufgetragen. Ohne Präzisionsdosierung verbrauchte die Presse 2.527 Liter jährlich mit Sprühverlusten und Bodenverschüttungen.",
+        impactCategory: "Cost"
+      },
+      {
+        title: "Acetylenflammen: Aktive Brandgefahr & Sicherheitsaufwand",
+        description: "Eine offene Flamme bei jedem Zyklus erforderte spezielle Brandschutzprotokolle. Die Entfernung des Flammenarms senkte das Unfallrisiko und die EHS-Kosten sofort.",
+        impactCategory: "Safety"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "55%",
+      metricLabel: "Reduzierung des Stempelschmierstoff-Verbrauchs an Presse 1 (Pressezi)",
+      metricContext: "Der Umstieg von manueller Ejecteze-Applikation (15 ml) auf Interforge KI-C (7 ml) sparte 1.372 Liter jährlich bei perfekter Trennwirkung.",
+      metricUnit: "geprüft · Extrum · Honduras"
+    },
+
+    secondaryHeroMetric: {
+      metricValue: "98.865",
+      metricUnit: "lb",
+      pressLabel: "Presse 2 · Mei Ruey",
+      metricLabel: "Jährliche Produktionskapazität an Presse 2 (Mei Ruey) zurückgewonnen",
+      metricContext: "Eliminierung des Acetylen-Flammenarms und der Stopps stellte 270 lb Aluminium pro Arbeitstag wieder her."
+    },
+
+    verificationNote: "Alle Daten vor Ort vom technischen Team von Interlub bei Extrum Honduras erfasst. Auditfähig.",
+
+    supportingMetrics: [
+      { press: "Presse 1 · Pressezi", label: "Schmierstoff pro Schuss", before: "15 ml", after: "7 ml", unit: "", improvement: "↓ 53%" },
+      { press: "Presse 1 · Pressezi", label: "Jahresverbrauch", before: "2.527 L", after: "1.154 L", unit: "/Jahr", improvement: "↓ 55%" },
+      { press: "Presse 2 · Mei Ruey", label: "Produktionsverlust", before: "98.865 lb", after: "0 lb", unit: "/Jahr", improvement: "↓ 100%" },
+      { press: "Presse 2 · Mei Ruey", label: "Tägliche Ausfallzeit", before: "11,25 Min", after: "0 Min", unit: "/Tag", improvement: "Eliminiert" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Schmierstoffverbrauch",
+        subtitle: "Presse 1 · Pressezi · Ejecteze vs. Interforge KI-C · Pressstempel · 540 Extrusionen/Tag",
+        columns: ["", "Ejecteze", "Interforge KI-C"],
+        highlight: 4,
+        rows: [
+          ["Anzahl Pressen", "1", "1"],
+          ["ml pro Schuss", "15 ml", "7 ml"],
+          ["Schmierstoff / 24 Std.", "8,1 L", "3,7 L"],
+          ["Arbeitstage / Monat", "26", "26"],
+          ["Jahresverbrauch", "2.527 L", "1.154 L"]
+        ]
+      },
+      {
+        title: "Produktionsverlust durch Schmierung",
+        subtitle: "Presse 2 · Mei Ruey · Acetylenflamme vs. Interforge KI-C · 1.690 lb/h · 26 Tage/Monat",
+        columns: ["", "Flamme", "Interforge KI-C"],
+        highlight: 5,
+        rows: [
+          ["Anzahl Pressen", "1", "1"],
+          ["Schmierung Arm", "Alle 4 Zyklen", "N/A"],
+          ["Verlorene Zeit / Schmierung", "5 Sek.", "0 Sek."],
+          ["Extrusionen / 24 Std.", "540", "540"],
+          ["Arbeitstage / Monat", "26", "26"],
+          ["Verlorene Lb/Jahr durch Schmierung", "98.865 lb", "0 lb"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Feldanalyse an Presse 1 bei Extrum, Honduras. Acetylen manuell + Ejecteze (15 ml/Schuss, 2 Punkte, alle 4 Zyklen) vs. Interforge KI-C mit RO3 (7 ml/Schuss, 1 Punkt, in Bewegung). 540 Extrusionen/Tag · 26 Tage/Monat · 1.690 lb/h.",
+      product1Label: "Acetylenflamme + Ejecteze",
+      product1Result: "15 ml pro Schuss · 2 Schmierpunkte · Applikation mit Stopp alle 4 Zyklen · 5 Sek. Ausfallzeit pro Ereignis · 98.865 lb/Jahr Produktionsverlust · 2.527 L Jahresverbrauch.",
+      product2Label: "Interforge KI-C + RO3",
+      product2Result: "7 ml pro Schuss · 1 Schmierpunkt · Applikation in Bewegung ohne Stopps · 0 Sek. Ausfallzeit · 0 lb Produktionsverlust · 1.154 L Jahresverbrauch (1.372 L eingespart) · 100% Stempelabdeckung.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Ejecteze", performance: "Medium", price: "Medium", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Graphit", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Acetylenflamme", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Beide Pressen wurden mit Interforge KI-C automatisiert. An Presse 1 senkte die RO3-Dosierung den Verbrauch um 55% (1.372 L/Jahr Ersparnis). An Presse 2 wurde der Flammenarm entfernt, was 98.865 lb Jahreskapazität zurückgewann. Beide Pressen laufen nun mit 3 automatischen Schmierpunkten in Bewegung: Warmblockschere, Pressstempel und Kropfschere.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis, graphitfrei. Wird in Bewegung über das RO3-System aufgetragen. Verhindert Stempelanhaftung, erzeugt keinen Ruß und Rückstände sind leicht mit Wasser abwaschbar.",
+      ro3Description: "Automatische Mehrdüsendosierung in Bewegung. Sprüht ein kalibriertes Volumen (7 ml) während der Schneid- und Extrusionszyklen ohne die Presse zu stoppen."
+    },
+
+    resultGroups: [
+      {
+        pressLabel: "Presse 1 · Pressezi",
+        headline: "55",
+        headlineUnit: "%",
+        headlineSub: "weniger Schmierstoff am Pressstempel",
+        items: [
+          "Jahresverbrauch von <strong>2.527 L</strong> auf <strong>1.154 L</strong> gesenkt (1.372 L/Jahr Ersparnis).",
+          "Dosierung von <strong>15 ml</strong> auf <strong>7 ml</strong> pro Schuss reduziert, automatisch in Bewegung aufgetragen.",
+          "100% Stempelabdeckung bei halbiertem Schmierstoffvolumen."
+        ]
+      },
+      {
+        pressLabel: "Presse 2 · Mei Ruey",
+        headline: "98.865",
+        headlineUnit: "lb",
+        headlineSub: "zurückgewonnene Jahresproduktion",
+        items: [
+          "Eliminierung des Acetylen-Flammenarms für <strong>null erzwungene Stopps</strong>.",
+          "Entfernung offener Flammen in der Halle entlastet Sicherheits- und Brandschutzauflagen.",
+          "Tägliche Ausfallzeit von <strong>11,25 Min. auf 0 Min.</strong> reduziert."
+        ]
+      }
+    ],
+
+    additionalBenefits: [
+      { icon: "productivity", label: "98.865 lb Produktion zurückgewonnen" },
+      { icon: "cost", label: "55% weniger Schmierstoff verbraucht" },
+      { icon: "safety", label: "Flamme entfernt, null Brandrisiko" },
+      { icon: "quality", label: "100% Stempelabdeckung" },
+      { icon: "cleanliness", label: "Wasserbasiert, graphitfrei, leicht zu reinigen" },
+      { icon: "environment", label: "1.372 L pro Jahr eingespart" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_02.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/extrum_logo.webp",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+
+  }, /* end extrum */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 3 · INDALUM
+     ──────────────────────────────────────────────────────── */
+  'indalum': {
+
+    clientName: "INDALUM",
+    clientLocation: "San Nicolas, Nuevo Leon, Mexiko",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2022-11",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 3,
+    activePressesWithRO3: null,
+    plantDescription: "Der Betrieb nutzte 3 Hochleistungs-Strangpressen mit manueller und halbautomatischer Graphitstift-Applikation. Dichte Graphitrückstände auf den Profilen führten zu schweren Oberflächenfehlern und Ausfällen bei der Weiterverarbeitung (Lackier- und Eloxalhaftung). Zudem verunreinigte abrasiver Graphitstaub Führungen und Werkzeuge. Durch die Umstellung aller 3 Pressen auf Interforge KI-C über bestehende OEM-Dosiersysteme wurde Graphit vollständig eliminiert und die Schmierstoffkosten um 75% gesenkt.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Graphitstifte (2 Stifte/Schicht)",
+        dosingSystem: "Bestehendes Dosiersystem der Presse",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C über bestehendes Dosiersystem aufgetragen"
+      },
+      {
+        pressId: "Presse 2",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Graphitstifte (2 Stifte/Schicht)",
+        dosingSystem: "Bestehendes Dosiersystem der Presse",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C über bestehendes Dosiersystem aufgetragen"
+      },
+      {
+        pressId: "Presse 3",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Graphitstifte (2 Stifte/Schicht)",
+        dosingSystem: "Bestehendes Dosiersystem der Presse",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C über bestehendes Dosiersystem aufgetragen"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Graphitkontamination auf Profilen",
+        description: "Graphitstifte hinterließen dichte Kohlenstoffrückstände auf den Extrusionsprofilen. Diese dunklen Ablagerungen verursachten Lochfraß, Schönheitsfehler und Qualitätsausschuss bei Lackierung und Eloxierung.",
+        impactCategory: "Quality"
+      },
+      {
+        title: "Geräteverschmutzung & Wartungsaufwand",
+        description: "Abrasiver Graphitstaub lagerte sich rasch an Matrizen, Haltern und Behälterführungen ab. Sprühdüsen verstopften ständig und erforderten manuelle Reinigungen sowie ungeplante Mikro-Stopps.",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Übermäßige Schmierstoffkosten",
+        description: "Der Verbrauch von 2 soliden Graphitstiften pro Schicht an 3 Pressen im 3-Schicht-Betrieb verursachte hohe direkte Kosten. Zusammen mit manuellem Profilwaschen und Ausschuss war die Gesamtkostenstruktur (TCO) unhaltbar.",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "75%",
+      metricLabel: "Reduzierung der jährlichen Schmierstoffausgaben an allen 3 Pressen",
+      metricContext: "Die Umstellung auf Interforge KI-C eliminierte Graphit vollständig. Durch die Vermeidung von Profilfehlern, manuellem Reinigen und Düsenverstopfungen sanken die Gesamtschmierkosten um 75%.",
+      metricUnit: "geprüft seit November 2022"
+    },
+
+    secondaryHeroMetric: null,
+
+    verificationNote: null,
+
+    supportingMetrics: [
+      { label: "Spezifischer Chemieverbrauch", before: "2 Graphitstifte", after: "2,4 kg", unit: "/Schicht", improvement: "Standardisiert" },
+      { label: "Jährliche Schmierstoffausgaben", before: "100% (Baseline)", after: "25%", unit: "", improvement: "↓ 75% (TCO)" },
+      { label: "Profiloberflächen-Ausschuss", before: "Häufiger Ausschuss", after: "0% Ausschuss", unit: "", improvement: "↓ 100% Defekte" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Schmierstoffkosten-Vergleich",
+        subtitle: "Alle 3 Pressen · Graphitstifte vs. Interforge KI-C · 3 Schichten/Tag · 26 Tage/Monat",
+        columns: ["", "Graphitstifte", "Interforge KI-C"],
+        highlight: 4,
+        rows: [
+          ["Anzahl Pressen", "3", "3"],
+          ["Schmierstoff / Schicht", "2 Stifte", "2,4 kg"],
+          ["Schichten / Tag", "3", "3"],
+          ["Arbeitstage / Monat", "26", "26"],
+          ["Kostenreduzierung", "", "75%"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Vollständige Umstellung aller 3 Pressen bei INDALUM, Mexiko. Graphitstifte durch Interforge KI-C ersetzt, aufgetragen über bestehende OEM-Dosiersysteme. 3 Schichten/Tag, 26 Tage/Monat.",
+      product1Label: "Graphitstifte",
+      product1Result: "2 Stifte pro Schicht. Dunkle Rückstände auf Profilen erforderten Nacharbeit. Geräteverschmutzung und verstopfte Düsen.",
+      product2Label: "Interforge KI-C",
+      product2Result: "2,4 kg pro Schicht. Null Rückstände auf Profilen ab Tag eins. Keine Geräteverschmutzung, keine verstopften Düsen. Spurenreste leicht mit Wasser abwaschbar.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Graphit", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Bornitrid", performance: "Medium", price: "High", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Acetylenflamme", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Alle 3 Pressen wurden auf die wasserbasierte Chemie von Interforge KI-C umgestellt. Die Umstellung erfolgte unter Nutzung der bestehenden OEM-Dosiersysteme nach Feinabstimmung von Düsendruck und Sprühzeiten – ohne CAPEX für neue Applikationsgeräte.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis, graphitfrei. Einsatzfertig direkt aus dem Gebinde. Profile bleiben frei von dunklen Rückständen; Spurenreste lassen sich mühelos mit Wasser entfernen.",
+      ro3Description: null
+    },
+
+    results: [
+      { resultText: "Verifizierte 75%ige Senkung der jährlichen Schmierungskosten (TCO) durch Entfall von manueller Reinigung und Ausschuss." },
+      { resultText: "100% Eliminierung dunkler Graphitflecken; Lackier- und Eloxalausschuss sank auf null." },
+      { resultText: "Eliminierung abrasiven Graphitstaubs schützt Führungen und verlängert die Lebensdauer von Dichtungen und Werkzeugen." },
+      { resultText: "Vollständige Nutzung bestehender OEM-Dosieranlagen ohne zusätzliches CAPEX." }
+    ],
+
+    additionalBenefits: [
+      { icon: "cost", label: "75% Reduzierung der jährlichen Schmierstoffausgaben" },
+      { icon: "quality", label: "Null Graphitrückstände auf Profilen" },
+      { icon: "cleanliness", label: "Rückstände leicht mit Wasser zu reinigen" },
+      { icon: "productivity", label: "Keine Verschmutzung, keine Düsenverstopfung" },
+      { icon: "safety", label: "Nicht brennbar, ungiftig, wasserbasiert" },
+      { icon: "environment", label: "Keine VOC-Emissionen, kein Gefahrgut" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_05.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/indalum_logo.png",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+
+  }, /* end indalum */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 4 · HAI
+     ──────────────────────────────────────────────────────── */
+  'hai': {
+    clientName: "HAI",
+    clientLocation: "Chisineu-Cris, Rumänien",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2023-11",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 4,
+    activePressesWithRO3: null,
+    plantSummary: "",
+    plantDescription: "Ein Test im Werk von HAI Rumänien (4 Pressen) zielte darauf ab, kritische Düsenverstopfungen und Stillstände durch das bisherige Trennmittel (STAG 118) an Presse 1 (Presezzi) und Presse 3 (Cometal) zu beheben. Das Konkurrenzprodukt neigte zu rascher Kristallisation mit harten Krusten. Durch den Einsatz von Interforge KI-C an Kropf- und Warmblockschere sowie technische Kalibrierungsschulungen sanken verstopfungsbedingte Wartungsstopps um 100%.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: "Presezzi",
+        pushTons: null,
+        billetDiameter: 10,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Geprüft & verifiziert für Kropfscherenschmierung (butt shear)"
+      },
+      {
+        pressId: "Presse 2",
+        pressBrand: "Prisma",
+        pushTons: null,
+        billetDiameter: 5,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Nur als Referenz (STAG 118 bisheriges Trennmittel)"
+      },
+      {
+        pressId: "Presse 3",
+        pressBrand: "Cometal",
+        pushTons: null,
+        billetDiameter: 7,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Geprüft & verifiziert für Warmblockscherenschmierung (hot log shear)"
+      },
+      {
+        pressId: "Presse 4",
+        pressBrand: "Sutton",
+        pushTons: null,
+        billetDiameter: 8,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Nur als Referenz (STAG 118 bisheriges Trennmittel)"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Ständige Ventilverstopfung",
+        description: "Chemische Kristallisation des früheren Trennmittels (STAG 118) bildete harte Ablagerungen in den Sprühdüsen. Die Öffnungen verstopften täglich, was zu ungeplanten Reinigungsstopps führte.",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Kontaminierte Arbeitsumgebung",
+        description: "Verstopfte Düsen verursachten ungleichmäßige Sprühbilder. Zur Kompensation erhöhten Bediener den Systemdruck, was zu starkem Übersprühen und rutschigen Böden führte.",
+        impactCategory: "Environment"
+      },
+      {
+        title: "Hohe Produktverschwendung & fehlender Support",
+        description: "Der bisherige Lieferant bot keine Schulung zur Düsendurchflusskalibrierung. Ohne Richtlinien lieferte das System zu viel Trennmittel, was Verschwendung und dicke Beläge erzeugte.",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "100%",
+      metricLabel: "Reduzierung verstopfungsbedingter Ventilstopps",
+      metricContext: "Vollständige Eliminierung ungeplanter Wartungsstopps. Etwaige Beläge von Interforge KI-C bleiben weich und lassen sich einfach mit einem feuchten Tuch abwischen.",
+      metricUnit: "erreicht"
+    },
+
+    secondaryHeroMetric: null,
+
+    verificationNote: null,
+
+    supportingMetrics: [
+      { label: "Verstopfungsereignisse", before: "Täglich", after: "0", unit: "/Monat", improvement: "↓ 100% Stopps" },
+      { label: "Trennmittelverbrauch", before: "Exzessiv (STAG 118)", after: "Optimiert", unit: "", improvement: "Reduziert" },
+      { label: "Reinigung von Rückständen", before: "Extrem schwierig", after: "Einfach mit Wasser", unit: "", improvement: "Weicher Rückstand" },
+      { label: "Anwendungsverschwendung", before: "Hoch (ohne Schulung)", after: "Minimiert", unit: "", improvement: "Kalibriert" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Vergleich der Betriebsleistung",
+        subtitle: "Bisheriges Trennmittel (STAG 118) vs. Interforge KI-C unter technischer Kalibrierung",
+        columns: ["Parameter", "STAG 118", "Interforge KI-C"],
+        highlight: 1,
+        rows: [
+          ["Verstopfungshäufigkeit", "Ständig / Täglich", "Eliminiert"],
+          ["Ausfallzeiten durch Verstopfung", "Häufige Stopps", "100% Reduzierung"],
+          ["Trennmittelverbrauch", "Hohe Verschwendung (keine Schulung)", "Reduziert & optimiert"],
+          ["Methode zur Rückstandsentfernung", "Schwierig / Mechanisches Kratzen", "Einfache Reinigung mit Wasser & Tuch"],
+          ["Sauberkeit des Arbeitsbereichs", "Stark verschmutzt / Ruß", "Sauber & kontrolliert"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Vergleich zwischen dem bisherigen Trennmittel (STAG 118) und Interforge KI-C an Presse 1 (Presezzi, Kropfschere) und Presse 3 (Cometal, Warmblockschere).",
+      product1Label: "STAG 118",
+      product1Result: "Ständige Ventilverstopfung, harte Rückstände, hohe Verschwendung ohne Lieferantensupport und verschmutzter Arbeitsbereich.",
+      product2Label: "Interforge KI-C",
+      product2Result: "100% Reduzierung verstopfungsbedingter Stopps, optimierter Verbrauch und weiche Rückstände, die leicht mit Wasser abwischbar sind.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "STAG 118", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Durch den Einsatz von Interforge KI-C und die technische Unterstützung von Interlub konnten die Schmierpunkte gezielt kalibriert werden. Etwaige Spuren von Interforge KI-C bilden einen weichen Belag, der sich leicht mit einem feuchten Tuch entfernen lässt.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis für Aluminium-Extrusion. Erzeugt weiche Rückstände, die Verkrustungen verhindern und leicht abwaschbar sind.",
+      ro3Description: null
+    },
+
+    results: [
+      { resultText: "100%ige Reduzierung ungeplanter Pressenstopps durch verstopfte Sprühdüsen." },
+      { resultText: "Reduzierung des Trennmittelverbrauchs durch Kalibrierung." },
+      { resultText: "Weiche Rückstände, die leicht mit Wasser und Tuch zu reinigen sind." },
+      { resultText: "Vermeidung von Produktverschwendung dank technischer Schulung der Bediener." },
+      { resultText: "Deutlich sauberer Arbeitsbereich durch optimierte Düsenabstimmung." }
+    ],
+
+    additionalBenefits: [
+      { icon: "productivity", label: "100% Reduzierung der Verstopfungsstopps" },
+      { icon: "cost", label: "Geringerer Trennmittelverbrauch" },
+      { icon: "cleanliness", label: "Rückstände leicht mit Tuch & Wasser abwaschbar" },
+      { icon: "safety", label: "Technische Schulung für Geräte und Ventile" },
+      { icon: "environment", label: "Sauberer Arbeitsbereich, weniger Abfall" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_06.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+  }
+
+};
+/* end casesDataDe */
+
+
+/* ============================================================
+   GALERÍA DE CASOS (DEUTSCH)
+   ============================================================ */
+
+const casesRegistryDe = [
+  {
+    id: "bonnell-newnan",
+    client: "Bonnell Aluminum",
+    industry: "Aluminium-Extrusion",
+    location: "Newnan, Georgia, Vereinigte Staaten",
+    headline: "100% Eliminierung von Atemwegsrisiken und kosmetischen Oberflächenfehlern",
+    date: "2021-06",
+    isCurrent: true
+  },
+  {
+    id: "indalum",
+    client: "INDALUM",
+    industry: "Aluminium-Extrusion",
+    location: "San Nicolas, Nuevo Leon, Mexiko",
+    headline: "75% Reduzierung der jährlichen Schmier-TCO durch Graphit-Eliminierung",
+    date: "2022-11",
+    isCurrent: true
+  },
+  {
+    id: "extrum",
+    client: "Extrum",
+    industry: "Aluminium-Extrusion",
+    location: "San Pedro Sula, Honduras",
+    headline: "55% Einsparung beim Schmierstoffvolumen und 98.865 lb Produktion zurückgewonnen",
+    date: "2024-08",
+    isCurrent: true
+  },
+  {
+    id: "hai",
+    client: "HAI",
+    industry: "Aluminium-Extrusion",
+    location: "Chisineu-Cris, Rumänien",
+    headline: "100% Eliminierung ungeplanter Ausfallzeiten durch Düsenverstopfungen",
+    date: "2023-11",
+    isCurrent: true
+  },
+  {
+    id: "hydro-cressona",
+    client: "Hydro",
+    industry: "Aluminium-Extrusion",
+    location: "Cressona, Pennsylvania, Vereinigte Staaten",
+    headline: "100% Umstellung auf wasserbasierte Technologien",
+    date: "TBD",
+    isCurrent: false
+  }
+];
+
+
+/* ============================================================
+   TEXTOS DE LA PANTALLA DE INICIO (DEUTSCH)
+   ============================================================ */
+
+const homeContentDe = {
+  headerTag: "Erfolgsfälle · The Uncommon Lubricant Company",
+  eyebrow: "Dokumentierte Ergebnisse",
+  title: "Erfolgsfälle",
+  subtitle: "Echte Werke. Gemessene Ergebnisse. Wählen Sie einen Fall aus, um die gesamte Geschichte zu lesen, wobei jede Zahl vor Ort von unserem technischen Team validiert wurde.",
+  scrollLabel: "Wählen Sie einen Fall oben aus"
+};
+
+
+
+
+
+/* ============================================================
+   DATOS DEL FRAMEWORK DE COMPARACIÓN (DEUTSCH)
+   ============================================================ */
+
+const frameworkDataDe = {
+  categories: [
+    { id: "cost", name: "Kategorie 1 — Kosten & TCO", weight: 25, parameters: ["1.1", "1.2"] },
+    { id: "safety", name: "Kategorie 2 — Sicherheit & Umwelt EHS", weight: 25, parameters: ["2.1", "2.2", "2.3", "2.4"] },
+    { id: "productivity", name: "Kategorie 3 — Produktivität & Oberflächengüte", weight: 25, parameters: ["3.1", "3.2", "3.3"] },
+    { id: "easeOfUse", name: "Kategorie 4 — Bedienbarkeit & Wartung", weight: 25, parameters: ["4.1", "4.2", "4.3"] }
+  ],
+  parameters: {
+    "1.1": { label: "Trennmittel-Stückkosten ($/kg)", note: "1 = Höchster Preis, 5 = Niedrigster Preis" },
+    "1.2": { label: "Spezifischer Chemieverbrauch (ml/Zyklus)", note: "1 = Exzessive Menge/Verschwendung, 5 = Optimierte Mikroliterdosierung" },
+    "2.1": { label: "Brandgefahr (Offene Flamme/Flammpunkt)", note: "1 = Kritisches Risiko (Acetylen/Lösemittel), 5 = Null Brandgefahr (Wasserbasiert)" },
+    "2.2": { label: "Arbeitsschutz-Risiko (Inhalation & Kontakt)", note: "1 = Staub-/Verbrennungsgefahr, 5 = Sichere automatische Applikation" },
+    "2.3": { label: "Umweltfußabdruck (VOC & Abfall)", note: "1 = Hohe VOCs/Gefahrengut, 5 = Null VOCs/biologisch abbaubar" },
+    "2.4": { label: "Sauberkeit im Pressenbereich (Rutschgefahr)", note: "1 = Öl-/Graphitfilmansammlung, 5 = Saubere Trockenzone" },
+    "3.1": { label: "Trennleistung (Entformungsgüte Stempel)", note: "1 = Stempelanhaftung/Profilschaden, 5 = Einwandfreie Trennung" },
+    "3.2": { label: "Profiloberflächenqualität (Flecken/Blasen)", note: "1 = Schwere Fleckenbildung, 5 = Null Defekte/bereits lackierfähig" },
+    "3.3": { label: "Werkzeugschutz (Scherblätter & Rezipient)", note: "1 = Beschleunigter Verschleiß, 5 = Verlängerte Werkzeugstandzeit" },
+    "4.1": { label: "Düsenverstopfung & Wartungsaufwand", note: "1 = Harte Kristallisation/Verstopfung, 5 = Verstopfungsfreier weicher Rückstand" },
+    "4.2": { label: "CAPEX-Bedarf für Applikationstechnik", note: "1 = Proprietäre Hochkostensysteme, 5 = Standard/Integration in Bestand" },
+    "4.3": { label: "Vielseitigkeit der Schmierpunkte (SKUs)", note: "1 = Nur Bolzen (mehrere Produkte nötig), 5 = Mehrpunkt-Fähigkeit" }
+  },
+  technologies: [
+    {
+      id: "interforge",
+      name: "Interforge KI-C",
+      color: "#ff0000",
+      isInterlub: true,
+      grades: { "1.1": 3, "1.2": 5, "2.1": 5, "2.2": 5, "2.3": 4, "2.4": 5, "3.1": 5, "3.2": 5, "3.3": 4, "4.1": 5, "4.2": 3, "4.3": 5 }
+    },
+    {
+      id: "acetylene",
+      name: "Acetylenflamme",
+      color: "#6c6c72",
+      grades: { "1.1": 5, "1.2": 5, "2.1": 1, "2.2": 1, "2.3": 1, "2.4": 1, "3.1": 5, "3.2": 5, "3.3": 1, "4.1": 2, "4.2": 4, "4.3": 2 }
+    },
+    {
+      id: "bn_suspension",
+      name: "Bornitrid-Suspension",
+      color: "#2e7bcf",
+      grades: { "1.1": 2, "1.2": 4, "2.1": 5, "2.2": 3, "2.3": 4, "2.4": 3, "3.1": 5, "3.2": 3, "3.3": 3, "4.1": 2, "4.2": 3, "4.3": 5 }
+    },
+    {
+      id: "bn_powder",
+      name: "Bornitrid-Pulver",
+      color: "#3bb19b",
+      grades: { "1.1": 1, "1.2": 3, "2.1": 5, "2.2": 3, "2.3": 5, "2.4": 4, "3.1": 5, "3.2": 5, "3.3": 1, "4.1": 2, "4.2": 1, "4.3": 2 }
+    },
+    {
+      id: "graphite_suspension",
+      name: "Graphit-Suspension",
+      color: "#8a58bf",
+      grades: { "1.1": 3, "1.2": 4, "2.1": 5, "2.2": 2, "2.3": 4, "2.4": 3, "3.1": 5, "3.2": 5, "3.3": 5, "4.1": 2, "4.2": 3, "4.3": 4 }
+    },
+    {
+      id: "sticks",
+      name: "Stifte & Blöcke",
+      color: "#d9972b",
+      grades: { "1.1": 4, "1.2": 1, "2.1": 2, "2.2": 1, "2.3": 2, "2.4": 2, "3.1": 3, "3.2": 1, "3.3": 1, "4.1": 1, "4.2": 5, "4.3": 2 }
+    }
+  ],
+  notes: [
+    { param: "2.2", text: "Die Verwendung von Graphit- oder Bornitrid-Stiften stellt ein hohes EHS-Risiko dar. Bediener müssen nahe an heißen beweglichen Bauteilen über 500 °C arbeiten." },
+    { param: "3.2", text: "Nitrid-Suspensionen nutzen organische Trägerstoffe, die beim Extrudieren ausgasen und Blasen erzeugen können. Stifte hinterlassen dicke Beläge und Fehler." },
+    { param: "4.1", text: "Acetylenflammen und Bornitrid-Pulver können Scheren (Kropf- oder Warmblockschere) nicht schmieren, was ein zweites Schmiersystem erfordert." },
+    { param: "4.1", text: "Interforge KI-C arbeitet mit niedrigem Zerstäubungsdruck, erfordert kein Aufrühren und hinterlässt weiche Rückstände, die leicht mit Wasser abwaschbar sind." },
+    { param: "4.1", text: "Trockenes Bornitrid-Pulver verursacht Verstopfungen und abrasiven Verschleiß an Magnetventilen und Führungen." },
+    { param: "4.2", text: "Acetylenflammen-Systeme erfordern hohe Instrumentierung, explosionsgeschützte Leitungen und spezielle Sicherheitsauflagen." },
+    { param: "1.2", text: "Viskose Bornitrid- und Graphitsuspensionen erfordern höhere Schussmengen (12 bis 20 ml pro Zyklus)." },
+    { param: "1.2", text: "Bornitrid-Pulver verweht außerhalb der Zielzone, was zu Materialverlusten und höherem Verbrauch führt." },
+    { param: "1.2", text: "Interforge KI-C ist für Mikrolitersprühung optimiert und verbraucht nur 5 bis 10 ml pro Zyklus." },
+    { param: "4.3", text: "Produkte auf Graphitbasis können nicht an der Warmblockschere verwendet werden, da schwarze Rückstände das Profil für Architektureloxal unbrauchbar machen." }
+  ]
+};
+
+window.casesDataDe = casesDataDe;
+window.casesRegistryDe = casesRegistryDe;
+window.homeContentDe = homeContentDe;
+window.frameworkDataDe = frameworkDataDe;
+
+
+
 
 
 

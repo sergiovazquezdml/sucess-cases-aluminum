@@ -212,14 +212,26 @@
     }
 
     /* Language Toggling Utilities */
-    body:not(.lang-es-active) .lang-es { display: none !important; }
+    body:not(.lang-es-active):not(.lang-de-active) .lang-es { display: none !important; }
+    body:not(.lang-es-active):not(.lang-de-active) .lang-de { display: none !important; }
+
     body.lang-es-active .lang-en { display: none !important; }
+    body.lang-es-active .lang-de { display: none !important; }
     body.lang-es-active .lang-es { display: inline !important; }
     body.lang-es-active div.lang-es,
     body.lang-es-active p.lang-es,
     body.lang-es-active h2.lang-es,
     body.lang-es-active section.lang-es { display: block !important; }
     body.lang-es-active button.lang-es { display: inline-flex !important; }
+
+    body.lang-de-active .lang-en { display: none !important; }
+    body.lang-de-active .lang-es { display: none !important; }
+    body.lang-de-active .lang-de { display: inline !important; }
+    body.lang-de-active div.lang-de,
+    body.lang-de-active p.lang-de,
+    body.lang-de-active h2.lang-de,
+    body.lang-de-active section.lang-de { display: block !important; }
+    body.lang-de-active button.lang-de { display: inline-flex !important; }
 
     #s-home .home-hero {
       position: relative;
@@ -2562,7 +2574,7 @@
       flex-direction: column;
       overflow: hidden;
       justify-content: flex-end;
-      padding: 0 var(--px) 80px;
+      padding: clamp(96px, 12vh, 140px) var(--px) clamp(50px, 8vh, 80px);
     }
     .fw-cover-image-container {
       position: absolute;
@@ -2598,7 +2610,26 @@
       position: relative;
       z-index: 5;
       max-width: 900px;
+      margin-top: auto;
     }
+    .fw-cover-logo {
+      height: clamp(42px, 5.5vw, 64px);
+      width: auto;
+      max-width: 100%;
+      margin-bottom: 24px;
+      object-fit: contain;
+      display: block;
+    }
+    #s-fw-cover .cover-headline {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 96px);
+      line-height: 0.94;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    #s-fw-cover .cover-headline .dot { color: var(--red); }
     #s-fw-cover .fw-tag {
       display: inline-flex;
       align-items: center;
@@ -3222,7 +3253,7 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
       <polyline points="15 18 9 12 15 6"/>
     </svg>
-    All Cases
+    <span class="lang-en">All Cases</span><span class="lang-es" style="display:none">Ver todos los casos</span><span class="lang-de" style="display:none">Alle Fälle</span>
   </button>
 </div>
 
@@ -3256,6 +3287,8 @@
       <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
       <span class="lang-divider">|</span>
       <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" data-lang="de" onclick="setLanguage('de')">DE</button>
     </div>
   </header>
 
@@ -3275,7 +3308,7 @@
         <circle cx="12" cy="12" r="3"/>
         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
       </svg>
-      <span class="lang-en">Release Agent Selector</span><span class="lang-es" style="display:none">Selector de Lubricantes</span>
+      <span class="lang-en">Release Agent Selector</span><span class="lang-es" style="display:none">Selector de Lubricantes</span><span class="lang-de" style="display:none">Trennmittel-Selektor</span>
     </button>
   </div>
 
@@ -3327,7 +3360,7 @@
 
     <div class="scroll-hint">
       <div class="arrow"></div>
-      <span class="lang-en">Scroll</span><span class="lang-es" style="display:none">Deslizar</span>
+      <span class="lang-en">Scroll</span><span class="lang-es" style="display:none">Deslizar</span><span class="lang-de" style="display:none">Scrollen</span>
     </div>
   </section>
 
@@ -3336,8 +3369,8 @@
     <div class="section-inner">
       <div class="challenge-head">
         <div>
-          <div class="eyebrow reveal"><span class="lang-en">What was at stake</span><span class="lang-es" style="display:none">Pérdidas y Riesgos Operativos</span></div>
-          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Operational Bottlenecks</span><span class="lang-es" style="display:none">El Reto Técnico</span><span class="dot">.</span></h2>
+          <div class="eyebrow reveal"><span class="lang-en">What was at stake</span><span class="lang-es" style="display:none">Pérdidas y Riesgos Operativos</span><span class="lang-de" style="display:none">Betriebsrisiken &amp; Verluste</span></div>
+          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Operational Bottlenecks</span><span class="lang-es" style="display:none">El Reto Técnico</span><span class="lang-de" style="display:none">Betriebliche Engpässe</span><span class="dot">.</span></h2>
         </div>
         <p class="section-lead reveal reveal-delay-2" id="plant-description"></p>
       </div>
@@ -3350,8 +3383,8 @@
     <div class="section-inner">
       <div class="press-head">
         <div>
-          <div class="eyebrow reveal"><span class="lang-en">Extrusion Infrastructure</span><span class="lang-es" style="display:none">Parque de Prensas de la Planta</span></div>
-          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">The Equipment</span><span class="lang-es" style="display:none">Equipos y Prensas</span><span class="dot">.</span></h2>
+          <div class="eyebrow reveal"><span class="lang-en">Extrusion Infrastructure</span><span class="lang-es" style="display:none">Parque de Prensas de la Planta</span><span class="lang-de" style="display:none">Pressen-Infrastruktur</span></div>
+          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">The Equipment</span><span class="lang-es" style="display:none">Equipos y Prensas</span><span class="lang-de" style="display:none">Die Anlagen</span><span class="dot">.</span></h2>
         </div>
         <p class="section-lead reveal reveal-delay-2" id="press-summary"></p>
       </div>
@@ -3363,7 +3396,7 @@
   <section id="s-hero">
     <div class="hero-eyebrow reveal">
       <div class="bar"></div>
-      <span class="eyebrow" style="margin:0;"><span class="lang-en">Verified Performance Gain</span><span class="lang-es" style="display:none">Impacto Operativo Auditado</span></span>
+      <span class="eyebrow" style="margin:0;"><span class="lang-en">Verified Performance Gain</span><span class="lang-es" style="display:none">Impacto Operativo Auditado</span><span class="lang-de" style="display:none">Geprüfte Leistungssteigerung</span></span>
       <div class="bar"></div>
     </div>
     <div class="hero-metrics-pair single-metric" id="hero-metrics-pair">
@@ -3395,21 +3428,22 @@
     <div class="section-inner">
       <div class="data-head">
         <div>
-          <div class="eyebrow reveal"><span class="lang-en">Operational Audit</span><span class="lang-es" style="display:none">Auditoría Operativa</span></div>
-          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">The Data</span><span class="lang-es" style="display:none">Métricas de Rendimiento</span><span class="dot">.</span></h2>
+          <div class="eyebrow reveal"><span class="lang-en">Operational Audit</span><span class="lang-es" style="display:none">Auditoría Operativa</span><span class="lang-de" style="display:none">Betriebs-Audit</span></div>
+          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">The Data</span><span class="lang-es" style="display:none">Métricas de Rendimiento</span><span class="lang-de" style="display:none">Die Daten</span><span class="dot">.</span></h2>
         </div>
         <p class="section-lead reveal reveal-delay-2">
           <span class="lang-en">Operational performance comparison: baseline manual lubrication vs. automated Interforge KI-C dosing.</span>
           <span class="lang-es" style="display:none">Comparativa de rendimiento operativo: lubricación manual (línea base) vs. dosificación automatizada de Interforge KI-C.</span>
+          <span class="lang-de" style="display:none">Vergleich der Betriebsleistung: Manuelle Schmierung (Baseline) vs. automatische Interforge KI-C Dosierung.</span>
         </p>
       </div>
       <table class="compare-table reveal" id="compare-table">
         <thead>
           <tr>
-            <th><span class="lang-en">Operational Metric</span><span class="lang-es" style="display:none">Métrica Operativa</span></th>
-            <th><span class="lang-en">Baseline (Before)</span><span class="lang-es" style="display:none">Línea Base (Antes)</span></th>
-            <th><span class="lang-en">With Interlub (After)</span><span class="lang-es" style="display:none">Con Interlub (Después)</span></th>
-            <th><span class="lang-en">Performance Gain</span><span class="lang-es" style="display:none">Mejora (%)</span></th>
+            <th><span class="lang-en">Operational Metric</span><span class="lang-es" style="display:none">Métrica Operativa</span><span class="lang-de" style="display:none">Betriebskennzahl</span></th>
+            <th><span class="lang-en">Baseline (Before)</span><span class="lang-es" style="display:none">Línea Base (Antes)</span><span class="lang-de" style="display:none">Baseline (Vorher)</span></th>
+            <th><span class="lang-en">With Interlub (After)</span><span class="lang-es" style="display:none">Con Interlub (Después)</span><span class="lang-de" style="display:none">Mit Interlub (Nachher)</span></th>
+            <th><span class="lang-en">Performance Gain</span><span class="lang-es" style="display:none">Mejora (%)</span><span class="lang-de" style="display:none">Leistungsplus (%)</span></th>
           </tr>
         </thead>
         <tbody id="compare-tbody"></tbody>
@@ -3422,8 +3456,8 @@
   <!-- SECTION 6 · COMPARATIVE TEST (conditional) -->
   <section id="s-test">
     <div class="section-inner">
-      <div class="eyebrow reveal"><span class="lang-en">Controlled Field Trial</span><span class="lang-es" style="display:none">Pruebas de Campo Controladas</span></div>
-      <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Comparative Test</span><span class="lang-es" style="display:none">Evaluación Técnica de Desempeño</span><span class="dot">.</span></h2>
+      <div class="eyebrow reveal"><span class="lang-en">Controlled Field Trial</span><span class="lang-es" style="display:none">Pruebas de Campo Controladas</span><span class="lang-de" style="display:none">Kontrollierter Feldtest</span></div>
+      <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Comparative Test</span><span class="lang-es" style="display:none">Evaluación Técnica de Desempeño</span><span class="lang-de" style="display:none">Vergleichstest</span><span class="dot">.</span></h2>
       <div class="test-desc reveal reveal-delay-2" id="test-description"></div>
       <div class="test-grid reveal reveal-delay-3" id="test-grid"></div>
     </div>
@@ -3434,37 +3468,42 @@
     <div class="section-inner">
       <div class="compare-head">
         <div>
-          <div class="eyebrow reveal"><span class="lang-en">Technology evaluation</span><span class="lang-es" style="display:none">Análisis Comparativo de Tecnologías</span></div>
-          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Why Interforge KI-C</span><span class="lang-es" style="display:none">¿Por qué Interforge KI-C?</span><span class="dot">.</span></h2>
+          <div class="eyebrow reveal"><span class="lang-en">Technology evaluation</span><span class="lang-es" style="display:none">Análisis Comparativo de Tecnologías</span><span class="lang-de" style="display:none">Technologiebeurteilung</span></div>
+          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Why Interforge KI-C</span><span class="lang-es" style="display:none">¿Por qué Interforge KI-C?</span><span class="lang-de" style="display:none">Warum Interforge KI-C</span><span class="dot">.</span></h2>
         </div>
         <p class="section-lead reveal reveal-delay-2">
           <span class="lang-en">Comparative analysis of release agents and desmoldants in the aluminum extrusion industry.</span>
           <span class="lang-es" style="display:none">Análisis técnico de agentes desmoldantes y tecnologías de aplicación en extrusión de aluminio.</span>
+          <span class="lang-de" style="display:none">Vergleichende Analyse von Trennmitteln in der Aluminium-Strangpressindustrie.</span>
         </p>
       </div>
       <div style="overflow-x:auto;">
         <table class="product-table reveal">
           <thead>
             <tr>
-              <th><span class="lang-en">Technology / Product</span><span class="lang-es" style="display:none">Tecnología / Producto</span></th>
-              <th><span class="lang-en">Extrusion Performance</span><span class="lang-es" style="display:none">Rendimiento de Extrusión</span></th>
-              <th><span class="lang-en">Operational Cost</span><span class="lang-es" style="display:none">Costo de Operación</span></th>
-              <th><span class="lang-en">Profile &amp; Area Cleanliness</span><span class="lang-es" style="display:none">Limpieza de Perfil y Área</span></th>
-              <th><span class="lang-en">EHS &amp; Risk Level</span><span class="lang-es" style="display:none">Seguridad y EHS</span></th>
+              <th><span class="lang-en">Technology / Product</span><span class="lang-es" style="display:none">Tecnología / Producto</span><span class="lang-de" style="display:none">Technologie / Produkt</span></th>
+              <th><span class="lang-en">Extrusion Performance</span><span class="lang-es" style="display:none">Rendimiento de Extrusión</span><span class="lang-de" style="display:none">Extrusionsleistung</span></th>
+              <th><span class="lang-en">Operational Cost</span><span class="lang-es" style="display:none">Costo de Operación</span><span class="lang-de" style="display:none">Betriebskosten</span></th>
+              <th><span class="lang-en">Profile &amp; Area Cleanliness</span><span class="lang-es" style="display:none">Limpieza de Perfil y Área</span><span class="lang-de" style="display:none">Profil- &amp; Bereichssauberkeit</span></th>
+              <th><span class="lang-en">EHS &amp; Risk Level</span><span class="lang-es" style="display:none">Seguridad y EHS</span><span class="lang-de" style="display:none">Sicherheit &amp; EHS-Niveau</span></th>
             </tr>
           </thead>
           <tbody id="product-tbody"></tbody>
         </table>
       </div>
-      <p class="table-note">● More dots = higher rating &nbsp;|&nbsp; Operational Cost: more dots = lower operational cost</p>
+      <p class="table-note">
+        <span class="lang-en">● More dots = higher rating &nbsp;|&nbsp; Operational Cost: more dots = lower operational cost</span>
+        <span class="lang-es" style="display:none">● Más puntos = mejor calificación &nbsp;|&nbsp; Costo de operación: más puntos = menor costo operativo</span>
+        <span class="lang-de" style="display:none">● Mehr Punkte = bessere Bewertung &nbsp;|&nbsp; Betriebskosten: mehr Punkte = geringere Betriebskosten</span>
+      </p>
     </div>
   </section>
 
   <!-- SECTION 8 · SOLUTION -->
   <section id="s-solution">
     <div class="section-inner">
-      <div class="eyebrow reveal"><span class="lang-en">The corrective action</span><span class="lang-es" style="display:none">Acción Correctiva</span></div>
-      <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">The Interlub Solution</span><span class="lang-es" style="display:none">La Solución de Lubricación</span><span class="dot">.</span></h2>
+      <div class="eyebrow reveal"><span class="lang-en">The corrective action</span><span class="lang-es" style="display:none">Acción Correctiva</span><span class="lang-de" style="display:none">Die Korrekturmaßnahme</span></div>
+      <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">The Interlub Solution</span><span class="lang-es" style="display:none">La Solución de Lubricación</span><span class="lang-de" style="display:none">Die Interlub-Lösung</span><span class="dot">.</span></h2>
       <div class="solution-grid">
         <div class="solution-left reveal reveal-delay-2">
           <p id="solution-text"></p>
@@ -3476,13 +3515,13 @@
               </svg>
             </div>
             <div>
-              <div class="ro3-label"><span class="lang-en">RO3 System</span><span class="lang-es" style="display:none">Sistema RO3</span></div>
+              <div class="ro3-label"><span class="lang-en">RO3 System</span><span class="lang-es" style="display:none">Sistema RO3</span><span class="lang-de" style="display:none">RO3-System</span></div>
               <div class="ro3-text" id="ro3-text"></div>
             </div>
           </div>
         </div>
         <div class="solution-image-slot reveal reveal-delay-3" id="product-image-slot">
-          <span class="lang-en">Product image</span><span class="lang-es" style="display:none">Imagen del producto</span>
+          <span class="lang-en">Product image</span><span class="lang-es" style="display:none">Imagen del producto</span><span class="lang-de" style="display:none">Produktbild</span>
         </div>
       </div>
     </div>
@@ -3493,16 +3532,17 @@
     <div class="section-inner">
       <div class="results-head">
         <div>
-          <div class="eyebrow reveal"><span class="lang-en">Audit outcomes</span><span class="lang-es" style="display:none">Resultados Auditados</span></div>
-          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Operational Results</span><span class="lang-es" style="display:none">Rendimiento Obtenido</span><span class="dot">.</span></h2>
+          <div class="eyebrow reveal"><span class="lang-en">Audit outcomes</span><span class="lang-es" style="display:none">Resultados Auditados</span><span class="lang-de" style="display:none">Auditergebnisse</span></div>
+          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Operational Results</span><span class="lang-es" style="display:none">Rendimiento Obtenido</span><span class="lang-de" style="display:none">Betriebsergebnisse</span><span class="dot">.</span></h2>
         </div>
         <p class="section-lead reveal reveal-delay-2">
           <span class="lang-en">Operational outcomes verified directly on-press by Interlub field engineers.</span>
           <span class="lang-es" style="display:none">Resultados operativos auditados directamente en prensa por el equipo de ingeniería de campo de Interlub.</span>
+          <span class="lang-de" style="display:none">Betriebsergebnisse direkt an der Presse von Interlub-Feldingenieuren verifiziert.</span>
         </p>
       </div>
       <div class="results-list reveal" id="results-list"></div>
-      <div class="eyebrow reveal" style="margin-bottom:20px;"><span class="lang-en">EHS &amp; Operations Value</span><span class="lang-es" style="display:none">Valor Agregado EHS y Operaciones</span></div>
+      <div class="eyebrow reveal" style="margin-bottom:20px;"><span class="lang-en">EHS &amp; Operations Value</span><span class="lang-es" style="display:none">Valor Agregado EHS y Operaciones</span><span class="lang-de" style="display:none">EHS- &amp; Betriebswert</span></div>
       <div class="benefits-grid reveal reveal-delay-1" id="benefits-grid"></div>
     </div>
   </section>
@@ -3544,26 +3584,29 @@
     <div class="cover-red-bar"></div>
 
     <div class="cover-content">
-      <img src="assets/Et expo 24.png" alt="ET Expo 24" style="height: 64px; margin-bottom: 24px;">
-      <div class="fw-tag"><span class="lang-en">Technical Framework · ET Expo 24</span><span class="lang-es" style="display:none">Marco Técnico · ET Expo 24</span></div>
+      <img src="assets/Et expo 24.png" alt="ET Expo 24" class="fw-cover-logo">
+      <div class="fw-tag"><span class="lang-en">Technical Framework · ET Expo 24</span><span class="lang-es" style="display:none">Marco Técnico · ET Expo 24</span><span class="lang-de" style="display:none">Technisches Framework · ET Expo 24</span></div>
       <h2 class="cover-headline">
         <span class="lang-en">Release Agent<br>Selection Framework</span>
         <span class="lang-es" style="display:none">Marco de Selección<br>de Agente Desmoldante</span>
+        <span class="lang-de" style="display:none">Trennmittel-<br>Auswahl-Framework</span>
         <span class="dot">.</span>
       </h2>
       <p class="cover-sub" style="color: rgba(255,255,255,0.7); max-width: 60ch; font-size: clamp(16px, 1.4vw, 19px); line-height: 1.65; margin-top: 18px;">
         <span class="lang-en">A rigorous evaluation comparing the industry's primary release agent technologies, engineered to help plant managers optimize OEE, EHS compliance, and cost-per-ton.</span>
         <span class="lang-es" style="display:none">Una evaluación técnica rigurosa que compara las principales tecnologías de desmoldeo, diseñada para ayudar a los gerentes de planta a optimizar la efectividad global de los equipos (OEE), el cumplimiento de EHS y el costo por tonelada.</span>
+        <span class="lang-de" style="display:none">Eine rigide technische Bewertung zum Vergleich der wichtigsten Trennmitteltechnologien der Industrie, entwickelt um Werksleitern bei der Optimierung von OEE, EHS-Konformität und Kosten pro Tonne zu helfen.</span>
       </p>
       <div class="cover-meta" style="color: rgba(255,255,255,0.4); font-size: 13px; font-family: var(--font-head); margin-top: 24px;">
         <span class="lang-en">Authors: Héctor Kelly, Miguel Preciado, Ricardo Ocaranza, Christopher Rivera &middot; Interlub Jalisco, México</span>
         <span class="lang-es" style="display:none">Autores: Héctor Kelly, Miguel Preciado, Ricardo Ocaranza, Christopher Rivera &middot; Interlub Jalisco, México</span>
+        <span class="lang-de" style="display:none">Autoren: Héctor Kelly, Miguel Preciado, Ricardo Ocaranza, Christopher Rivera &middot; Interlub Jalisco, Mexiko</span>
       </div>
     </div>
     
     <div class="scroll-hint">
       <div class="arrow"></div>
-      <span class="lang-en">Scroll</span><span class="lang-es" style="display:none">Deslizar</span>
+      <span class="lang-en">Scroll</span><span class="lang-es" style="display:none">Deslizar</span><span class="lang-de" style="display:none">Scrollen</span>
     </div>
   </section>
 
@@ -3572,12 +3615,13 @@
     <div class="section-inner">
       <div style="display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:end; margin-bottom: 44px;">
         <div>
-          <div class="eyebrow reveal"><span class="lang-en">Interactive tool</span><span class="lang-es" style="display:none">Herramienta interactiva</span></div>
-          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Priority customizer</span><span class="lang-es" style="display:none">Personalizador de prioridades</span><span class="dot">.</span></h2>
+          <div class="eyebrow reveal"><span class="lang-en">Interactive tool</span><span class="lang-es" style="display:none">Herramienta interactiva</span><span class="lang-de" style="display:none">Interaktives Werkzeug</span></div>
+          <h2 class="section-title reveal reveal-delay-1"><span class="lang-en">Priority customizer</span><span class="lang-es" style="display:none">Personalizador de prioridades</span><span class="lang-de" style="display:none">Prioritäten-Anpassung</span><span class="dot">.</span></h2>
         </div>
         <p class="section-lead reveal reveal-delay-2" style="margin-bottom:0; color: rgba(255,255,255,0.6);">
           <span class="lang-en">Adjust the sliders below to match your plant's operational focus. The system will dynamically calculate the weighted technical performance of each release technology and sort them accordingly.</span>
           <span class="lang-es" style="display:none">Ajusta los controles deslizantes a continuación para que coincidan con el enfoque operativo de tu planta. El sistema calculará dinámicamente el rendimiento técnico ponderado de cada tecnología de desmolde y las ordenará en consecuencia.</span>
+          <span class="lang-de" style="display:none">Passen Sie die Schieberegler unten an den betrieblichen Schwerpunkt Ihres Werks an. Das System berechnet dynamisch die gewichtete technische Leistung jeder Trennmitteltechnologie.</span>
         </p>
       </div>
 
@@ -3588,14 +3632,16 @@
             <h3 style="font-family:var(--font-head); font-weight:800; font-size:18px; color:var(--white);">
               <span class="lang-en">1. Weighted Plant Priorities</span>
               <span class="lang-es" style="display:none">1. Prioridades de la Planta Ponderadas</span>
+              <span class="lang-de" style="display:none">1. Gewichtete Werksprioritäten</span>
             </h3>
-            <span style="font-family:var(--font-head); font-size:11px; font-weight:800; text-transform:uppercase; color:var(--red); background:rgba(255,0,0,0.06); padding:4px 10px; border-radius:99px;" id="total-weight-badge"><span class="lang-en">Total: 100%</span><span class="lang-es" style="display:none">Total: 100%</span></span>
+            <span style="font-family:var(--font-head); font-size:11px; font-weight:800; text-transform:uppercase; color:var(--red); background:rgba(255,0,0,0.06); padding:4px 10px; border-radius:99px;" id="total-weight-badge"><span class="lang-en">Total: 100%</span><span class="lang-es" style="display:none">Total: 100%</span><span class="lang-de" style="display:none">Gesamt: 100%</span></span>
           </div>
 
           <div class="fw-slider-group">
             <div class="fw-slider-label">
               <span class="lang-en">Category 1: Total Cost of Ownership (TCO)<small>Product purchase cost and consumption volume efficiency</small></span>
               <span class="lang-es" style="display:none">Categoría 1: Costo Total de Propiedad (TCO)<small>Costo de adquisición y eficiencia en el volumen de consumo</small></span>
+              <span class="lang-de" style="display:none">Kategorie 1: Gesamtkosten der Anschaffung (TCO)<small>Produktpreis und Effizienz des Verbrauchsvolumens</small></span>
               <span class="weight-val" id="val-cost">25%</span>
             </div>
             <div class="fw-slider-input-wrap">
@@ -3607,6 +3653,7 @@
             <div class="fw-slider-label">
               <span class="lang-en">Category 2: EHS &amp; Operational Risk<small>Flash point hazards, inhalation risks, VOC emissions, and floor slip prevention</small></span>
               <span class="lang-es" style="display:none">Categoría 2: EHS y Riesgo Operacional<small>Riesgos de inflamabilidad, inhalación de polvos, emisiones COV y derrames en piso</small></span>
+              <span class="lang-de" style="display:none">Kategorie 2: EHS &amp; Betriebsrisiko<small>Entflammbarkeit, Staub-Inhalation, VOC-Emissionen und Rutschgefahren</small></span>
               <span class="weight-val" id="val-safety">25%</span>
             </div>
             <div class="fw-slider-input-wrap">
@@ -3618,6 +3665,7 @@
             <div class="fw-slider-label">
               <span class="lang-en">Category 3: Productivity &amp; Extrusion OEE<small>Dummy block release performance, profile surface quality, and hot log shear blade protection</small></span>
               <span class="lang-es" style="display:none">Categoría 3: Productividad y OEE de Extrusión<small>Rendimiento del dummy block, calidad superficial del perfil y protección de la cizalla en caliente</small></span>
+              <span class="lang-de" style="display:none">Kategorie 3: Produktivität &amp; Extrusions-OEE<small>Entformungsleistung am Stempel, Oberflächenqualität und Scherblattschutz</small></span>
               <span class="weight-val" id="val-productivity">25%</span>
             </div>
             <div class="fw-slider-input-wrap">
@@ -3629,6 +3677,7 @@
             <div class="fw-slider-label">
               <span class="lang-en">Category 4: Maintenance &amp; Equipment Reliability<small>Nozzle clogging resistance, cleanup downtime, and application point versatility</small></span>
               <span class="lang-es" style="display:none">Categoría 4: Mantenimiento y Confiabilidad de Equipos<small>Resistencia al taponamiento de boquillas, tiempos de limpieza y versatilidad de puntos</small></span>
+              <span class="lang-de" style="display:none">Kategorie 4: Wartung &amp; Anlagenzuverlässigkeit<small>Beständigkeit gegen Düsenverstopfung, Reinigungszeiten und Vielseitigkeit</small></span>
               <span class="weight-val" id="val-easeOfUse">25%</span>
             </div>
             <div class="fw-slider-input-wrap">
@@ -3642,7 +3691,8 @@
           <div class="fw-rank-title">
             <span class="lang-en">2. Weighted Recommendation (OEE Fit)</span>
             <span class="lang-es" style="display:none">2. Recomendación Técnica Ponderada</span>
-            <button class="fw-reset-btn" id="fw-reset-btn"><span class="lang-en">Restore Defaults</span><span class="lang-es" style="display:none">Restablecer Valores</span></button>
+            <span class="lang-de" style="display:none">2. Gewichtete Empfehlung (OEE-Passung)</span>
+            <button class="fw-reset-btn" id="fw-reset-btn"><span class="lang-en">Restore Defaults</span><span class="lang-es" style="display:none">Restablecer Valores</span><span class="lang-de" style="display:none">Zurücksetzen</span></button>
           </div>
 
           <div class="fw-rank-list" id="fw-rank-list">
@@ -3661,10 +3711,12 @@
           <div class="eyebrow reveal">
             <span class="lang-en">Whitepaper Intelligence</span>
             <span class="lang-es" style="display:none">Información del Whitepaper</span>
+            <span class="lang-de" style="display:none">Whitepaper-Erkenntnisse</span>
           </div>
           <h2 class="section-title reveal reveal-delay-1">
             <span class="lang-en">Technology Explorer</span>
             <span class="lang-es" style="display:none">Explorador de Tecnologías</span>
+            <span class="lang-de" style="display:none">Technologie-Explorer</span>
             <span class="dot">.</span>
           </h2>
         </div>
@@ -3674,6 +3726,9 @@
         <p class="section-lead reveal reveal-delay-2 lang-es" style="display:none; margin-bottom:0; color: rgba(255,255,255,0.6);">
           Selecciona una tecnología de desmoldeo a continuación para explorar sus especificaciones técnicas, ventajas, limitaciones y calificaciones de rendimiento extraídas directamente del whitepaper de la ET Expo 24.
         </p>
+        <p class="section-lead reveal reveal-delay-2 lang-de" style="display:none; margin-bottom:0; color: rgba(255,255,255,0.6);">
+          Wählen Sie unten eine Trennmitteltechnologie aus, um deren technische Spezifikationen, Vor- und Nachteile sowie Leistungsbewertungen aus dem ET Expo 24 Whitepaper zu erkunden.
+        </p>
       </div>
 
       <!-- Interactive Tabs -->
@@ -3682,22 +3737,27 @@
         <button class="fw-explorer-tab" data-tech="acetylene">
           <span class="lang-en">Acetylene Flame</span>
           <span class="lang-es" style="display:none">Flama de Acetileno</span>
+          <span class="lang-de" style="display:none">Acetylenflamme</span>
         </button>
         <button class="fw-explorer-tab" data-tech="bn_suspension">
           <span class="lang-en">BN Suspension</span>
           <span class="lang-es" style="display:none">Suspensión de NB</span>
+          <span class="lang-de" style="display:none">BN-Suspension</span>
         </button>
         <button class="fw-explorer-tab" data-tech="bn_powder">
           <span class="lang-en">BN Powder</span>
           <span class="lang-es" style="display:none">Polvo de NB</span>
+          <span class="lang-de" style="display:none">BN-Pulver</span>
         </button>
         <button class="fw-explorer-tab" data-tech="graphite_suspension">
           <span class="lang-en">Graphite Suspension</span>
           <span class="lang-es" style="display:none">Suspensión de Grafito</span>
+          <span class="lang-de" style="display:none">Graphit-Suspension</span>
         </button>
         <button class="fw-explorer-tab" data-tech="sticks">
           <span class="lang-en">Sticks &amp; Blocks</span>
           <span class="lang-es" style="display:none">Crayones y Bloques</span>
+          <span class="lang-de" style="display:none">Stifte &amp; Blöcke</span>
         </button>
       </div>
 
@@ -3706,12 +3766,15 @@
         <!-- Interforge KI-C -->
         <div class="fw-explorer-card active" id="fw-card-interforge">
           <div class="fw-exp-left">
-            <h3 class="fw-exp-tech-title">Interforge KI-C <span class="badge interlub"><span class="lang-en">Premium Solution</span><span class="lang-es" style="display:none">Solución Premium</span></span></h3>
+            <h3 class="fw-exp-tech-title">Interforge KI-C <span class="badge interlub"><span class="lang-en">Premium Solution</span><span class="lang-es" style="display:none">Solución Premium</span><span class="lang-de" style="display:none">Premium-Lösung</span></span></h3>
             <p class="fw-exp-desc lang-en">
               Released agents that are graphite-free, being water-based, the environmental impact is minimal, keeping the operators and the press electrical equipment safe. Because of its composition of sodium-based acids and salts that are water-soluble, it generates no toxic fumes and no slippery surfaces that could endanger operator's physical integrity.
             </p>
             <p class="fw-exp-desc lang-es" style="display:none">
               Agentes desmoldantes libres de grafito. Al ser base agua, el impacto ambiental es mínimo, manteniendo seguros a los operadores y al equipo eléctrico de la prensa. Debido a su composición de sales y ácidos a base de sodio solubles en agua, no genera humos tóxicos ni superficies resbaladizas que puedan poner en peligro la integridad física del operador.
+            </p>
+            <p class="fw-exp-desc lang-de" style="display:none">
+              Graphitfreie Trennmittel auf Wasserbasis mit minimaler Umweltbelastung. Schützt Bediener und elektrische Komponenten der Presse. Die wasserlösliche Zusammensetzung auf Natriumsalzbasis erzeugt keine toxischen Dämpfe und keine rutschigen Oberflächen.
             </p>
             <p class="fw-exp-desc lang-en" style="font-size: 13.5px; opacity: 0.85;">
               The dosage method is recommended via automatic spraying systems (like the RO3 system). This ensures that the dosage can be precisely controlled and held constant at every application cycle, reducing overall release agent consumption.
@@ -3719,9 +3782,12 @@
             <p class="fw-exp-desc lang-es" style="display:none; font-size: 13.5px; opacity: 0.85;">
               Se recomienda el método de dosificación mediante sistemas de pulverización automática (como el sistema RO3). Esto asegura que la dosificación se pueda controlar con precisión y mantener constante en cada ciclo de aplicación, reduciendo el consumo general del agente desmoldante.
             </p>
+            <p class="fw-exp-desc lang-de" style="display:none; font-size: 13.5px; opacity: 0.85;">
+              Die automatische Sprühdosierung (z.B. mit dem RO3-System) wird empfohlen. Dies gewährleistet eine präzise Steuerung und gleichbleibende Mengen in jedem Applikationszyklus, was den Gesamtverbrauch reduziert.
+            </p>
             <div class="fw-exp-proscons">
               <div>
-                <h4 class="fw-exp-list-title pro"><span class="lang-en">✓ Key Advantages</span><span class="lang-es" style="display:none">✓ Ventajas Clave</span></h4>
+                <h4 class="fw-exp-list-title pro"><span class="lang-en">✓ Key Advantages</span><span class="lang-es" style="display:none">✓ Ventajas Clave</span><span class="lang-de" style="display:none">✓ Hauptvorteile</span></h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Water-based &amp; graphite-free</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Non-flammable (0% fire risk)</li>
@@ -3734,9 +3800,15 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Sin humos tóxicos ni polvo resbaladizo</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Dosificación 100% automatizada (RO3)</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Wasserbasiert &amp; graphitfrei</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Nicht brennbar (0% Brandrisiko)</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Keine toxischen Dämpfe oder Staub</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>100% automatische Dosierung (RO3)</li>
+                </ul>
               </div>
               <div>
-                <h4 class="fw-exp-list-title con"><span class="lang-en">✗ Constraints</span><span class="lang-es" style="display:none">✗ Limitaciones</span></h4>
+                <h4 class="fw-exp-list-title con"><span class="lang-en">✗ Constraints</span><span class="lang-es" style="display:none">✗ Limitaciones</span><span class="lang-de" style="display:none">✗ Einschränkungen</span></h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Requires automatic spray setup</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Higher upfront implementation</li>
@@ -3745,30 +3817,34 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Requiere sistema de pulverización automática</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Mayor inversión inicial de instalación</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Erfordert automatisches Sprühsystem</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Höhere initiale Investition</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="fw-exp-right">
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Safety &amp; Environment <span class="val">Excellent (5/5)</span></span><span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Excelente (5/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Safety &amp; Environment <span class="val">Excellent (5/5)</span></span><span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Excelente (5/5)</span></span><span class="lang-de" style="display:none">Sicherheit &amp; Umwelt <span class="val">Ausgezeichnet (5/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div>
               </div>
             </div>
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Productivity &amp; Quality <span class="val">Maximum (5/5)</span></span><span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Máximo (5/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Productivity &amp; Quality <span class="val">Maximum (5/5)</span></span><span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Máximo (5/5)</span></span><span class="lang-de" style="display:none">Produktivität &amp; Qualität <span class="val">Maximal (5/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div>
               </div>
             </div>
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Consumption Efficiency <span class="val">Low Consumption (5/5)</span></span><span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Bajo Consumo (5/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Consumption Efficiency <span class="val">Low Consumption (5/5)</span></span><span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Bajo Consumo (5/5)</span></span><span class="lang-de" style="display:none">Verbrauchseffizienz <span class="val">Geringer Verbrauch (5/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div>
               </div>
             </div>
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Ease of Use <span class="val">Exceptional (5/5)</span></span><span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Excepcional (5/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Ease of Use <span class="val">Exceptional (5/5)</span></span><span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Excepcional (5/5)</span></span><span class="lang-de" style="display:none">Bedienbarkeit <span class="val">Außergewöhnlich (5/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div><div class="fw-exp-stat-dot active"></div>
               </div>
@@ -3779,16 +3855,19 @@
         <!-- Acetylene Flame -->
         <div class="fw-explorer-card" id="fw-card-acetylene">
           <div class="fw-exp-left">
-            <h3 class="fw-exp-tech-title"><span class="lang-en">Acetylene Flame</span><span class="lang-es" style="display:none">Flama de Acetileno</span> <span class="badge competitor"><span class="lang-en">Soot coating</span><span class="lang-es" style="display:none">Capa de hollín</span></span></h3>
+            <h3 class="fw-exp-tech-title"><span class="lang-en">Acetylene Flame</span><span class="lang-es" style="display:none">Flama de Acetileno</span><span class="lang-de" style="display:none">Acetylenflamme</span> <span class="badge competitor"><span class="lang-en">Soot coating</span><span class="lang-es" style="display:none">Capa de hollín</span><span class="lang-de" style="display:none">Rußüberzug</span></span></h3>
             <p class="fw-exp-desc lang-en">
               The process involves initiating the combustion of acetylene in front of a billet, resulting in the creation of carbon black. This carbon black serves as a release agent during the extrusion process. The procedure is automated, with the flame igniting as the billet transitions from the preheating furnace to the extrusion press.
             </p>
             <p class="fw-exp-desc lang-es" style="display:none">
               El proceso consiste en iniciar la combustión de acetileno frente al tocho, lo que da como resultado la creación de negro de humo. Este negro de humo sirve como agente desmoldante durante el proceso de extrusión. El procedimiento está automatizado y la flama se enciende a medida que el tocho pasa del horno de precalentamiento a la prensa de extrusión.
             </p>
+            <p class="fw-exp-desc lang-de" style="display:none">
+              Der Prozess verbrennt Acetylen vor dem Bolzen, um Ruß (Carbon Black) als Trennmittel zu erzeugen. Der Vorgang ist automatisiert, wobei die Flamme beim Übergang vom Vorwärmofen zur Presse zündet.
+            </p>
             <div class="fw-exp-proscons">
               <div>
-                <h4 class="fw-exp-list-title pro"><span class="lang-en">✓ Key Advantages</span><span class="lang-es" style="display:none">✓ Ventajas Clave</span></h4>
+                <h4 class="fw-exp-list-title pro"><span class="lang-en">✓ Key Advantages</span><span class="lang-es" style="display:none">✓ Ventajas Clave</span><span class="lang-de" style="display:none">✓ Hauptvorteile</span></h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Fully automated process</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Cheap raw material cost</li>
@@ -3797,9 +3876,13 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Proceso totalmente automatizado</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Bajo costo de materia prima</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Vollautomatischer Prozess</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Günstige Rohstoffkosten</li>
+                </ul>
               </div>
               <div>
-                <h4 class="fw-exp-list-title con"><span class="lang-en">✗ Constraints</span><span class="lang-es" style="display:none">✗ Limitaciones</span></h4>
+                <h4 class="fw-exp-list-title con"><span class="lang-en">✗ Constraints</span><span class="lang-es" style="display:none">✗ Limitaciones</span><span class="lang-de" style="display:none">✗ Einschränkungen</span></h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>100nm soot inhalation risk</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Dark marks prevent anodizing</li>
@@ -3812,30 +3895,36 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Peligros de incendio por flama abierta</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Requiere recubrimiento separado por tocho</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>100nm Ruß-Inhalationsrisiko</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Dunkle Flecken verhindern Eloxieren</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Brandgefahr durch offene Flamme</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Erfordert separaten Überzug pro Bolzen</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="fw-exp-right">
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Safety &amp; Environment <span class="val">Critical (1/5)</span></span><span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Crítico (1/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Safety &amp; Environment <span class="val">Critical (1/5)</span></span><span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Crítico (1/5)</span></span><span class="lang-de" style="display:none">Sicherheit &amp; Umwelt <span class="val">Kritisch (1/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
               </div>
             </div>
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Productivity &amp; Quality <span class="val">Medium (3/5)</span></span><span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Medio (3/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Productivity &amp; Quality <span class="val">Medium (3/5)</span></span><span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Medio (3/5)</span></span><span class="lang-de" style="display:none">Produktivität &amp; Qualität <span class="val">Mittel (3/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
               </div>
             </div>
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Consumption Efficiency <span class="val">Low Consumption (5/5)</span></span><span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Bajo Consumo (5/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Consumption Efficiency <span class="val">Low Consumption (5/5)</span></span><span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Bajo Consumo (5/5)</span></span><span class="lang-de" style="display:none">Verbrauchseffizienz <span class="val">Geringer Verbrauch (5/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div>
               </div>
             </div>
             <div class="fw-exp-stat-row">
-              <div class="fw-exp-stat-label"><span class="lang-en">Ease of Use <span class="val">Difficult (2/5)</span></span><span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Difícil (2/5)</span></span></div>
+              <div class="fw-exp-stat-label"><span class="lang-en">Ease of Use <span class="val">Difficult (2/5)</span></span><span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Difícil (2/5)</span></span><span class="lang-de" style="display:none">Bedienbarkeit <span class="val">Schwierig (2/5)</span></span></div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
               </div>
@@ -3849,9 +3938,11 @@
             <h3 class="fw-exp-tech-title">
               <span class="lang-en">Boron Nitride Suspension</span>
               <span class="lang-es" style="display:none">Suspensión de Nitruro de Boro</span>
+              <span class="lang-de" style="display:none">Bornitrid-Suspension</span>
               <span class="badge competitor">
                 <span class="lang-en">Liquid BN</span>
                 <span class="lang-es" style="display:none">NB Líquido</span>
+                <span class="lang-de" style="display:none">Flüssiges BN</span>
               </span>
             </h3>
             <p class="fw-exp-desc lang-en">
@@ -3860,11 +3951,15 @@
             <p class="fw-exp-desc lang-es" style="display:none">
               Suspensión base agua de Nitruro de Boro. El NB exhibe una fuerte adherencia a altas temperaturas. Recubrir un tocho con NB asegura que la capa en contacto con el dummy se adhiera, reduciendo la frecuencia de aplicación a cada tercer o quinto tocho.
             </p>
+            <p class="fw-exp-desc lang-de" style="display:none">
+              Wasserbasierte Bornitrid-Suspension. BN zeigt starke Haftung bei hohen Temperaturen. Das Beschichten eines Bolzens mit BN reduziert die Häufigkeit des Nachbeschichtens auf jeden 3. bis 5. Bolzen.
+            </p>
             <div class="fw-exp-proscons">
               <div>
                 <h4 class="fw-exp-list-title pro">
                   <span class="lang-en">✓ Key Advantages</span>
                   <span class="lang-es" style="display:none">✓ Ventajas Clave</span>
+                  <span class="lang-de" style="display:none">✓ Hauptvorteile</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Strong adhesion at high temp</li>
@@ -3876,11 +3971,17 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Soluble en agua, no inflamable</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Aplicación cada 3 a 5 tochos</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Starke Haftung bei hohen Temp.</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Wasserlöslich, nicht brennbar</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Beschichtung nur alle 3 bis 5 Bolzen</li>
+                </ul>
               </div>
               <div>
                 <h4 class="fw-exp-list-title con">
                   <span class="lang-en">✗ Constraints</span>
                   <span class="lang-es" style="display:none">✗ Limitaciones</span>
+                  <span class="lang-de" style="display:none">✗ Einschränkungen</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Stabilizers can generate blisters</li>
@@ -3892,6 +3993,11 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Alta viscosidad (mayor vol. por disparo)</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Requiere supervisión manual</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Stabilisatoren können Blasen erzeugen</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Hohe Viskosität (höhere Menge/Schuss)</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Erfordert manuelle Überwachung</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -3900,6 +4006,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Safety &amp; Environment <span class="val">Good (3.7/5)</span></span>
                 <span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Bueno (3.7/5)</span></span>
+                <span class="lang-de" style="display:none">Sicherheit &amp; Umwelt <span class="val">Gut (3.7/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div>
@@ -3909,6 +4016,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Productivity &amp; Quality <span class="val">Good (3.7/5)</span></span>
                 <span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Bueno (3.7/5)</span></span>
+                <span class="lang-de" style="display:none">Produktivität &amp; Qualität <span class="val">Gut (3.7/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div>
@@ -3918,6 +4026,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Consumption Efficiency <span class="val">Medium (4/5)</span></span>
                 <span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Medio (4/5)</span></span>
+                <span class="lang-de" style="display:none">Verbrauchseffizienz <span class="val">Mittel (4/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div>
@@ -3927,6 +4036,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Ease of Use <span class="val">Moderate (3/5)</span></span>
                 <span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Moderado (3/5)</span></span>
+                <span class="lang-de" style="display:none">Bedienbarkeit <span class="val">Moderat (3/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -3941,9 +4051,11 @@
             <h3 class="fw-exp-tech-title">
               <span class="lang-en">Boron Nitride Powder</span>
               <span class="lang-es" style="display:none">Polvo de Nitruro de Boro</span>
+              <span class="lang-de" style="display:none">Bornitrid-Pulver</span>
               <span class="badge competitor">
                 <span class="lang-en">Dry Powder</span>
                 <span class="lang-es" style="display:none">Polvo Seco</span>
+                <span class="lang-de" style="display:none">Trockenes Pulver</span>
               </span>
             </h3>
             <p class="fw-exp-desc lang-en">
@@ -3952,11 +4064,15 @@
             <p class="fw-exp-desc lang-es" style="display:none">
               Pulverización de polvo seco de Nitruro de Boro. Requiere carga electrostática en partículas finamente molidas para su adherencia. Manejar la dispersión aérea es extremadamente difícil ya que las partículas finas flotan a largas distancias.
             </p>
+            <p class="fw-exp-desc lang-de" style="display:none">
+              Sprühen von trockenem Bornitrid-Pulver. Benötigt elektrostatische Aufladung feiner Partikel zur Haftung. Die Kontrolle der Staubausbreitung ist extrem schwierig, da feine Partikel weit schweben.
+            </p>
             <div class="fw-exp-proscons">
               <div>
                 <h4 class="fw-exp-list-title pro">
                   <span class="lang-en">✓ Key Advantages</span>
                   <span class="lang-es" style="display:none">✓ Ventajas Clave</span>
+                  <span class="lang-de" style="display:none">✓ Hauptvorteile</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Strong adhesion at high temp</li>
@@ -3968,11 +4084,17 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Área de trabajo limpia y seca</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Cero inflamabilidad / riesgo de incendio</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Starke Haftung bei hohen Temp.</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Sauberer, trockener Arbeitsbereich</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Keine Entflammbarkeit / Brandgefahr</li>
+                </ul>
               </div>
               <div>
                 <h4 class="fw-exp-list-title con">
                   <span class="lang-en">✗ Constraints</span>
                   <span class="lang-es" style="display:none">✗ Limitaciones</span>
+                  <span class="lang-de" style="display:none">✗ Einschränkungen</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Highest material cost ($/kg)</li>
@@ -3986,6 +4108,12 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Frecuente taponamiento de boquillas</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Requiere exclusivamente aire seco o N2</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Höchste Materialkosten ($/kg)</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Staub-Inhalationsrisiko für Bediener</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Starkes Verstopfen der Sprühdüsen</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Benötigt ausschließlich trockene Luft oder N2</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -3994,6 +4122,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Safety &amp; Environment <span class="val">High Risk (4.2/5)</span></span>
                 <span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Riesgo Alto (4.2/5)</span></span>
+                <span class="lang-de" style="display:none">Sicherheit &amp; Umwelt <span class="val">Hohes Risiko (4.2/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div>
@@ -4003,6 +4132,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Productivity &amp; Quality <span class="val">Good (3.7/5)</span></span>
                 <span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Bueno (3.7/5)</span></span>
+                <span class="lang-de" style="display:none">Produktivität &amp; Qualität <span class="val">Gut (3.7/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div>
@@ -4012,6 +4142,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Consumption Efficiency <span class="val">Medium (3/5)</span></span>
                 <span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Medio (3/5)</span></span>
+                <span class="lang-de" style="display:none">Verbrauchseffizienz <span class="val">Mittel (3/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -4021,6 +4152,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Ease of Use <span class="val">Difficult (1.7/5)</span></span>
                 <span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Difícil (1.7/5)</span></span>
+                <span class="lang-de" style="display:none">Bedienbarkeit <span class="val">Schwierig (1.7/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -4035,9 +4167,11 @@
             <h3 class="fw-exp-tech-title">
               <span class="lang-en">Graphite Suspension</span>
               <span class="lang-es" style="display:none">Suspensión Graficada</span>
+              <span class="lang-de" style="display:none">Graphit-Suspension</span>
               <span class="badge competitor">
                 <span class="lang-en">Conductive Paste</span>
                 <span class="lang-es" style="display:none">Pasta Conductora</span>
+                <span class="lang-de" style="display:none">Leitfähige Paste</span>
               </span>
             </h3>
             <p class="fw-exp-desc lang-en">
@@ -4046,11 +4180,15 @@
             <p class="fw-exp-desc lang-es" style="display:none">
               Lubricantes formulados con grafito y aglutinantes orgánicos. El vehículo orgánico inflamable se enciende al contacto con las herramientas calientes, generando humo masivo y hollín que pueden provocar poros o ampollas.
             </p>
+            <p class="fw-exp-desc lang-de" style="display:none">
+              Schmierstoffe mit Graphit und organischen Bindemitteln. Der brennbare organische Träger entzündet sich bei Kontakt mit heißen Werkzeugen und erzeugt starken Rauch und Ruß, was zu Blasenbildung führen kann.
+            </p>
             <div class="fw-exp-proscons">
               <div>
                 <h4 class="fw-exp-list-title pro">
                   <span class="lang-en">✓ Key Advantages</span>
                   <span class="lang-es" style="display:none">✓ Ventajas Clave</span>
+                  <span class="lang-de" style="display:none">✓ Hauptvorteile</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>High thermal tool protection</li>
@@ -4060,11 +4198,16 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Alta protección térmica de herramentales</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Excelente rendimiento de desmoldeo</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Hoher thermischer Werkzeugschutz</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Hervorragende Trennleistung</li>
+                </ul>
               </div>
               <div>
                 <h4 class="fw-exp-list-title con">
                   <span class="lang-en">✗ Constraints</span>
                   <span class="lang-es" style="display:none">✗ Limitaciones</span>
+                  <span class="lang-de" style="display:none">✗ Einschränkungen</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Messy workspace (grease stains)</li>
@@ -4078,6 +4221,12 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Conductor (riesgo de cortocircuito eléctrico)</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Ensucia la salida de cizalla (inutilizable ahí)</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Verschmutzter Arbeitsbereich (Fettflecken)</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Verbrennungsrauch erzeugt Blasen</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Elektrisch leitfähig (Kurzschlussrisiko)</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Verschmutzt Warmblockscheren</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -4086,6 +4235,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Safety &amp; Environment <span class="val">High Risk (3.5/5)</span></span>
                 <span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Riesgo Alto (3.5/5)</span></span>
+                <span class="lang-de" style="display:none">Sicherheit &amp; Umwelt <span class="val">Hohes Risiko (3.5/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div>
@@ -4095,6 +4245,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Productivity &amp; Quality <span class="val">Maximum (5/5)</span></span>
                 <span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Máximo (5/5)</span></span>
+                <span class="lang-de" style="display:none">Produktivität &amp; Qualität <span class="val">Maximal (5/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div>
@@ -4104,6 +4255,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Consumption Efficiency <span class="val">Medium (4/5)</span></span>
                 <span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Medio (4/5)</span></span>
+                <span class="lang-de" style="display:none">Verbrauchseffizienz <span class="val">Mittel (4/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div>
@@ -4113,6 +4265,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Ease of Use <span class="val">Difficult (3/5)</span></span>
                 <span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Difícil (3/5)</span></span>
+                <span class="lang-de" style="display:none">Bedienbarkeit <span class="val">Schwierig (3/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -4127,9 +4280,11 @@
             <h3 class="fw-exp-tech-title">
               <span class="lang-en">Sticks &amp; Blocks</span>
               <span class="lang-es" style="display:none">Crayones y Bloques</span>
+              <span class="lang-de" style="display:none">Stifte &amp; Blöcke</span>
               <span class="badge competitor">
                 <span class="lang-en">Solid Lubricant</span>
                 <span class="lang-es" style="display:none">Lubricante Sólido</span>
+                <span class="lang-de" style="display:none">Festschmierstoff</span>
               </span>
             </h3>
             <p class="fw-exp-desc lang-en">
@@ -4138,11 +4293,15 @@
             <p class="fw-exp-desc lang-es" style="display:none">
               Barras sólidas de grafito o Nitruro de Boro aplicadas manualmente al dummy o tocho. Aunque son económicas de adquirir, poseen el peor control general y el mayor riesgo de seguridad en plantas de extrusión.
             </p>
+            <p class="fw-exp-desc lang-de" style="display:none">
+              Feste Graphit- oder Bornitrid-Stifte, die manuell auf den Stempel oder Bolzen aufgetragen werden. Günstig in der Anschaffung, aber mit der schlechtesten Prozesskontrolle und dem höchsten Sicherheitsrisiko.
+            </p>
             <div class="fw-exp-proscons">
               <div>
                 <h4 class="fw-exp-list-title pro">
                   <span class="lang-en">✓ Key Advantages</span>
                   <span class="lang-es" style="display:none">✓ Ventajas Clave</span>
+                  <span class="lang-de" style="display:none">✓ Hauptvorteile</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Extremely low product cost</li>
@@ -4152,11 +4311,16 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Costo de producto extremadamente bajo</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Cero costo de inversión en sistemas</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Extrem niedrige Produktkosten</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3bb19b" stroke-width="3" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>Null Systeminvestition</li>
+                </ul>
               </div>
               <div>
                 <h4 class="fw-exp-list-title con">
                   <span class="lang-en">✗ Constraints</span>
                   <span class="lang-es" style="display:none">✗ Limitaciones</span>
+                  <span class="lang-de" style="display:none">✗ Einschränkungen</span>
                 </h4>
                 <ul class="fw-exp-bullets lang-en">
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Highly dangerous manual application</li>
@@ -4170,6 +4334,12 @@
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>La aplicación en exceso genera desperdicio (scrap)</li>
                   <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Área de trabajo sucia, altos COVs</li>
                 </ul>
+                <ul class="fw-exp-bullets lang-de" style="display:none">
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Hochgefährliche manuelle Applikation</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Extremes Verbrennungsrisiko an heißen Teilen</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Übermäßige Applikation erzeugt Ausschuss</li>
+                  <li class="fw-exp-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="#ff0000" stroke-width="3" width="12" height="12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Verschmutzter Arbeitsbereich, hohe VOCs</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -4178,6 +4348,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Safety &amp; Environment <span class="val">Dangerous (1.7/5)</span></span>
                 <span class="lang-es" style="display:none">Seguridad y M.A. <span class="val">Peligroso (1.7/5)</span></span>
+                <span class="lang-de" style="display:none">Sicherheit &amp; Umwelt <span class="val">Gefährlich (1.7/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -4187,6 +4358,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Productivity &amp; Quality <span class="val">Low (1.7/5)</span></span>
                 <span class="lang-es" style="display:none">Productividad y Calidad <span class="val">Bajo (1.7/5)</span></span>
+                <span class="lang-de" style="display:none">Produktivität &amp; Qualität <span class="val">Niedrig (1.7/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -4196,6 +4368,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Consumption Efficiency <span class="val">Very High Consumption (1/5)</span></span>
                 <span class="lang-es" style="display:none">Eficiencia de Consumo <span class="val">Consumo Muy Alto (1/5)</span></span>
+                <span class="lang-de" style="display:none">Verbrauchseffizienz <span class="val">Sehr hoher Verbrauch (1/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -4205,6 +4378,7 @@
               <div class="fw-exp-stat-label">
                 <span class="lang-en">Ease of Use <span class="val">Manual / Messy (2.7/5)</span></span>
                 <span class="lang-es" style="display:none">Facilidad de Uso <span class="val">Manual / Sucio (2.7/5)</span></span>
+                <span class="lang-de" style="display:none">Bedienbarkeit <span class="val">Manuell / Verschmutzt (2.7/5)</span></span>
               </div>
               <div class="fw-exp-stat-dots">
                 <div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot active competitor"></div><div class="fw-exp-stat-dot"></div><div class="fw-exp-stat-dot"></div>
@@ -4224,10 +4398,12 @@
           <div class="eyebrow reveal">
             <span class="lang-en">Detailed evaluation</span>
             <span class="lang-es" style="display:none">Evaluación detallada</span>
+            <span class="lang-de" style="display:none">Detaillierte Bewertung</span>
           </div>
           <h2 class="section-title reveal reveal-delay-1">
             <span class="lang-en">Parameter Matrix</span>
             <span class="lang-es" style="display:none">Matriz de Parámetros</span>
+            <span class="lang-de" style="display:none">Parameter-Matrix</span>
             <span class="dot">.</span>
           </h2>
         </div>
@@ -4236,6 +4412,9 @@
         </p>
         <p class="section-lead reveal reveal-delay-2 lang-es" style="display:none; margin-bottom:0;">
           Comparación directa frente a frente de 14 parámetros entre las seis tecnologías de agentes desmoldantes. Calificado en una escala rigurosa del 1 (peor) al 5 (mejor).
+        </p>
+        <p class="section-lead reveal reveal-delay-2 lang-de" style="display:none; margin-bottom:0;">
+          Direkter Vergleich von 14 Parametern für die sechs Trennmitteltechnologien. Bewertet auf einer Skala von 1 (schlechteste) bis 5 (beste).
         </p>
       </div>
 
@@ -4246,6 +4425,7 @@
               <th>
                 <span class="lang-en">Evaluation Parameter</span>
                 <span class="lang-es" style="display:none">Parámetro de Evaluación</span>
+                <span class="lang-de" style="display:none">Bewertungsparameter</span>
               </th>
               <!-- populated by JS -->
             </tr>
@@ -4261,6 +4441,9 @@
       <p class="table-note lang-es" style="display:none; margin-top:20px; color:var(--gray-5); font-family:var(--font-head); font-size:12px;">
         ● Más puntos = mayor calificación (1 a 5 puntos) &nbsp;|&nbsp; Costo y Consumo: más puntos = más económico (menor costo/volumen)
       </p>
+      <p class="table-note lang-de" style="display:none; margin-top:20px; color:var(--gray-5); font-family:var(--font-head); font-size:12px;">
+        ● Mehr Punkte = bessere Bewertung (1 bis 5 Punkte) &nbsp;|&nbsp; Kosten &amp; Verbrauch: mehr Punkte = wirtschaftlicher (geringere Kosten/Menge)
+      </p>
     </div>
   </section>
 
@@ -4272,10 +4455,12 @@
           <div class="eyebrow reveal">
             <span class="lang-en">R&amp;D Insights</span>
             <span class="lang-es" style="display:none">Perspectivas de I+D</span>
+            <span class="lang-de" style="display:none">F&amp;E-Erkenntnisse</span>
           </div>
           <h2 class="section-title reveal reveal-delay-1">
             <span class="lang-en">Research Observations</span>
             <span class="lang-es" style="display:none">Observaciones de Investigación</span>
+            <span class="lang-de" style="display:none">Forschungsbeobachtungen</span>
             <span class="dot">.</span>
           </h2>
         </div>
@@ -4284,6 +4469,9 @@
         </p>
         <p class="section-lead reveal reveal-delay-2 lang-es" style="display:none; margin-bottom:0;">
           Anotaciones técnicas y hallazgos de campo sobre comportamientos de aplicación, causas de defectos y desafíos de mantenimiento.
+        </p>
+        <p class="section-lead reveal reveal-delay-2 lang-de" style="display:none; margin-bottom:0;">
+          Technische Anmerkungen und Feldbeobachtungen zum Anwendungsverhalten, zu Defektursachen und Wartungsherausforderungen.
         </p>
       </div>
 
@@ -4305,7 +4493,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px; height:13px; margin-right:4px;">
             <polyline points="15 18 9 12 15 6"/>
           </svg>
-          All Cases
+          <span class="lang-en">All Cases</span><span class="lang-es" style="display:none">Todos los Casos</span><span class="lang-de" style="display:none">Alle Fälle</span>
         </button>
       </div>
       <div style="text-align:right;">
@@ -6060,24 +6248,24 @@ window.frameworkData = frameworkData;
 
 const frameworkDataEs = {
   categories: [
-    { id: "cost", name: "Categoría 1 - Costo", weight: 25, parameters: ["1.1", "1.2"] },
-    { id: "safety", name: "Categoría 2 - Seguridad y Medio Ambiente", weight: 25, parameters: ["2.1", "2.2", "2.3", "2.4"] },
-    { id: "productivity", name: "Categoría 3 - Productividad y Rendimiento", weight: 25, parameters: ["3.1", "3.2", "3.3"] },
-    { id: "easeOfUse", name: "Categoría 4 - Facilidad de uso", weight: 25, parameters: ["4.1", "4.2", "4.3"] }
+    { id: "cost", name: "Categoría 1 — Costo y TCO", weight: 25, parameters: ["1.1", "1.2"] },
+    { id: "safety", name: "Categoría 2 — Seguridad y Cumplimiento Ambiental (EHS)", weight: 25, parameters: ["2.1", "2.2", "2.3", "2.4"] },
+    { id: "productivity", name: "Categoría 3 — Productividad y Calidad Superficial", weight: 25, parameters: ["3.1", "3.2", "3.3"] },
+    { id: "easeOfUse", name: "Categoría 4 — Operabilidad y Mantenimiento", weight: 25, parameters: ["4.1", "4.2", "4.3"] }
   ],
   parameters: {
-    "1.1": { label: "Costo del lubricante ($/kg)", note: "1 = Costo más alto, 5 = Costo más bajo" },
-    "1.2": { label: "Volumen de consumo de lubricante", note: "1 = Mayor consumo, 5 = Menor consumo" },
-    "2.1": { label: "Seguridad (Riesgo de incendio)", note: "1 = Mayor riesgo, 5 = Menor riesgo" },
-    "2.2": { label: "Salud ocupacional (Riesgo de lesiones / a largo plazo)", note: "1 = Mayor riesgo, 5 = Menor riesgo" },
-    "2.3": { label: "Medio ambiente (Emisiones de COV)", note: "1 = Mayor COV, 5 = Menor" },
-    "2.4": { label: "Limpieza del área de trabajo", note: "1 = Más sucia / resbaladiza, 5 = Más limpia" },
-    "3.1": { label: "Productividad (Desempeño de desmoldeo)", note: "1 = Menor protección de dummy, 5 = Mayor" },
-    "3.2": { label: "Calidad del producto terminado", note: "1 = Mayor probabilidad de defectos, 5 = Menor" },
-    "3.3": { label: "Protección de herramentales (Cizalla en caliente)", note: "1 = Menor protección, 5 = Mayor" },
-    "4.1": { label: "Facilidad de uso (Taponamiento y limpieza)", note: "1 = Más difícil de mantener, 5 = Más fácil" },
-    "4.2": { label: "Costo del método de aplicación", note: "1 = Mayor inversión, 5 = Menor" },
-    "4.3": { label: "Puntos de lubricación (Versatilidad)", note: "1 = Menor cantidad de usos, 5 = Mayor" }
+    "1.1": { label: "Costo Unitario del Agente ($/kg)", note: "1 = Precio unitario más alto, 5 = Precio unitario más bajo" },
+    "1.2": { label: "Consumo de Químico Específico (ml/ciclo)", note: "1 = Volumen excesivo/desperdicio, 5 = Dosificación optimizada en microlitros" },
+    "2.1": { label: "Riesgo de Incendio (Flama Abierta/Punto de Inflamación)", note: "1 = Riesgo crítico (acetileno/solventes), 5 = Cero riesgo de fuego (base agua)" },
+    "2.2": { label: "Responsabilidad de Salud Ocupacional (Inhalación/Contacto)", note: "1 = Exposición a polvos/quemaduras, 5 = Entrega automática segura" },
+    "2.3": { label: "Huella Ambiental (COV y Residuos)", note: "1 = Altos COV/envases peligrosos, 5 = Cero COV/biodegradable" },
+    "2.4": { label: "Limpieza del Área de Prensa (Riesgo de Deslizamiento)", note: "1 = Acumulación de aceite/grafito resbaladizo, 5 = Zona seca y limpia" },
+    "3.1": { label: "Rendimiento de Desmoldeo (Calidad de Despegue)", note: "1 = Adherencia de dummy block/daño a perfil, 5 = Separación impecable" },
+    "3.2": { label: "Calidad Superficial del Perfil (Manchas/Ampollas)", note: "1 = Manchas cosméticas severas, 5 = Cero defectos/listo para pintura" },
+    "3.3": { label: "Protección de Herramentales (Cizallas y Contenedor)", note: "1 = Desgaste acelerado/fricción abrasiva, 5 = Vida útil extendida" },
+    "4.1": { label: "Taponamiento de Boquillas y Mantenimiento", note: "1 = Cristalización rígida/obstrucción diaria, 5 = Residuo blando sin tapón" },
+    "4.2": { label: "Requerimiento de CAPEX para Equipos de Aplicación", note: "1 = Sistemas propietarios de alto costo, 5 = Integración en estándar/existente" },
+    "4.3": { label: "Versatilidad de Puntos de Lubricación (Número de SKUs)", note: "1 = Solo tocho (requiere múltiples productos), 5 = Capacidad multipunto" }
   },
   technologies: [
     {
@@ -6119,26 +6307,878 @@ const frameworkDataEs = {
     }
   ],
   notes: [
-    { param: "2.2", text: "El uso de crayones y bloques de grafito o nitruro de boro es altamente peligroso. El operador debe trabajar al alcance de componentes calientes en movimiento." },
-    { param: "3.2", text: "El uso de suspensiones de nitruro utiliza otros compuestos para mantenerse estable que pueden generar ampollas o burbujas superficiales. Las crayones y bloques califican bajo porque causan defectos si se aplican en exceso." },
-    { param: "4.1", text: "La flama de acetileno y el polvo de nitruro de boro no se pueden usar en otros puntos de lubricación (ej. cizalla de colilla o cizalla en caliente), requiriendo un segundo sistema de lubricación." },
-    { param: "4.1", text: "Interforge KI-C no necesita agitación previa, opera con baja presión de atomización y es excepcionalmente fácil de limpiar con agua estándar." },
-    { param: "4.1", text: "El polvo de nitruro de boro tiene un efecto severo de obstrucción en boquillas de pulverización, válvulas y equipos circundantes." },
-    { param: "4.2", text: "La flama de acetileno tiene una complejidad de sistema sumamente elevada para una implementación automatizada segura." },
-    { param: "1.2", text: "Las suspensiones de nitruro de boro y grafito tienden a ser más viscosas, requiriendo un mayor volumen por disparo de aplicación." },
-    { param: "1.2", text: "El polvo de nitruro de boro resulta en un mayor consumo general y pérdidas continuas debido al polvo en el aire." },
-    { param: "1.2", text: "Interforge KI-C es sumamente eficiente, consumiendo en promedio sólo de 10g a 15g por ciclo de aplicación." },
-    { param: "4.3", text: "Las suspensiones de grafito no se pueden aplicar en las cizallas en caliente a la salida del horno de precalentamiento porque ensuciarán y contaminarán el cuerpo del perfil de aluminio." }
+    { param: "2.2", text: "El uso de crayones y bloques de grafito o nitruro de boro genera una alta responsabilidad de EHS. Los operadores deben aplicarlos manualmente cerca de componentes móviles a temperaturas superiores a 500 °C." },
+    { param: "3.2", text: "Las suspensiones de nitruro utilizan vehículos orgánicos que pueden gasificar durante la extrusión, produciendo ampollas o burbujas superficiales. Los crayones y bloques dejan depósitos localizados gruesos, resultando en defectos superficiales." },
+    { param: "4.1", text: "La flama de acetileno y el polvo seco de nitruro de boro no pueden lubricar cizallas (de colilla o en caliente), obligando a mantener sistemas de lubricación separados." },
+    { param: "4.1", text: "Interforge KI-C opera con baja presión de atomización, no requiere agitación continua para mantenerse en suspensión y deja un residuo blando que se disuelve en agua convencional." },
+    { param: "4.1", text: "El polvo seco de nitruro de boro causa taponamientos severos en boquillas y desgaste abrasivo en electroválvulas cercanas y guías del contenedor." },
+    { param: "4.2", text: "Los sistemas de flama de acetileno requieren alta complejidad de instrumentación, tuberías a prueba de explosión y protocolos especializados de EHS para integración automática." },
+    { param: "1.2", text: "Las suspensiones viscosas de grafito y nitruro de boro requieren mayores volúmenes de entrega (típicamente 12 a 20 ml por ciclo) para garantizar cobertura." },
+    { param: "1.2", text: "El polvo de nitruro de boro se dispersa fuera de la zona objetivo, resultando en pérdidas materiales y alto consumo del producto." },
+    { param: "1.2", text: "Interforge KI-C está optimizado para deposición eficiente en microlitros, consumiendo sólo de 5 a 10 ml por ciclo de prensa." },
+    { param: "4.3", text: "Los productos base grafito no pueden aplicarse en la cizalla de troncos en caliente porque el residuo negro contamina el cuerpo del perfil, arruinando acabados de anodizado arquitectónico." }
   ]
 };
 
 window.frameworkDataEs = frameworkDataEs;
 
+/* ============================================================
+   TODOS LOS CASOS (DEUTSCH)
+   ============================================================ */
+
+const casesDataDe = {
+
+  /* ────────────────────────────────────────────────────────
+     CASO 1 · BONNELL ALUMINUM – NEWNAN
+     ──────────────────────────────────────────────────────── */
+  'bonnell-newnan': {
+
+    clientName: "Bonnell Aluminum",
+    clientLocation: "Newnan, Georgia, Vereinigte Staaten",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2021-06",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 10,
+    activePressesWithRO3: 4,
+    plantDescription: "Insgesamt 10 Pressen im Werk Newnan, davon 4 Hochleistungs-Strangpressen auf automatische Interforge KI-C Dosierung umgerüstet. Bonnell liefert hochpräzise Aluminiumprofile für Architektur, Automobil und Industrie in den USA mit höchsten Anforderungen an die Oberflächengüte.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: "Pressezi",
+        pushTons: null,
+        billetDiameter: 9,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 8",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 6,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 9",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 8,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Kropfschere (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 10",
+        pressBrand: "OMAV",
+        pushTons: null,
+        billetDiameter: 7,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Bornitrid (Pulver)",
+        lubricantPriceBefore: null,
+        mlPerApplicationBefore: null,
+        mlPerApplicationAfter: null,
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 }
+        ]
+      }
+    ],
+
+    challenges: [
+      {
+        title: "EHS-Risiken & Manuelle Applikation",
+        description: "Bediener trugen trockenes Bornitrid-Pulver manuell bei Bolzentemperaturen von bis zu 600 °C auf. Die ständige Inhalation von Staub und die Nähe zu heißen Pressenbauteilen führten zu Sicherheitsrisiken und variablen Zykluszeiten.",
+        impactCategory: "Safety"
+      },
+      {
+        title: "Oberflächenfehler & Ausschussrate",
+        description: "Unkontrolliertes manuelles Auftragen hinterließ weiße Bornitrid-Flecken auf den Profilen. Diese Verunreinigungen führten zu kosmetischen Ausschüssen und Haftungsproblemen beim Eloxieren/Lackieren.",
+        impactCategory: "Quality"
+      },
+      {
+        title: "Inventarkomplexität & Unkontrollierte Kosten",
+        description: "Ohne Dosiersteuerung gab es keine Verbrauchstransparenz. Bonnell kaufte, lagerte und verendete 3 verschiedene Schmierstoffe. Der Mangel an Standardisierung erhöhte die Gesamtkosten (TCO).",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "100%",
+      metricLabel: "Eliminierung von EHS-Vorfällen & Arbeitsunfällen durch Schmierstoffe",
+      metricContext: "Nachhaltig null Atembeschwerden, null Kontaktverbrennungen und null Sicherheitsberichte seit der Umstellung auf automatische Dosierung.",
+      metricUnit: "nachhaltig seit Implementierung"
+    },
+
+    supportingMetrics: [
+      { label: "Prozesssteuerung", before: "Manuell / Variabel", after: "Automatisch im Zyklus", unit: "", improvement: "RO3 Automatisiert" },
+      { label: "Oberflächenkontamination", before: "Häufig", after: "Eliminiert", unit: "", improvement: "↓ 100%" },
+      { label: "EHS-Sicherheitsunfälle", before: 14, after: 0, unit: "/Jahr", improvement: "↓ 100%" },
+      { label: "Inventarkomplexität", before: "3 Produkte", after: "1 Produkt", unit: "", improvement: "KI-C Standardisiert" }
+    ],
+
+    visualComparison: {
+      testDescription: "Kontrollierter Vergleichstest an Presse 2 über 4 Produktionswochen: Bornitrid-Pulver vs. Interforge KI-C mit dem RO3-System.",
+      product1Label: "Bornitrid (Pulver)",
+      product1Result: "Sichtbare weiße Rückstände auf 38% der Profile. Manuelles Nachauftragen in jedem Zyklus. Null Dosierkontrolle.",
+      product2Label: "Interforge KI-C",
+      product2Result: "Null Rückstände auf allen Profilen. Automatische Dosierung konstant bei 7 ml pro Zyklus.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Bornitrid", performance: "Medium", price: "High", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Graphit", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Acetylenflamme", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Alle aktiven Pressen wurden auf Interforge KI-C auf Wasserbasis umgestellt. Automatische RO3-Dosiersysteme ersetzten das manuelle Bestäuben an Warmblockschere, Bolzen und Kropfschere. Die Dosierung erfolgt vollautomatisch im Presszyklus.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis, graphitfrei. Einsatzfertig ohne Mischen. Verhindert Bornitrid-Flecken; trockene Spurenreste lassen sich einfach mit Wasser abwaschen.",
+      ro3Description: "Hochpräzise automatische Sprühdosierung. Liefert exakte Mikrolitermengen direkt an die Schmierpunkte ohne Bedienerrisiko."
+    },
+
+    results: [
+      { resultText: "Nachhaltig null Atemwegs- oder Verbrennungsunfälle (neuer EHS-Anlagenrekord)." },
+      { resultText: "100% Eliminierung weißer Bornitrid-Rückstände auf den Profiloberflächen, drastische Senkung des Ausschusses." },
+      { resultText: "Standardisierung auf eine einzige Trennmittel-SKU anstelle von drei Schmierstoffen." },
+      { resultText: "Automatische Dosierung im Zyklus ohne manuelle Eingriffe." },
+      { resultText: "Konstante Dosierung von 7 ml pro Zyklus ohne Verbrauchsspitzen." },
+      { resultText: "Beseitigung von Pulverstaub in der Luft schützt Pressendichtungen und Führungen." }
+    ],
+
+    additionalBenefits: [
+      { icon: "safety", label: "Nicht brennbar & ungiftig" },
+      { icon: "cleanliness", label: "Wasserbasiert, Rückstände leicht entfernbar" },
+      { icon: "quality", label: "Fehlerfreie Profile" },
+      { icon: "productivity", label: "Konstante automatische Dosierung" },
+      { icon: "cost", label: "Ein Produkt ersetzt drei" },
+      { icon: "environment", label: "Keine toxischen Emissionen oder Stäube" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_01.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/bonnell-aluminum.png"
+    }
+
+  }, /* end bonnell-newnan */
 
 
+  /* ────────────────────────────────────────────────────────
+     CASO 2 · EXTRUM
+     ──────────────────────────────────────────────────────── */
+  'extrum': {
 
+    clientName: "Extrum",
+    clientLocation: "San Pedro Sula, Honduras",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2024-08",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 3,
+    activePressesWithRO3: 2,
+    plantDescription: "Das Werk Sula von Extrum betreibt 3 Strangpresslinien. Pressezi (Presse 1) verbrauchte jährlich **2.527 Liter Ejecteze** am Pressstempel ohne Durchflusssteuerung. Gleichzeitig stoppte Mei Ruey (Presse 2) alle 4 Zyklen für einen Acetylen-Flammenarm, was täglich **11,25 Minuten Produktionskapazität** kostete (98.865 lb jährlich) und eine offene Brandgefahr darstellte.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: "Pressezi",
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: 180,
+        lubricantBefore: "Ejecteze am Pressstempel",
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        keyBenefit: "55% Reduzierung des Stempelschmierstoffs von 2.527 L auf 1.154 L pro Jahr",
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Kropfschere (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 2",
+        pressBrand: "Mei Ruey",
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Acetylenflamme (Arm, alle 4 Zyklen) plus Ejecteze",
+        dosingSystem: "Automatisches RO3-Dosiersystem",
+        valveType: "Zerstäubungssprühventil",
+        ro3Implemented: true,
+        keyBenefit: "98.865 lb/Jahr zurückgewonnen · Flammenarm entfernt · Null Brandunfälle",
+        ro3Units: [
+          { number: 1, location: "Warmblockschere", lubePoints: 1, valves: 2 },
+          { number: 2, location: "Bolzen", lubePoints: 1, valves: 1 },
+          { number: 3, location: "Kropfschere (butt shear)", lubePoints: 1, valves: 1 }
+        ]
+      },
+      {
+        pressId: "Presse 3",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Ejecteze + Acetylenflamme",
+        dosingSystem: "Bestehendes automatisches System",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Nur als Referenz, kein RO3 installiert"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Mei Ruey: Kapazitätsverlust durch erzwungene Flammzyklus-Stopps",
+        description: "Presse 2 musste alle 4 Zyklen für 5 Sekunden anhalten. Bei 1.690 lb/h summierten sich diese Unterbrechungen auf 11,25 Minuten verlorene Kapazität pro Tag (**98.865 lb Aluminium pro Jahr**).",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Pressezi: Übermäßiger Trennmittelverbrauch & Verschwendung",
+        description: "Ejecteze wurde manuell mit 15 ml pro Schuss aufgetragen. Ohne Präzisionsdosierung verbrauchte die Presse 2.527 Liter jährlich mit Sprühverlusten und Bodenverschüttungen.",
+        impactCategory: "Cost"
+      },
+      {
+        title: "Acetylenflammen: Aktive Brandgefahr & Sicherheitsaufwand",
+        description: "Eine offene Flamme bei jedem Zyklus erforderte spezielle Brandschutzprotokolle. Die Entfernung des Flammenarms senkte das Unfallrisiko und die EHS-Kosten sofort.",
+        impactCategory: "Safety"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "55%",
+      metricLabel: "Reduzierung des Stempelschmierstoff-Verbrauchs an Presse 1 (Pressezi)",
+      metricContext: "Der Umstieg von manueller Ejecteze-Applikation (15 ml) auf Interforge KI-C (7 ml) sparte 1.372 Liter jährlich bei perfekter Trennwirkung.",
+      metricUnit: "geprüft · Extrum · Honduras"
+    },
+
+    secondaryHeroMetric: {
+      metricValue: "98.865",
+      metricUnit: "lb",
+      pressLabel: "Presse 2 · Mei Ruey",
+      metricLabel: "Jährliche Produktionskapazität an Presse 2 (Mei Ruey) zurückgewonnen",
+      metricContext: "Eliminierung des Acetylen-Flammenarms und der Stopps stellte 270 lb Aluminium pro Arbeitstag wieder her."
+    },
+
+    verificationNote: "Alle Daten vor Ort vom technischen Team von Interlub bei Extrum Honduras erfasst. Auditfähig.",
+
+    supportingMetrics: [
+      { press: "Presse 1 · Pressezi", label: "Schmierstoff pro Schuss", before: "15 ml", after: "7 ml", unit: "", improvement: "↓ 53%" },
+      { press: "Presse 1 · Pressezi", label: "Jahresverbrauch", before: "2.527 L", after: "1.154 L", unit: "/Jahr", improvement: "↓ 55%" },
+      { press: "Presse 2 · Mei Ruey", label: "Produktionsverlust", before: "98.865 lb", after: "0 lb", unit: "/Jahr", improvement: "↓ 100%" },
+      { press: "Presse 2 · Mei Ruey", label: "Tägliche Ausfallzeit", before: "11,25 Min", after: "0 Min", unit: "/Tag", improvement: "Eliminiert" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Schmierstoffverbrauch",
+        subtitle: "Presse 1 · Pressezi · Ejecteze vs. Interforge KI-C · Pressstempel · 540 Extrusionen/Tag",
+        columns: ["", "Ejecteze", "Interforge KI-C"],
+        highlight: 4,
+        rows: [
+          ["Anzahl Pressen", "1", "1"],
+          ["ml pro Schuss", "15 ml", "7 ml"],
+          ["Schmierstoff / 24 Std.", "8,1 L", "3,7 L"],
+          ["Arbeitstage / Monat", "26", "26"],
+          ["Jahresverbrauch", "2.527 L", "1.154 L"]
+        ]
+      },
+      {
+        title: "Produktionsverlust durch Schmierung",
+        subtitle: "Presse 2 · Mei Ruey · Acetylenflamme vs. Interforge KI-C · 1.690 lb/h · 26 Tage/Monat",
+        columns: ["", "Flamme", "Interforge KI-C"],
+        highlight: 5,
+        rows: [
+          ["Anzahl Pressen", "1", "1"],
+          ["Schmierung Arm", "Alle 4 Zyklen", "N/A"],
+          ["Verlorene Zeit / Schmierung", "5 Sek.", "0 Sek."],
+          ["Extrusionen / 24 Std.", "540", "540"],
+          ["Arbeitstage / Monat", "26", "26"],
+          ["Verlorene Lb/Jahr durch Schmierung", "98.865 lb", "0 lb"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Feldanalyse an Presse 1 bei Extrum, Honduras. Acetylen manuell + Ejecteze (15 ml/Schuss, 2 Punkte, alle 4 Zyklen) vs. Interforge KI-C mit RO3 (7 ml/Schuss, 1 Punkt, in Bewegung). 540 Extrusionen/Tag · 26 Tage/Monat · 1.690 lb/h.",
+      product1Label: "Acetylenflamme + Ejecteze",
+      product1Result: "15 ml pro Schuss · 2 Schmierpunkte · Applikation mit Stopp alle 4 Zyklen · 5 Sek. Ausfallzeit pro Ereignis · 98.865 lb/Jahr Produktionsverlust · 2.527 L Jahresverbrauch.",
+      product2Label: "Interforge KI-C + RO3",
+      product2Result: "7 ml pro Schuss · 1 Schmierpunkt · Applikation in Bewegung ohne Stopps · 0 Sek. Ausfallzeit · 0 lb Produktionsverlust · 1.154 L Jahresverbrauch (1.372 L eingespart) · 100% Stempelabdeckung.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Ejecteze", performance: "Medium", price: "Medium", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Graphit", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Acetylenflamme", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Beide Pressen wurden mit Interforge KI-C automatisiert. An Presse 1 senkte die RO3-Dosierung den Verbrauch um 55% (1.372 L/Jahr Ersparnis). An Presse 2 wurde der Flammenarm entfernt, was 98.865 lb Jahreskapazität zurückgewann. Beide Pressen laufen nun mit 3 automatischen Schmierpunkten in Bewegung: Warmblockschere, Pressstempel und Kropfschere.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis, graphitfrei. Wird in Bewegung über das RO3-System aufgetragen. Verhindert Stempelanhaftung, erzeugt keinen Ruß und Rückstände sind leicht mit Wasser abwaschbar.",
+      ro3Description: "Automatische Mehrdüsendosierung in Bewegung. Sprüht ein kalibriertes Volumen (7 ml) während der Schneid- und Extrusionszyklen ohne die Presse zu stoppen."
+    },
+
+    resultGroups: [
+      {
+        pressLabel: "Presse 1 · Pressezi",
+        headline: "55",
+        headlineUnit: "%",
+        headlineSub: "weniger Schmierstoff am Pressstempel",
+        items: [
+          "Jahresverbrauch von <strong>2.527 L</strong> auf <strong>1.154 L</strong> gesenkt (1.372 L/Jahr Ersparnis).",
+          "Dosierung von <strong>15 ml</strong> auf <strong>7 ml</strong> pro Schuss reduziert, automatisch in Bewegung aufgetragen.",
+          "100% Stempelabdeckung bei halbiertem Schmierstoffvolumen."
+        ]
+      },
+      {
+        pressLabel: "Presse 2 · Mei Ruey",
+        headline: "98.865",
+        headlineUnit: "lb",
+        headlineSub: "zurückgewonnene Jahresproduktion",
+        items: [
+          "Eliminierung des Acetylen-Flammenarms für <strong>null erzwungene Stopps</strong>.",
+          "Entfernung offener Flammen in der Halle entlastet Sicherheits- und Brandschutzauflagen.",
+          "Tägliche Ausfallzeit von <strong>11,25 Min. auf 0 Min.</strong> reduziert."
+        ]
+      }
+    ],
+
+    additionalBenefits: [
+      { icon: "productivity", label: "98.865 lb Produktion zurückgewonnen" },
+      { icon: "cost", label: "55% weniger Schmierstoff verbraucht" },
+      { icon: "safety", label: "Flamme entfernt, null Brandrisiko" },
+      { icon: "quality", label: "100% Stempelabdeckung" },
+      { icon: "cleanliness", label: "Wasserbasiert, graphitfrei, leicht zu reinigen" },
+      { icon: "environment", label: "1.372 L pro Jahr eingespart" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_02.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/extrum_logo.webp",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+
+  }, /* end extrum */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 3 · INDALUM
+     ──────────────────────────────────────────────────────── */
+  'indalum': {
+
+    clientName: "INDALUM",
+    clientLocation: "San Nicolas, Nuevo Leon, Mexiko",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2022-11",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 3,
+    activePressesWithRO3: null,
+    plantDescription: "Der Betrieb nutzte 3 Hochleistungs-Strangpressen mit manueller und halbautomatischer Graphitstift-Applikation. Dichte Graphitrückstände auf den Profilen führten zu schweren Oberflächenfehlern und Ausfällen bei der Weiterverarbeitung (Lackier- und Eloxalhaftung). Zudem verunreinigte abrasiver Graphitstaub Führungen und Werkzeuge. Durch die Umstellung aller 3 Pressen auf Interforge KI-C über bestehende OEM-Dosiersysteme wurde Graphit vollständig eliminierte und die Schmierstoffkosten um 75% gesenkt.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Graphitstifte (2 Stifte/Schicht)",
+        dosingSystem: "Bestehendes Dosiersystem der Presse",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C über bestehendes Dosiersystem aufgetragen"
+      },
+      {
+        pressId: "Presse 2",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Graphitstifte (2 Stifte/Schicht)",
+        dosingSystem: "Bestehendes Dosiersystem der Presse",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C über bestehendes Dosiersystem aufgetragen"
+      },
+      {
+        pressId: "Presse 3",
+        pressBrand: null,
+        pushTons: null,
+        billetDiameter: null,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "Graphitstifte (2 Stifte/Schicht)",
+        dosingSystem: "Bestehendes Dosiersystem der Presse",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Interforge KI-C über bestehendes Dosiersystem aufgetragen"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Graphitkontamination auf Profilen",
+        description: "Graphitstifte hinterließen dichte Kohlenstoffrückstände auf den Extrusionsprofilen. Diese dunklen Ablagerungen verursachten Lochfraß, Schönheitsfehler und Qualitätsausschuss bei Lackierung und Eloxierung.",
+        impactCategory: "Quality"
+      },
+      {
+        title: "Geräteverschmutzung & Wartungsaufwand",
+        description: "Abrasiver Graphitstaub lagerte sich rasch an Matrizen, Haltern und Behälterführungen ab. Sprühdüsen verstopften ständig und erforderten manuelle Reinigungen sowie ungeplante Mikro-Stopps.",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Übermäßige Schmierstoffkosten",
+        description: "Der Verbrauch von 2 soliden Graphitstiften pro Schicht an 3 Pressen im 3-Schicht-Betrieb verursachte hohe direkte Kosten. Zusammen mit manuellem Profilwaschen und Ausschuss war die Gesamtkostenstruktur (TCO) unhaltbar.",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "75%",
+      metricLabel: "Reduzierung der jährlichen Schmierstoffausgaben an allen 3 Pressen",
+      metricContext: "Die Umstellung auf Interforge KI-C eliminierte Graphit vollständig. Durch die Vermeidung von Profilfehlern, manuellem Reinigen und Düsenverstopfungen sanken die Gesamtschmierkosten um 75%.",
+      metricUnit: "geprüft seit November 2022"
+    },
+
+    secondaryHeroMetric: null,
+
+    verificationNote: null,
+
+    supportingMetrics: [
+      { label: "Spezifischer Chemieverbrauch", before: "2 Graphitstifte", after: "2,4 kg", unit: "/Schicht", improvement: "Standardisiert" },
+      { label: "Jährliche Schmierstoffausgaben", before: "100% (Baseline)", after: "25%", unit: "", improvement: "↓ 75% (TCO)" },
+      { label: "Profiloberflächen-Ausschuss", before: "Häufiger Ausschuss", after: "0% Ausschuss", unit: "", improvement: "↓ 100% Defekte" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Schmierstoffkosten-Vergleich",
+        subtitle: "Alle 3 Pressen · Graphitstifte vs. Interforge KI-C · 3 Schichten/Tag · 26 Tage/Monat",
+        columns: ["", "Graphitstifte", "Interforge KI-C"],
+        highlight: 4,
+        rows: [
+          ["Anzahl Pressen", "3", "3"],
+          ["Schmierstoff / Schicht", "2 Stifte", "2,4 kg"],
+          ["Schichten / Tag", "3", "3"],
+          ["Arbeitstage / Monat", "26", "26"],
+          ["Kostenreduzierung", "", "75%"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Vollständige Umstellung aller 3 Pressen bei INDALUM, Mexiko. Graphitstifte durch Interforge KI-C ersetzt, aufgetragen über bestehende OEM-Dosiersysteme. 3 Schichten/Tag, 26 Tage/Monat.",
+      product1Label: "Graphitstifte",
+      product1Result: "2 Stifte pro Schicht. Dunkle Rückstände auf Profilen erforderten Nacharbeit. Geräteverschmutzung und verstopfte Düsen.",
+      product2Label: "Interforge KI-C",
+      product2Result: "2,4 kg pro Schicht. Null Rückstände auf Profilen ab Tag eins. Keine Geräteverschmutzung, keine verstopften Düsen. Spurenreste leicht mit Wasser abwaschbar.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "Graphit", performance: "Medium", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Bornitrid", performance: "Medium", price: "High", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Acetylenflamme", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Alle 3 Pressen wurden auf die wasserbasierte Chemie von Interforge KI-C umgestellt. Die Umstellung erfolgte unter Nutzung der bestehenden OEM-Dosiersysteme nach Feinabstimmung von Düsendruck und Sprühzeiten – ohne CAPEX für neue Applikationsgeräte.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis, graphitfrei. Einsatzfertig direkt aus dem Gebinde. Profile bleiben frei von dunklen Rückständen; Spurenreste lassen sich mühelos mit Wasser entfernen.",
+      ro3Description: null
+    },
+
+    results: [
+      { resultText: "Verifizierte 75%ige Senkung der jährlichen Schmierungskosten (TCO) durch Entfall von manueller Reinigung und Ausschuss." },
+      { resultText: "100% Eliminierung dunkler Graphitflecken; Lackier- und Eloxalausschuss sank auf null." },
+      { resultText: "Eliminierung abrasiven Graphitstaubs schützt Führungen und verlängert die Lebensdauer von Dichtungen und Werkzeugen." },
+      { resultText: "Vollständige Nutzung bestehender OEM-Dosieranlagen ohne zusätzliches CAPEX." }
+    ],
+
+    additionalBenefits: [
+      { icon: "cost", label: "75% Reduzierung der jährlichen Schmierstoffausgaben" },
+      { icon: "quality", label: "Null Graphitrückstände auf Profilen" },
+      { icon: "cleanliness", label: "Rückstände leicht mit Wasser zu reinigen" },
+      { icon: "productivity", label: "Keine Verschmutzung, keine Düsenverstopfung" },
+      { icon: "safety", label: "Nicht brennbar, ungiftig, wasserbasiert" },
+      { icon: "environment", label: "Keine VOC-Emissionen, kein Gefahrgut" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_05.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/indalum_logo.png",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+
+  }, /* end indalum */
+
+
+  /* ────────────────────────────────────────────────────────
+     CASO 4 · HAI
+     ──────────────────────────────────────────────────────── */
+  'hai': {
+    clientName: "HAI",
+    clientLocation: "Chisineu-Cris, Rumänien",
+    clientIndustry: "Aluminium-Extrusion",
+    caseDate: "2023-11",
+    interlubContact: "Technisches Team von Interlub",
+
+    totalPresses: 4,
+    activePressesWithRO3: null,
+    plantSummary: "",
+    plantDescription: "Ein Test im Werk von HAI Rumänien (4 Pressen) zielte darauf ab, kritische Düsenverstopfungen und Stillstände durch das bisherige Trennmittel (STAG 118) an Presse 1 (Presezzi) und Presse 3 (Cometal) zu beheben. Das Konkurrenzprodukt neigte zu rascher Kristallisation mit harten Krusten. Durch den Einsatz von Interforge KI-C an Kropf- und Warmblockschere sowie technische Kalibrierungsschulungen sanken verstopfungsbedingte Wartungsstopps um 100%.",
+
+    presses: [
+      {
+        pressId: "Presse 1",
+        pressBrand: "Presezzi",
+        pushTons: null,
+        billetDiameter: 10,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Geprüft & verifiziert für Kropfscherenschmierung (butt shear)"
+      },
+      {
+        pressId: "Presse 2",
+        pressBrand: "Prisma",
+        pushTons: null,
+        billetDiameter: 5,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Nur als Referenz (STAG 118 bisheriges Trennmittel)"
+      },
+      {
+        pressId: "Presse 3",
+        pressBrand: "Cometal",
+        pushTons: null,
+        billetDiameter: 7,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Geprüft & verifiziert für Warmblockscherenschmierung (hot log shear)"
+      },
+      {
+        pressId: "Presse 4",
+        pressBrand: "Sutton",
+        pushTons: null,
+        billetDiameter: 8,
+        billetUnit: "in",
+        extrusionsPerShift: null,
+        lubricantBefore: "STAG 118",
+        dosingSystem: "Automatisiert",
+        valveType: null,
+        ro3Implemented: false,
+        statusNote: "Nur als Referenz (STAG 118 bisheriges Trennmittel)"
+      }
+    ],
+
+    challenges: [
+      {
+        title: "Ständige Ventilverstopfung",
+        description: "Chemische Kristallisation des früheren Trennmittels (STAG 118) bildete harte Ablagerungen in den Sprühdüsen. Die Öffnungen verstopften täglich, was zu ungeplanten Reinigungsstopps führte.",
+        impactCategory: "Productivity"
+      },
+      {
+        title: "Kontaminierte Arbeitsumgebung",
+        description: "Verstopfte Düsen verursachten ungleichmäßige Sprühbilder. Zur Kompensation erhöhten Bediener den Systemdruck, was zu starkem Übersprühen und rutschigen Böden führte.",
+        impactCategory: "Environment"
+      },
+      {
+        title: "Hohe Produktverschwendung & fehlender Support",
+        description: "Der bisherige Lieferant bot keine Schulung zur Düsendurchflusskalibrierung. Ohne Richtlinien lieferte das System zu viel Trennmittel, was Verschwendung und dicke Beläge erzeugte.",
+        impactCategory: "Cost"
+      }
+    ],
+
+    heroMetric: {
+      metricValue: "100%",
+      metricLabel: "Reduzierung verstopfungsbedingter Ventilstopps",
+      metricContext: "Vollständige Eliminierung ungeplanter Wartungsstopps. Etwaige Beläge von Interforge KI-C bleiben weich und lassen sich einfach mit einem feuchten Tuch abwischen.",
+      metricUnit: "erreicht"
+    },
+
+    secondaryHeroMetric: null,
+
+    verificationNote: null,
+
+    supportingMetrics: [
+      { label: "Verstopfungsereignisse", before: "Täglich", after: "0", unit: "/Monat", improvement: "↓ 100% Stopps" },
+      { label: "Trennmittelverbrauch", before: "Exzessiv (STAG 118)", after: "Optimiert", unit: "", improvement: "Reduziert" },
+      { label: "Reinigung von Rückständen", before: "Extrem schwierig", after: "Einfach mit Wasser", unit: "", improvement: "Weicher Rückstand" },
+      { label: "Anwendungsverschwendung", before: "Hoch (ohne Schulung)", after: "Minimiert", unit: "", improvement: "Kalibriert" }
+    ],
+
+    comparisonTables: [
+      {
+        title: "Vergleich der Betriebsleistung",
+        subtitle: "Bisheriges Trennmittel (STAG 118) vs. Interforge KI-C unter technischer Kalibrierung",
+        columns: ["Parameter", "STAG 118", "Interforge KI-C"],
+        highlight: 1,
+        rows: [
+          ["Verstopfungshäufigkeit", "Ständig / Täglich", "Eliminiert"],
+          ["Ausfallzeiten durch Verstopfung", "Häufige Stopps", "100% Reduzierung"],
+          ["Trennmittelverbrauch", "Hohe Verschwendung (keine Schulung)", "Reduziert & optimiert"],
+          ["Methode zur Rückstandsentfernung", "Schwierig / Mechanisches Kratzen", "Einfache Reinigung mit Wasser & Tuch"],
+          ["Sauberkeit des Arbeitsbereichs", "Stark verschmutzt / Ruß", "Sauber & kontrolliert"]
+        ]
+      }
+    ],
+
+    visualComparison: {
+      testDescription: "Vergleich zwischen dem bisherigen Trennmittel (STAG 118) und Interforge KI-C an Presse 1 (Presezzi, Kropfschere) und Presse 3 (Cometal, Warmblockschere).",
+      product1Label: "STAG 118",
+      product1Result: "Ständige Ventilverstopfung, harte Rückstände, hohe Verschwendung ohne Lieferantensupport und verschmutzter Arbeitsbereich.",
+      product2Label: "Interforge KI-C",
+      product2Result: "100% Reduzierung verstopfungsbedingter Stopps, optimierter Verbrauch und weiche Rückstände, die leicht mit Wasser abwaschbar sind.",
+      hasPhotos: false,
+      photos: []
+    },
+
+    productComparison: [
+      { productName: "STAG 118", performance: "Low", price: "Low", cleanliness: "Low", safetyEnvironment: "Low", isInterlub: false },
+      { productName: "Interforge KI-C", performance: "High", price: "Medium", cleanliness: "High", safetyEnvironment: "High", isInterlub: true }
+    ],
+
+    solution: {
+      solutionText: "Durch den Einsatz von Interforge KI-C und die technische Unterstützung von Interlub konnten die Schmierpunkte gezielt kalibriert werden. Etwaige Spuren von Interforge KI-C bilden einen weichen Belag, der sich leicht mit einem feuchten Tuch entfernen lässt.",
+      product: "Interforge KI-C",
+      productDescription: "Synthetisches Trennmittel auf Wasserbasis für Aluminium-Extrusion. Erzeugt weiche Rückstände, die Verkrustungen verhindern und leicht abwaschbar sind.",
+      ro3Description: null
+    },
+
+    results: [
+      { resultText: "100%ige Reduzierung ungeplanter Pressenstopps durch verstopfte Sprühdüsen." },
+      { resultText: "Reduzierung des Trennmittelverbrauchs durch Kalibrierung." },
+      { resultText: "Weiche Rückstände, die leicht mit Wasser und Tuch zu reinigen sind." },
+      { resultText: "Vermeidung von Produktverschwendung dank technischer Schulung der Bediener." },
+      { resultText: "Deutlich sauberer Arbeitsbereich durch optimierte Düsenabstimmung." }
+    ],
+
+    additionalBenefits: [
+      { icon: "productivity", label: "100% Reduzierung der Verstopfungsstopps" },
+      { icon: "cost", label: "Geringerer Trennmittelverbrauch" },
+      { icon: "cleanliness", label: "Rückstände leicht mit Tuch & Wasser abwaschbar" },
+      { icon: "safety", label: "Technische Schulung für Geräte und Ventile" },
+      { icon: "environment", label: "Sauberer Arbeitsbereich, weniger Abfall" }
+    ],
+
+    media: {
+      coverImage: "assets/Extrusion_HD_06.png",
+      productImage: "assets/Interforge-KI-C.png",
+      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
+      logoPillBg: "rgba(255,255,255,0.92)"
+    }
+  }
+
+};
+
+const casesRegistryDe = [
+  {
+    id: "bonnell-newnan",
+    client: "Bonnell Aluminum",
+    industry: "Aluminium-Extrusion",
+    location: "Newnan, Georgia, Vereinigte Staaten",
+    headline: "100% Eliminierung von Atemwegsrisiken und kosmetischen Oberflächenfehlern",
+    date: "2021-06",
+    isCurrent: true
+  },
+  {
+    id: "indalum",
+    client: "INDALUM",
+    industry: "Aluminium-Extrusion",
+    location: "San Nicolas, Nuevo Leon, Mexiko",
+    headline: "75% Reduzierung der jährlichen Schmier-TCO durch Graphit-Eliminierung",
+    date: "2022-11",
+    isCurrent: true
+  },
+  {
+    id: "extrum",
+    client: "Extrum",
+    industry: "Aluminium-Extrusion",
+    location: "San Pedro Sula, Honduras",
+    headline: "55% Einsparung beim Schmierstoffvolumen und 98.865 lb Produktion zurückgewonnen",
+    date: "2024-08",
+    isCurrent: true
+  },
+  {
+    id: "hai",
+    client: "HAI",
+    industry: "Aluminium-Extrusion",
+    location: "Chisineu-Cris, Rumänien",
+    headline: "100% Eliminierung ungeplanter Ausfallzeiten durch Düsenverstopfungen",
+    date: "2023-11",
+    isCurrent: true
+  },
+  {
+    id: "hydro-cressona",
+    client: "Hydro",
+    industry: "Aluminium-Extrusion",
+    location: "Cressona, Pennsylvania, Vereinigte Staaten",
+    headline: "100% Umstellung auf wasserbasierte Technologien",
+    date: "TBD",
+    isCurrent: false
+  }
+];
+
+const homeContentDe = {
+  headerTag: "Erfolgsfälle · The Uncommon Lubricant Company",
+  eyebrow: "Dokumentierte Ergebnisse",
+  title: "Erfolgsfälle",
+  subtitle: "Echte Werke. Gemessene Ergebnisse. Wählen Sie einen Fall aus, um die gesamte Geschichte zu lesen, wobei jede Zahl vor Ort von unserem technischen Team validiert wurde.",
+  scrollLabel: "Wählen Sie einen Fall oben aus"
+};
+
+const frameworkDataDe = {
+  categories: [
+    { id: "cost", name: "Kategorie 1 — Kosten & TCO", weight: 25, parameters: ["1.1", "1.2"] },
+    { id: "safety", name: "Kategorie 2 — Sicherheit & Umwelt EHS", weight: 25, parameters: ["2.1", "2.2", "2.3", "2.4"] },
+    { id: "productivity", name: "Kategorie 3 — Produktivität & Oberflächengüte", weight: 25, parameters: ["3.1", "3.2", "3.3"] },
+    { id: "easeOfUse", name: "Kategorie 4 — Bedienbarkeit & Wartung", weight: 25, parameters: ["4.1", "4.2", "4.3"] }
+  ],
+  parameters: {
+    "1.1": { label: "Trennmittel-Stückkosten ($/kg)", note: "1 = Höchster Preis, 5 = Niedrigster Preis" },
+    "1.2": { label: "Spezifischer Chemieverbrauch (ml/Zyklus)", note: "1 = Exzessive Menge/Verschwendung, 5 = Optimierte Mikroliterdosierung" },
+    "2.1": { label: "Brandgefahr (Offene Flamme/Flammpunkt)", note: "1 = Kritisches Risiko (Acetylen/Lösemittel), 5 = Null Brandgefahr (Wasserbasiert)" },
+    "2.2": { label: "Arbeitsschutz-Risiko (Inhalation & Kontakt)", note: "1 = Staub-/Verbrennungsgefahr, 5 = Sichere automatische Applikation" },
+    "2.3": { label: "Umweltfußabdruck (VOC & Abfall)", note: "1 = Hohe VOCs/Gefahrengut, 5 = Null VOCs/biologisch abbaubar" },
+    "2.4": { label: "Sauberkeit im Pressenbereich (Rutschgefahr)", note: "1 = Öl-/Graphitfilmansammlung, 5 = Saubere Trockenzone" },
+    "3.1": { label: "Trennleistung (Entformungsgüte Stempel)", note: "1 = Stempelanhaftung/Profilschaden, 5 = Einwandfreie Trennung" },
+    "3.2": { label: "Profiloberflächenqualität (Flecken/Blasen)", note: "1 = Schwere Fleckenbildung, 5 = Null Defekte/bereits lackierfähig" },
+    "3.3": { label: "Werkzeugschutz (Scherblätter & Rezipient)", note: "1 = Beschleunigter Verschleiß, 5 = Verlängerte Werkzeugstandzeit" },
+    "4.1": { label: "Düsenverstopfung & Wartungsaufwand", note: "1 = Harte Kristallisation/Verstopfung, 5 = Verstopfungsfreier weicher Rückstand" },
+    "4.2": { label: "CAPEX-Bedarf für Applikationstechnik", note: "1 = Proprietäre Hochkostensysteme, 5 = Standard/Integration in Bestand" },
+    "4.3": { label: "Vielseitigkeit der Schmierpunkte (SKUs)", note: "1 = Nur Bolzen (mehrere Produkte nötig), 5 = Mehrpunkt-Fähigkeit" }
+  },
+  technologies: [
+    {
+      id: "interforge",
+      name: "Interforge KI-C",
+      color: "#ff0000",
+      isInterlub: true,
+      grades: { "1.1": 3, "1.2": 5, "2.1": 5, "2.2": 5, "2.3": 4, "2.4": 5, "3.1": 5, "3.2": 5, "3.3": 4, "4.1": 5, "4.2": 3, "4.3": 5 }
+    },
+    {
+      id: "acetylene",
+      name: "Acetylenflamme",
+      color: "#6c6c72",
+      grades: { "1.1": 5, "1.2": 5, "2.1": 1, "2.2": 1, "2.3": 1, "2.4": 1, "3.1": 5, "3.2": 5, "3.3": 1, "4.1": 2, "4.2": 4, "4.3": 2 }
+    },
+    {
+      id: "bn_suspension",
+      name: "Bornitrid-Suspension",
+      color: "#2e7bcf",
+      grades: { "1.1": 2, "1.2": 4, "2.1": 5, "2.2": 3, "2.3": 4, "2.4": 3, "3.1": 5, "3.2": 3, "3.3": 3, "4.1": 2, "4.2": 3, "4.3": 5 }
+    },
+    {
+      id: "bn_powder",
+      name: "Bornitrid-Pulver",
+      color: "#3bb19b",
+      grades: { "1.1": 1, "1.2": 3, "2.1": 5, "2.2": 3, "2.3": 5, "2.4": 4, "3.1": 5, "3.2": 5, "3.3": 1, "4.1": 2, "4.2": 1, "4.3": 2 }
+    },
+    {
+      id: "graphite_suspension",
+      name: "Graphit-Suspension",
+      color: "#8a58bf",
+      grades: { "1.1": 3, "1.2": 4, "2.1": 5, "2.2": 2, "2.3": 4, "2.4": 3, "3.1": 5, "3.2": 5, "3.3": 5, "4.1": 2, "4.2": 3, "4.3": 4 }
+    },
+    {
+      id: "sticks",
+      name: "Stifte & Blöcke",
+      color: "#d9972b",
+      grades: { "1.1": 4, "1.2": 1, "2.1": 2, "2.2": 1, "2.3": 2, "2.4": 2, "3.1": 3, "3.2": 1, "3.3": 1, "4.1": 1, "4.2": 5, "4.3": 2 }
+    }
+  ],
+  notes: [
+    { param: "2.2", text: "Die Verwendung von Graphit- oder Bornitrid-Stiften stellt ein hohes EHS-Risiko dar. Bediener müssen nahe an heißen beweglichen Bauteilen über 500 °C arbeiten." },
+    { param: "3.2", text: "Nitrid-Suspensionen nutzen organische Trägerstoffe, die beim Extrudieren ausgasen und Blasen erzeugen können. Stifte hinterlassen dicke Beläge und Fehler." },
+    { param: "4.1", text: "Acetylenflammen und Bornitrid-Pulver können Scheren (Kropf- oder Warmblockschere) nicht schmieren, was ein zweites Schmiersystem erfordert." },
+    { param: "4.1", text: "Interforge KI-C arbeitet mit niedrigem Zerstäubungsdruck, erfordert kein Aufrühren und hinterlässt weiche Rückstände, die leicht mit Wasser abwaschbar sind." },
+    { param: "4.1", text: "Trockenes Bornitrid-Pulver verursacht Verstopfungen und abrasiven Verschleiß an Magnetventilen und Führungen." },
+    { param: "4.2", text: "Acetylenflammen-Systeme erfordern hohe Instrumentierung, explosionsgeschützte Leitungen und spezielle Sicherheitsauflagen." },
+    { param: "1.2", text: "Viskose Bornitrid- und Graphitsuspensionen erfordern höhere Schussmengen (12 bis 20 ml pro Zyklus)." },
+    { param: "1.2", text: "Bornitrid-Pulver verweht außerhalb der Zielzone, was zu Materialverlusten und höherem Verbrauch führt." },
+    { param: "1.2", text: "Interforge KI-C ist für Mikrolitersprühung optimiert und verbraucht nur 5 bis 10 ml pro Zyklus." },
+    { param: "4.3", text: "Produkte auf Graphitbasis können nicht an der Warmblockschere verwendet werden, da schwarze Rückstände das Profil für Architektureloxal unbrauchbar machen." }
+  ]
+};
+
+window.casesDataDe = casesDataDe;
+window.casesRegistryDe = casesRegistryDe;
+window.homeContentDe = homeContentDe;
+window.frameworkDataDe = frameworkDataDe;
 
 </script>
+
+<script src="data.js"></script>
 
 <!-- ================================================================
      APP
@@ -6152,12 +7192,13 @@ window.frameworkDataEs = frameworkDataEs;
   function na(v) { return (v === null || v === undefined || v === '') ? null : v; }
   var currentLang = 'en';
 
-  /* Format "YYYY-MM" → "Jun 2021" / "Jun 2021" */
+  /* Format "YYYY-MM" → "Jun 2021" / "Jun 2021" / "Jun 2021" */
   function fmtDate(s) {
     if (!s) return '';
     var MONTHS_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     var MONTHS_ES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-    var MONTHS = currentLang === 'en' ? MONTHS_EN : MONTHS_ES;
+    var MONTHS_DE = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+    var MONTHS = currentLang === 'en' ? MONTHS_EN : (currentLang === 'de' ? MONTHS_DE : MONTHS_ES);
     var parts = String(s).split('-');
     if (parts.length < 2) return s;
     var m = parseInt(parts[1], 10);
@@ -6171,7 +7212,7 @@ window.frameworkDataEs = frameworkDataEs;
 
   function renderHome() {
     /* ── GALLERY HOME TEXTS ────────────────────── */
-    const hc = currentLang === 'en' ? (window.homeContent || {}) : (window.homeContentEs || {});
+    const hc = currentLang === 'en' ? (window.homeContent || {}) : (currentLang === 'de' ? (window.homeContentDe || {}) : (window.homeContentEs || {}));
     if (hc.headerTag) {
       const tagEl = document.getElementById('home-header-tag');
       const parts = hc.headerTag.split('·');
@@ -6188,7 +7229,7 @@ window.frameworkDataEs = frameworkDataEs;
 
     var homeGrid = document.getElementById('home-grid');
     homeGrid.innerHTML = '';
-    const reg = currentLang === 'en' ? (window.casesRegistry || []) : (window.casesRegistryEs || []);
+    const reg = currentLang === 'en' ? (window.casesRegistry || []) : (currentLang === 'de' ? (window.casesRegistryDe || []) : (window.casesRegistryEs || []));
 
     reg.forEach(function(c) {
       const card = document.createElement('div');
@@ -6203,10 +7244,14 @@ window.frameworkDataEs = frameworkDataEs;
           (c.isCurrent
             ? (currentLang === 'en'
               ? '<span class="hc-viewing-badge"><span class="dot"></span>Open case</span>'
-              : '<span class="hc-viewing-badge"><span class="dot"></span>Abrir caso</span>')
+              : (currentLang === 'de'
+                ? '<span class="hc-viewing-badge"><span class="dot"></span>Fall öffnen</span>'
+                : '<span class="hc-viewing-badge"><span class="dot"></span>Abrir caso</span>'))
             : (currentLang === 'en'
               ? '<span class="hc-cta">View case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>'
-              : '<span class="hc-cta">Ver caso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>')
+              : (currentLang === 'de'
+                ? '<span class="hc-cta">Fall anzeigen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>'
+                : '<span class="hc-cta">Ver caso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>'))
           ) +
         '</div>';
 
@@ -6216,6 +7261,8 @@ window.frameworkDataEs = frameworkDataEs;
         } else {
           if (currentLang === 'en') {
             alert('Case "' + c.client + '" coming soon.\n\nTo add it, add the case to casesData in data.js and set isCurrent: true in casesRegistry.');
+          } else if (currentLang === 'de') {
+            alert('Fall "' + c.client + '" demnächst verfügbar.\n\nUm ihn hinzuzufügen, fügen Sie den Fall zu casesData in data.js hinzu und setzen Sie isCurrent: true in casesRegistry.');
           } else {
             alert('Caso "' + c.client + '" próximamente.\n\nPara agregarlo, añade el caso a casesData en data.js y establece isCurrent: true en casesRegistry.');
           }
@@ -7005,14 +8052,14 @@ window.frameworkDataEs = frameworkDataEs;
     
     // Clear dynamic matrix headers and contents if rebuilding
     const headerRow = document.getElementById('fw-matrix-headers');
-    headerRow.innerHTML = '<th><span class="lang-en">Evaluation Parameter</span><span class="lang-es" style="display:none">Parámetro de Evaluación</span></th>';
+    headerRow.innerHTML = '<th><span class="lang-en">Evaluation Parameter</span><span class="lang-es" style="display:none">Parámetro de Evaluación</span><span class="lang-de" style="display:none">Bewertungsparameter</span></th>';
     const tbody = document.getElementById('fw-matrix-tbody');
     tbody.innerHTML = '';
     
-    const fd = currentLang === 'en' ? (window.frameworkData || localFrameworkData) : (window.frameworkDataEs || (typeof frameworkDataEs !== 'undefined' ? frameworkDataEs : null));
+    const fd = currentLang === 'en' ? (window.frameworkData || localFrameworkData) : (currentLang === 'de' ? (window.frameworkDataDe || (typeof frameworkDataDe !== 'undefined' ? frameworkDataDe : null)) : (window.frameworkDataEs || (typeof frameworkDataEs !== 'undefined' ? frameworkDataEs : null)));
     if (!fd) return;
     
-    document.title = currentLang === 'en' ? "Interlub · Release Agent Selector" : "Interlub · Selector de Agente Desmoldante";
+    document.title = currentLang === 'en' ? "Interlub · Release Agent Selector" : (currentLang === 'de' ? "Interlub · Trennmittel-Selektor" : "Interlub · Selector de Agente Desmoldante");
 
     // 1. Populate Matrix Headers
     fd.technologies.forEach(function(t) {
@@ -7064,7 +8111,7 @@ window.frameworkDataEs = frameworkDataEs;
       const card = document.createElement('div');
       card.className = 'fw-note-card reveal';
       const paramLabel = fd.parameters[note.param] ? fd.parameters[note.param].label.split('(')[0].trim() : 'Note';
-      const paramWord = currentLang === 'en' ? 'Parameter' : 'Parámetro';
+      const paramWord = currentLang === 'en' ? 'Parameter' : (currentLang === 'de' ? 'Parameter' : 'Parámetro');
       card.innerHTML = 
         '<div class="fw-note-badge">' + paramWord + ' ' + note.param + ' &middot; ' + esc(paramLabel) + '</div>' +
         '<div class="fw-note-text">' + note.text + '</div>';
@@ -7108,7 +8155,7 @@ window.frameworkDataEs = frameworkDataEs;
   }
 
   function recalculateFrameworkScores() {
-    const fd = currentLang === 'en' ? (window.frameworkData || localFrameworkData) : (window.frameworkDataEs || (typeof frameworkDataEs !== 'undefined' ? frameworkDataEs : null));
+    const fd = currentLang === 'en' ? (window.frameworkData || localFrameworkData) : (currentLang === 'de' ? (window.frameworkDataDe || (typeof frameworkDataDe !== 'undefined' ? frameworkDataDe : null)) : (window.frameworkDataEs || (typeof frameworkDataEs !== 'undefined' ? frameworkDataEs : null)));
     if (!fd) return;
 
     const weights = {
@@ -7168,7 +8215,7 @@ window.frameworkDataEs = frameworkDataEs;
 
   /* ── OPEN CASE ─────────────────────────────── */
   function openCase(caseId) {
-    var casesSource = currentLang === 'en' ? window.casesData : window.casesDataEs;
+    var casesSource = currentLang === 'en' ? window.casesData : (currentLang === 'de' ? window.casesDataDe : window.casesDataEs);
     var data = (casesSource && caseId && casesSource[caseId])
       ? casesSource[caseId]
       : (window.caseData || (casesSource ? Object.values(casesSource)[0] : null));
@@ -7198,11 +8245,8 @@ window.frameworkDataEs = frameworkDataEs;
     currentLang = lang;
     
     // Toggle body class for static HTML translations
-    if (lang === 'es') {
-      document.body.classList.add('lang-es-active');
-    } else {
-      document.body.classList.remove('lang-es-active');
-    }
+    document.body.classList.toggle('lang-es-active', lang === 'es');
+    document.body.classList.toggle('lang-de-active', lang === 'de');
     
     // Toggle active state in language buttons
     document.querySelectorAll('.lang-btn').forEach(function(btn) {
@@ -7220,7 +8264,7 @@ window.frameworkDataEs = frameworkDataEs;
     // Re-render active case if case page is visible
     var caseDoc = document.getElementById('case-document');
     if (caseDoc && caseDoc.classList.contains('visible') && window.currentCaseId) {
-      var casesSource = currentLang === 'en' ? window.casesData : window.casesDataEs;
+      var casesSource = currentLang === 'en' ? window.casesData : (currentLang === 'de' ? window.casesDataDe : window.casesDataEs);
       var data = casesSource[window.currentCaseId];
       if (data) renderCase(data);
     }
