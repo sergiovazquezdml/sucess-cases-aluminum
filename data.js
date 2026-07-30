@@ -196,9 +196,9 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Extrusion_HD_01.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/bonnell-aluminum.png"
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/bonnell-aluminum.png"
     }
 
   }, /* end bonnell-newnan */
@@ -425,9 +425,9 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Extrusion_HD_02.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/extrum_logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/extrum_logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
 
@@ -606,9 +606,9 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Extrusion_HD_05.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/indalum_logo.png",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/indalum_logo.png",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
 
@@ -791,9 +791,9 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Extrusion_HD_06.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/Hammerer_Aluminium_Industries-profile-logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
   }
@@ -860,7 +860,7 @@ const casesRegistry = [
 const homeContent = {
   headerTag: "Success Cases · The Uncommon Lubricant Company",
   eyebrow: "Documented Operational Audits",
-  title: "Extrusion Success Cases",
+  title: "Success Cases",
   subtitle: "Data-verified operational improvements in aluminum extrusion plants. Direct field audits on cycle times, profile scrap reduction, TCO optimization, and EHS compliance.",
   scrollLabel: "Select a case study below to view verified plant data"
 };
@@ -1128,9 +1128,9 @@ const casesDataEs = {
     ],
 
     media: {
-      coverImage: "assets/Extrusion_HD_01.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/bonnell-aluminum.png"
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/bonnell-aluminum.png"
     }
 
   }, /* end bonnell-newnan */
@@ -1334,9 +1334,9 @@ const casesDataEs = {
     ],
 
     media: {
-      coverImage: "assets/Extrusion_HD_02.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/extrum_logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/extrum_logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
 
@@ -1492,9 +1492,9 @@ const casesDataEs = {
     ],
 
     media: {
-      coverImage: "assets/Extrusion_HD_05.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/indalum_logo.png",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/indalum_logo.png",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
 
@@ -1668,9 +1668,9 @@ const casesDataEs = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Extrusion_HD_06.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/Hammerer_Aluminium_Industries-profile-logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
   }
@@ -1739,7 +1739,7 @@ const casesRegistryEs = [
 const homeContentEs = {
   headerTag: "Casos de Éxito · The Uncommon Lubricant Company",
   eyebrow: "Auditorías Operativas Documentadas",
-  title: "Casos de Éxito en Extrusión",
+  title: "Casos de Éxito",
   subtitle: "Mejoras operativas verificadas con datos de campo en plantas de extrusión de aluminio. Auditorías directas sobre tiempos de ciclo, reducción de scrap, optimización de TCO y cumplimiento de EHS.",
   scrollLabel: "Selecciona un caso de éxito para ver los datos de planta verificados"
 };
@@ -2004,9 +2004,9 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Extrusion_HD_01.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/bonnell-aluminum.png"
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/bonnell-aluminum.png"
     }
 
   }, /* end bonnell-newnan */
@@ -2210,9 +2210,9 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Extrusion_HD_02.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/extrum_logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/extrum_logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
 
@@ -2368,9 +2368,9 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Extrusion_HD_05.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/indalum_logo.png",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/indalum_logo.png",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
 
@@ -2538,9 +2538,9 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Extrusion_HD_06.png",
-      productImage: "assets/Interforge-KI-C.png",
-      clientLogoUrl: "assets/Hammerer_Aluminium_Industries-profile-logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      clientLogoUrl: "assets/Logos extras/Hammerer_Aluminium_Industries-profile-logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
   }
