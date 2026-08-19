@@ -1803,7 +1803,7 @@
     {
         "key": "lingoteras",
         "img": "assets/Renders/Lingoteras/Moldes_permanentes_lingotes.jpeg",
-        "video": "assets/Videos/video_proceso_lingoteras.mp4",
+        "video": "assets/Videos/web/video_proceso_lingoteras.mp4",
         "startTime": 4.5,
         "badge": {
             "en": "PERMANENT MOLDS",
@@ -1829,7 +1829,7 @@
     {
         "key": "colada-continua",
         "img": "assets/Renders/Formado de barra aluminio/render_fundicion_formado_barra_01.png",
-        "video": "assets/Videos/video_proceso_fundicion.mp4",
+        "video": "assets/Videos/web/video_proceso_fundicion.mp4",
         "badge": {
             "en": "HORIZONTAL & VERTICAL CASTING",
             "es": "COLADA HORIZONTAL & VERTICAL",
@@ -1854,7 +1854,7 @@
     {
         "key": "extrusion",
         "img": "assets/Renders/Extrusión/render_extrusion_hd_06.png",
-        "video": "assets/Videos/video_proceso_extrusion.mp4",
+        "video": "assets/Videos/web/video_proceso_extrusion.mp4",
         "badge": {
             "en": "PRESSES & TOOLING",
             "es": "PRENSAS & HERRAMENTALES",
@@ -1880,7 +1880,7 @@
         "key": "corte",
         "img": "assets/Renders/Corte/render_corte_hd_01.png",
         "imgClass": "fit-corte",
-        "video": "assets/Videos/video_proceso_corte.mp4",
+        "video": "assets/Videos/web/video_proceso_corte.mp4",
         "startTime": 1,
         "badge": {
             "en": "HOT SHEAR & SAWS",
@@ -1932,7 +1932,7 @@
         "key": "ro3",
         "img": "assets/Renders/RO3/photo-ro3.jpg",
         "imgClass": "fit-ro3",
-        "video": "assets/Videos/video_ro3_proyecto.mp4",
+        "video": "assets/Videos/web/video_ro3_proyecto.mp4",
         "badge": {
             "en": "AUTOMATIC DOSING",
             "es": "DOSIFICACIÓN AUTOMÁTICA",
@@ -2073,13 +2073,35 @@
     });
     container.innerHTML = html;
     container.querySelectorAll('.process-card').forEach(attachCardSpotlight);
+    prefetchCardVideos();
+  }
+
+  /* Videos are small (compressed, muted, <650KB each) — warm the browser
+     cache during idle time so the first hover on each card plays instantly
+     instead of stalling on the network fetch. */
+  let _cardVideosPrefetched = false;
+  function prefetchCardVideos() {
+    if (_cardVideosPrefetched) return;
+    _cardVideosPrefetched = true;
+    const urls = cardsGridData.map(item => item.video).filter(Boolean);
+    const run = () => {
+      urls.forEach(url => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.as = 'video';
+        link.href = url;
+        document.head.appendChild(link);
+      });
+    };
+    if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 2000 });
+    else setTimeout(run, 800);
   }
 
   /* Multi-language Process Landing Database (EN / ES / DE) — Source: Interlub_Master_ES/EN/DE.md */
   const processLandings = {
     "lingoteras": {
         "bg": "assets/Renders/Lingoteras/Moldes_permanentes_lingotes.jpeg",
-        "video": "assets/Videos/video_proceso_lingoteras.mp4",
+        "video": "assets/Videos/web/video_proceso_lingoteras.mp4",
         "step": {
             "en": "PROCESS 01",
             "es": "PROCESO OPERATIVO 01",
@@ -2207,7 +2229,7 @@
     },
     "colada-continua": {
         "bg": "assets/Renders/Formado de barra aluminio/render_fundicion_formado_barra_01.png",
-        "video": "assets/Videos/video_proceso_fundicion.mp4",
+        "video": "assets/Videos/web/video_proceso_fundicion.mp4",
         "step": {
             "en": "PROCESS 02",
             "es": "PROCESO OPERATIVO 02",
@@ -2331,7 +2353,7 @@
     },
     "extrusion": {
         "bg": "assets/Renders/Extrusión/render_extrusion_hd_06.png",
-        "video": "assets/Videos/video_proceso_extrusion.mp4",
+        "video": "assets/Videos/web/video_proceso_extrusion.mp4",
         "step": {
             "en": "PROCESS 03 · CORE",
             "es": "PROCESO OPERATIVO 03 &middot; CORE",
@@ -2477,7 +2499,7 @@
     "corte": {
         "bg": "assets/Renders/Corte/render_corte_hd_03.png",
         "bgClass": "fit-corte",
-        "video": "assets/Videos/video_proceso_corte.mp4",
+        "video": "assets/Videos/web/video_proceso_corte.mp4",
         "step": {
             "en": "PROCESS 04",
             "es": "PROCESO OPERATIVO 04",
@@ -2764,7 +2786,7 @@
     },
     "ro3": {
         "bg": "assets/Renders/RO3/photo-ro3.jpg",
-        "video": "assets/Videos/video_ro3_proyecto.mp4",
+        "video": "assets/Videos/web/video_ro3_proyecto.mp4",
         "step": {
             "en": "EQUIPMENT",
             "es": "EQUIPO",

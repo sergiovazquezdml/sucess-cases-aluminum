@@ -196,8 +196,8 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/bonnell-aluminum.png"
     }
 
@@ -425,8 +425,8 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/extrum_logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
@@ -606,8 +606,8 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/indalum_logo.png",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
@@ -791,9 +791,9 @@ const casesData = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
-      clientLogoUrl: "assets/Logos extras/Hammerer_Aluminium_Industries-profile-logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
+      clientLogoUrl: "assets/Logos extras/HAI.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
   }
@@ -1128,8 +1128,8 @@ const casesDataEs = {
     ],
 
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/bonnell-aluminum.png"
     }
 
@@ -1334,8 +1334,8 @@ const casesDataEs = {
     ],
 
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/extrum_logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
@@ -1492,8 +1492,8 @@ const casesDataEs = {
     ],
 
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/indalum_logo.png",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
@@ -1668,9 +1668,9 @@ const casesDataEs = {
 
     /* ── IMÁGENES ─────────────────────────────────────────── */
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
-      clientLogoUrl: "assets/Logos extras/Hammerer_Aluminium_Industries-profile-logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
+      clientLogoUrl: "assets/Logos extras/HAI.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
   }
@@ -2004,8 +2004,8 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/bonnell-aluminum.png"
     }
 
@@ -2210,8 +2210,8 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_05.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/extrum_logo.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
@@ -2368,8 +2368,8 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_07.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
       clientLogoUrl: "assets/Logos extras/indalum_logo.png",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
@@ -2538,9 +2538,9 @@ const casesDataDe = {
     ],
 
     media: {
-      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.png",
-      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.jpeg",
-      clientLogoUrl: "assets/Logos extras/Hammerer_Aluminium_Industries-profile-logo.webp",
+      coverImage: "assets/Renders/Extrusión/Extrusion_HD_01.webp",
+      productImage: "assets/Fotos productos/Fotos producto cristal circular/Interforge KI-C individual fondo blanco.webp",
+      clientLogoUrl: "assets/Logos extras/HAI.webp",
       logoPillBg: "rgba(255,255,255,0.92)"
     }
   }

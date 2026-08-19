@@ -487,6 +487,183 @@
     }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
+    /* ================================================================
+       PASSWORD LOCK MODAL (case card gate)
+       ================================================================ */
+    #pw-gate-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,10,10,0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.32s ease, visibility 0s linear 0.32s;
+      padding: 24px;
+    }
+    #pw-gate-overlay.open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.32s ease, visibility 0s;
+    }
+    #pw-gate-modal {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      background: var(--black);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius);
+      padding: 40px 32px 32px;
+      text-align: center;
+      overflow: hidden;
+      transform: translateY(18px) scale(0.97);
+      opacity: 0;
+      transition: transform 0.38s cubic-bezier(.2,.9,.25,1.1), opacity 0.32s ease;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,0,0,0.04);
+    }
+    #pw-gate-overlay.open #pw-gate-modal {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    #pw-gate-modal::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--red);
+    }
+    #pw-gate-modal.shake {
+      animation: pwShake 0.42s cubic-bezier(.36,.07,.19,.97);
+    }
+    @keyframes pwShake {
+      10%, 90% { transform: translate3d(-1px, 0, 0); }
+      20%, 80% { transform: translate3d(2px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+    .pw-gate-icon {
+      width: 52px; height: 52px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: rgba(255,0,0,0.08);
+      border: 1px solid rgba(255,0,0,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .pw-gate-icon svg { width: 22px; height: 22px; color: var(--red); }
+    .pw-gate-icon::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,0,0,0.12);
+      animation: pwPulseRing 2.4s ease-in-out infinite;
+    }
+    @keyframes pwPulseRing {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.12); opacity: 0; }
+    }
+    .pw-gate-eyebrow {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .pw-gate-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .pw-gate-sub {
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 24px;
+    }
+    #pw-gate-input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      letter-spacing: 0.02em;
+    }
+    #pw-gate-input::placeholder { color: rgba(255,255,255,0.28); }
+    #pw-gate-input:focus {
+      border-color: rgba(255,0,0,0.45);
+      background: rgba(255,255,255,0.07);
+    }
+    #pw-gate-input.error {
+      border-color: var(--red);
+      background: rgba(255,0,0,0.06);
+    }
+    #pw-gate-error {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 11.5px;
+      letter-spacing: 0.04em;
+      color: var(--red);
+      margin-top: 10px;
+      height: 14px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    #pw-gate-error.show { opacity: 1; }
+    #pw-gate-submit {
+      width: 100%;
+      margin-top: 18px;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      transition: background 0.2s, transform 0.15s;
+    }
+    #pw-gate-submit:hover { background: var(--red-deep); }
+    #pw-gate-submit:active { transform: scale(0.98); }
+    #pw-gate-cancel {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 11.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.32);
+      padding: 8px;
+      transition: color 0.2s;
+    }
+    #pw-gate-cancel:hover { color: rgba(255,255,255,0.6); }
+
+    /* Success flash */
+    #pw-gate-modal.unlocked .pw-gate-icon {
+      border-color: rgba(255,0,0,0.4);
+      background: rgba(255,0,0,0.14);
+    }
+
     /* Scroll cue */
     #s-home .home-scroll {
       position: absolute;
@@ -3454,6 +3631,24 @@
   <div class="pw-panel"></div>
 </div>
 
+<!-- Password gate (bloqueo de acceso a los casos de éxito) -->
+<div id="pw-gate-overlay">
+  <div id="pw-gate-modal">
+    <div class="pw-gate-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+    </div>
+    <div class="pw-gate-eyebrow" id="pw-gate-eyebrow">Acceso restringido</div>
+    <div class="pw-gate-title" id="pw-gate-title">Caso protegido</div>
+    <div class="pw-gate-sub" id="pw-gate-sub">Ingresa la contraseña para ver este caso de éxito.</div>
+    <form id="pw-gate-form" autocomplete="off">
+      <input type="password" id="pw-gate-input" placeholder="Contraseña" autocomplete="new-password" />
+      <div id="pw-gate-error">Contraseña incorrecta</div>
+      <button type="submit" id="pw-gate-submit">Desbloquear</button>
+      <button type="button" id="pw-gate-cancel">Cancelar</button>
+    </form>
+  </div>
+</div>
+
 <!-- Fixed top bar — visible only inside a case -->
 <!-- ═══════════════════════════════════════════════════════════════
      UNIFIED GLOBAL NAVBAR
@@ -3805,7 +4000,7 @@
   <!-- SECTION 1 · COVER -->
   <section id="s-fw-cover">
     <div class="fw-cover-image-container">
-      <img src="assets/Renders/Extrusión/Extrusion_HD_02.png" class="fw-cover-image" alt="Extrusion machinery background">
+      <img src="assets/Renders/Extrusión/Extrusion_HD_02.webp" class="fw-cover-image" alt="Extrusion machinery background" loading="lazy" width="1750" height="1459">
     </div>
     <div class="cover-overlay"></div>
     <div class="cover-red-bar"></div>
@@ -4733,7 +4928,7 @@
   </footer>
 </div>
 
-<script src="data.js?v=1785442386312"></script>
+<script src="data.js?v=1785442386313"></script>
 
 <!-- ================================================================
      APP
@@ -4764,6 +4959,115 @@
     document.body.innerHTML = '<p style="padding:40px;font-family:sans-serif;color:#666">Error: data.js not loaded. Make sure data.js is in the same folder as index.html.</p>';
     return;
   }
+
+  /* ── PASSWORD GATE (bloqueo de tarjetas de casos de éxito) ──── */
+  var PW_GATE_PASSWORD = 'sergio.vazquez';
+  var PW_GATE_SESSION_KEY = 'interlub_cases_unlocked';
+  var pwGateOverlay  = document.getElementById('pw-gate-overlay');
+  var pwGateModal    = document.getElementById('pw-gate-modal');
+  var pwGateForm     = document.getElementById('pw-gate-form');
+  var pwGateInput    = document.getElementById('pw-gate-input');
+  var pwGateError    = document.getElementById('pw-gate-error');
+  var pwGateCancel   = document.getElementById('pw-gate-cancel');
+  var pwGateSubmit   = document.getElementById('pw-gate-submit');
+  var pwGateEyebrow  = document.getElementById('pw-gate-eyebrow');
+  var pwGateTitle    = document.getElementById('pw-gate-title');
+  var pwGateSub      = document.getElementById('pw-gate-sub');
+  var pwGatePending  = null;
+
+  var PW_GATE_TEXT = {
+    en: {
+      eyebrow: 'Restricted access',
+      title: 'Protected case',
+      sub: 'Enter the password to view this success case.',
+      placeholder: 'Password',
+      error: 'Incorrect password',
+      submit: 'Unlock',
+      cancel: 'Cancel'
+    },
+    de: {
+      eyebrow: 'Eingeschränkter Zugriff',
+      title: 'Geschützter Fall',
+      sub: 'Geben Sie das Passwort ein, um diesen Erfolgsfall zu sehen.',
+      placeholder: 'Passwort',
+      error: 'Falsches Passwort',
+      submit: 'Entsperren',
+      cancel: 'Abbrechen'
+    },
+    es: {
+      eyebrow: 'Acceso restringido',
+      title: 'Caso protegido',
+      sub: 'Ingresa la contraseña para ver este caso de éxito.',
+      placeholder: 'Contraseña',
+      error: 'Contraseña incorrecta',
+      submit: 'Desbloquear',
+      cancel: 'Cancelar'
+    }
+  };
+
+  function applyPwGateLang() {
+    var t = PW_GATE_TEXT[currentLang] || PW_GATE_TEXT.es;
+    pwGateEyebrow.textContent = t.eyebrow;
+    pwGateTitle.textContent = t.title;
+    pwGateSub.textContent = t.sub;
+    pwGateInput.placeholder = t.placeholder;
+    pwGateError.textContent = t.error;
+    pwGateSubmit.textContent = t.submit;
+    pwGateCancel.textContent = t.cancel;
+  }
+
+  function isCaseUnlocked() {
+    try { return sessionStorage.getItem(PW_GATE_SESSION_KEY) === '1'; } catch (e) { return false; }
+  }
+  function markCaseUnlocked() {
+    try { sessionStorage.setItem(PW_GATE_SESSION_KEY, '1'); } catch (e) {}
+  }
+
+  function requestCaseUnlock(onUnlocked) {
+    if (isCaseUnlocked()) { onUnlocked(); return; }
+    pwGatePending = onUnlocked;
+    applyPwGateLang();
+    pwGateInput.value = '';
+    pwGateInput.classList.remove('error');
+    pwGateError.classList.remove('show');
+    pwGateModal.classList.remove('shake', 'unlocked');
+    pwGateOverlay.classList.add('open');
+    setTimeout(function() { pwGateInput.focus(); }, 380);
+  }
+
+  function closePwGate() {
+    pwGateOverlay.classList.remove('open');
+    pwGatePending = null;
+  }
+
+  pwGateForm.addEventListener('submit', function(ev) {
+    ev.preventDefault();
+    if (pwGateInput.value === PW_GATE_PASSWORD) {
+      markCaseUnlocked();
+      pwGateModal.classList.add('unlocked');
+      var toRun = pwGatePending;
+      setTimeout(function() {
+        closePwGate();
+        if (toRun) toRun();
+      }, 260);
+    } else {
+      pwGateInput.classList.add('error');
+      pwGateError.classList.add('show');
+      pwGateModal.classList.remove('shake');
+      void pwGateModal.offsetWidth; /* restart animation */
+      pwGateModal.classList.add('shake');
+      pwGateInput.value = '';
+      pwGateInput.focus();
+    }
+  });
+
+  pwGateCancel.addEventListener('click', closePwGate);
+  pwGateOverlay.addEventListener('click', function(ev) {
+    if (ev.target === pwGateOverlay) closePwGate();
+  });
+  document.addEventListener('keydown', function(ev) {
+    if (ev.key === 'Escape' && pwGateOverlay.classList.contains('open')) closePwGate();
+  });
 
   function renderHome() {
     /* ── GALLERY HOME TEXTS ────────────────────── */
@@ -4813,17 +5117,19 @@
         '</div>';
 
       card.addEventListener('click', function() {
-        if (c.isCurrent) {
-          openCase(c.id);
-        } else {
-          if (currentLang === 'en') {
-            alert('Case "' + c.client + '" coming soon.\n\nTo add it, add the case to casesData in data.js and set isCurrent: true in casesRegistry.');
-          } else if (currentLang === 'de') {
-            alert('Fall "' + c.client + '" demnächst verfügbar.\n\nUm ihn hinzuzufügen, fügen Sie den Fall zu casesData in data.js hinzu und setzen Sie isCurrent: true in casesRegistry.');
+        requestCaseUnlock(function() {
+          if (c.isCurrent) {
+            openCase(c.id);
           } else {
-            alert('Caso "' + c.client + '" próximamente.\n\nPara agregarlo, añade el caso a casesData en data.js y establece isCurrent: true en casesRegistry.');
+            if (currentLang === 'en') {
+              alert('Case "' + c.client + '" coming soon.\n\nTo add it, add the case to casesData in data.js and set isCurrent: true in casesRegistry.');
+            } else if (currentLang === 'de') {
+              alert('Fall "' + c.client + '" demnächst verfügbar.\n\nUm ihn hinzuzufügen, fügen Sie den Fall zu casesData in data.js hinzu und setzen Sie isCurrent: true in casesRegistry.');
+            } else {
+              alert('Caso "' + c.client + '" próximamente.\n\nPara agregarlo, añade el caso a casesData en data.js y establece isCurrent: true en casesRegistry.');
+            }
           }
-        }
+        });
       });
       homeGrid.appendChild(card);
     });
@@ -4996,7 +5302,7 @@
     logoWrap.style.borderColor = (d.media && d.media.logoPillBg) ? 'rgba(0,0,0,0.08)' : '';
     if (d.media && d.media.clientLogoUrl) {
       logoWrap.innerHTML =
-        '<img src="' + esc(d.media.clientLogoUrl) + '" alt="' + esc(d.clientName) + '" style="height:52px;object-fit:contain;max-width:220px;" />';
+        '<img src="' + esc(d.media.clientLogoUrl) + '" alt="' + esc(d.clientName) + '" style="height:60px;object-fit:contain;max-width:220px;" />';
     } else {
       logoWrap.innerHTML =
         '<span id="client-logo-placeholder" style="font-family:var(--font-head);font-weight:700;font-size:15px;color:rgba(255,255,255,0.85);letter-spacing:0.04em;">' + esc(d.clientName) + '</span>';
@@ -5372,7 +5678,7 @@
       /* Wrapper for zoom · img keeps the float animation independently */
       imgSlot.innerHTML =
         '<div class="product-img-wrap">' +
-          '<img src="' + esc(d.media.productImage) + '" alt="' + esc(sol.product) + '" />' +
+          '<img src="' + esc(d.media.productImage) + '" alt="' + esc(sol.product) + '" loading="lazy" />' +
         '</div>';
     } else {
       imgSlot.innerHTML = '';
@@ -5858,10 +6164,10 @@
 
   let mouseX = -100, mouseY = -100;
   let nextSlot = 0;
+  let moveRaf = null;
 
-  document.addEventListener('mousemove', function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+  function emitTrail() {
+    moveRaf = null;
 
     // Posición del punto principal
     dot.style.left = mouseX + 'px';
@@ -5885,7 +6191,13 @@
       t.el.style.opacity    = '0';
       t.el.style.transform  = 'translate(-50%,-50%) scale(0.2)';
     });
-  });
+  }
+
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!moveRaf) moveRaf = requestAnimationFrame(emitTrail);
+  }, { passive: true });
 
   // Ocultar cuando sale de la ventana
   document.addEventListener('mouseleave', function () {
@@ -5905,22 +6217,27 @@
 
   // Hide scroll hints when user scrolls down
   window.lastScrollY = window.scrollY || window.pageYOffset;
+  var scrollRaf = null;
   window.addEventListener('scroll', function () {
-    var scrollY = window.scrollY || window.pageYOffset;
-    var hints = document.querySelectorAll('.scroll-hint');
-    hints.forEach(function (hint) {
-      if (scrollY > 50) {
-        hint.classList.add('hidden');
-      } else {
-        hint.classList.remove('hidden');
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(function () {
+      scrollRaf = null;
+      var scrollY = window.scrollY || window.pageYOffset;
+      var hints = document.querySelectorAll('.scroll-hint');
+      hints.forEach(function (hint) {
+        if (scrollY > 50) {
+          hint.classList.add('hidden');
+        } else {
+          hint.classList.remove('hidden');
+        }
+      });
+      var navbar = document.getElementById('global-navbar');
+      if (navbar) {
+        if (scrollY > 20) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
       }
     });
-    var navbar = document.getElementById('global-navbar');
-    if (navbar) {
-      if (scrollY > 20) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
-    }
-  });
+  }, { passive: true });
 })();
 </script>
 
@@ -5947,7 +6264,11 @@
 
   var W=1, H=1, T=0, SHIM=0;
   var mx=-9e4, my=-9e4, pmx=mx, pmy=my;
-  var paused=false, raf=null;
+  var raf=null;
+  /* Multiple independent pause reasons (case open, tab hidden, scrolled out
+     of view) can overlap — only run the RAF loop when none of them are active. */
+  var pauseReasons = Object.create(null);
+  function isPaused() { for (var k in pauseReasons) { if (pauseReasons[k]) return true; } return false; }
 
   function mkBlob() {
     return {
@@ -6043,7 +6364,7 @@
   }
 
   function frame() {
-    if (paused) return;
+    if (isPaused()) { raf=null; return; }
     raf=requestAnimationFrame(frame);
     T++; SHIM+=4e-4;
     /* Partial clear — original 0.36 for the viscous smearing trail */
@@ -6062,8 +6383,33 @@
   homeEl.addEventListener('mouseleave',function(){mx=-9e4;my=-9e4;});
   window.addEventListener('resize',init);
 
-  window._homeBgPause  = function(){paused=true;if(raf){cancelAnimationFrame(raf);raf=null;}};
-  window._homeBgResume = function(){if(paused){paused=false;init();frame();}};
+  function setPause(reason, on) {
+    var wasPaused = isPaused();
+    pauseReasons[reason] = on;
+    if (isPaused()) {
+      if (raf) { cancelAnimationFrame(raf); raf=null; }
+    } else if (wasPaused) {
+      init(); frame();
+    }
+  }
+
+  /* External API used when a case opens/closes over the home canvas */
+  window._homeBgPause  = function(){ setPause('case', true); };
+  window._homeBgResume = function(){ setPause('case', false); };
+
+  /* Stop burning CPU/GPU when the tab isn't visible */
+  document.addEventListener('visibilitychange', function() {
+    setPause('hidden', document.hidden);
+  });
+
+  /* Stop animating once the home section has scrolled out of view */
+  if (window.IntersectionObserver) {
+    new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        setPause('offscreen', !entry.isIntersecting);
+      });
+    }, { threshold: 0 }).observe(homeEl);
+  }
 
   init(); frame();
 })();
@@ -6072,12 +6418,19 @@
 (function () {
   var sec = document.getElementById('s-compare');
   if (!sec) return;
-  sec.addEventListener('mousemove', function (e) {
+  var raf=null, ex=0, ey=0;
+  function apply() {
+    raf=null;
     var r = sec.getBoundingClientRect();
-    sec.style.setProperty('--gx', (e.clientX - r.left) + 'px');
-    sec.style.setProperty('--gy', (e.clientY - r.top)  + 'px');
+    sec.style.setProperty('--gx', (ex - r.left) + 'px');
+    sec.style.setProperty('--gy', (ey - r.top)  + 'px');
+  }
+  sec.addEventListener('mousemove', function (e) {
+    ex=e.clientX; ey=e.clientY;
+    if (!raf) raf=requestAnimationFrame(apply);
   });
   sec.addEventListener('mouseleave', function () {
+    if (raf) { cancelAnimationFrame(raf); raf=null; }
     sec.style.setProperty('--gx', '-999px');
     sec.style.setProperty('--gy', '-999px');
   });
@@ -6086,10 +6439,16 @@
 /* ── PER-CARD CURSOR SPOTLIGHT ─────────────────────────── */
 (function () {
   function attach(card) {
-    card.addEventListener('mousemove', function(e) {
+    var raf=null, ex=0, ey=0;
+    function apply() {
+      raf=null;
       var r=card.getBoundingClientRect();
-      card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');
-      card.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');
+      card.style.setProperty('--mx',((ex-r.left)/r.width*100).toFixed(1)+'%');
+      card.style.setProperty('--my',((ey-r.top)/r.height*100).toFixed(1)+'%');
+    }
+    card.addEventListener('mousemove', function(e) {
+      ex=e.clientX; ey=e.clientY;
+      if (!raf) raf=requestAnimationFrame(apply);
     });
   }
   document.querySelectorAll('.home-case-card').forEach(attach);
@@ -6102,16 +6461,24 @@
 })();
 
 /* ── TITLE INTERACTIVE CURSOR COLOR TRACKING ENGINE ────── */
-window.addEventListener('mousemove', function(e) {
-  var titleEl = e.target.closest('#s-home .home-title, .home-case-card .hc-client, .hc-client, #s-cover .cover-headline, .cases-nav-btn, .fcb-title');
-  if (titleEl) {
-    var r = titleEl.getBoundingClientRect();
-    var xPct = Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100));
-    var yPct = Math.max(0, Math.min(100, ((e.clientY - r.top) / r.height) * 100));
-    titleEl.style.setProperty('--tx', xPct.toFixed(2) + '%');
-    titleEl.style.setProperty('--ty', yPct.toFixed(2) + '%');
+(function () {
+  var raf=null, lastEvt=null;
+  function apply() {
+    raf=null;
+    var titleEl = lastEvt.target.closest('#s-home .home-title, .home-case-card .hc-client, .hc-client, #s-cover .cover-headline, .cases-nav-btn, .fcb-title');
+    if (titleEl) {
+      var r = titleEl.getBoundingClientRect();
+      var xPct = Math.max(0, Math.min(100, ((lastEvt.clientX - r.left) / r.width) * 100));
+      var yPct = Math.max(0, Math.min(100, ((lastEvt.clientY - r.top) / r.height) * 100));
+      titleEl.style.setProperty('--tx', xPct.toFixed(2) + '%');
+      titleEl.style.setProperty('--ty', yPct.toFixed(2) + '%');
+    }
   }
-});
+  window.addEventListener('mousemove', function(e) {
+    lastEvt=e;
+    if (!raf) raf=requestAnimationFrame(apply);
+  });
+})();
 </script>
 
 </body>
