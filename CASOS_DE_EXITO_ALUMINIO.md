@@ -29,7 +29,7 @@ sucess-cases-aluminum/
 │   ├── bonnell-aluminum.png
 │   ├── extrum_logo.webp
 │   ├── indalum_logo.png
-│   └── Hammerer_Aluminium_Industries-profile-logo.webp
+│   └── HAI.webp
 └── CASOS_DE_EXITO_ALUMINIO.md # Este documento de documentación técnica para AI
 ```
 
